@@ -65,7 +65,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Spaces Within Website <onboarding@resend.dev>', // swap for a verified sender once the domain is set up
-        to: ['bobby@thespaceswithin.com'],
+        to: ['hello@thespaceswithin.com'],
         reply_to: email,
         subject: `New inquiry from ${data.name || 'the website'}`,
         text: lines,
