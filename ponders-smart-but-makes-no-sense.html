@@ -130,8 +130,58 @@
   .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
   .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
   .nav-links{display:flex;}
-  @media (max-width:860px){
-    .nav .nav-links{display:none;}
+  .nav{position:relative;}
+
+  .nav-toggle{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    padding:0;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:2px;
+    cursor:pointer;
+  }
+  .nav-toggle-bars,
+  .nav-toggle-bars::before,
+  .nav-toggle-bars::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:1.5px;
+    background:var(--ink);
+    position:relative;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .nav-toggle-bars::before{position:absolute; top:-6px;}
+  .nav-toggle-bars::after{position:absolute; top:6px;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars{background:transparent;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before{transform:translateY(6px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg);}
+
+  @media (max-width:640px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      flex-direction:column;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+      padding:8px clamp(20px,5vw,64px) 20px;
+      gap:4px;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .22s ease;
+      z-index:5;
+    }
+    .nav-links.is-open{max-height:480px;}
+    .nav-links li{width:100%;}
+    .nav-links li a{display:block; padding-block:11px; border-bottom:1px solid var(--line);}
+    .nav-links li:last-child a{border-bottom:none;}
   }
 
   /* ---- eyebrow ---- */
@@ -336,7 +386,10 @@
 
 <nav class="nav wrap">
   <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+    <span class="nav-toggle-bars" aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="how-it-works.html">How It Works</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="faq.html">FAQ</a></li>
@@ -418,5 +471,22 @@
   <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
 </footer>
 
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
 </body>
 </html>
