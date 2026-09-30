@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Personal stories from Bobby Jones's own life and practice — what happens when a space is finally allowed to settle.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — Beyond</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:660px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:760px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{
+    background:var(--copper);
+    color:#FBF6EC;
+  }
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  section{position:relative;}
+
+  /* ---- intro ---- */
+  .beyond-intro{padding-block:clamp(56px,8vw,96px) clamp(40px,6vw,60px);}
+  .beyond-intro-inner{max-width:660px;}
+  .beyond-intro h1{margin-top:22px; font-size:clamp(34px,5vw,52px);}
+  .beyond-intro .kicker{
+    margin-top:22px;
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:58ch;
+    line-height:1.55;
+  }
+
+  /* ---- stories ---- */
+  .stories{padding-block:0 clamp(40px,6vw,60px);}
+  .story-band{
+    scroll-margin-top:24px;
+  }
+  .story-band:nth-child(2n){background:var(--paper-2);}
+  .story{
+    padding-block:clamp(46px,7vw,72px);
+  }
+  .story h2{
+    font-size:clamp(24px,3vw,32px);
+    max-width:22ch;
+    font-style:italic;
+    font-weight:500;
+  }
+  .story .measure{margin-top:22px; display:flow-root;}
+  .story .measure > p{color:var(--ink-soft); font-size:16.5px; line-height:1.65; margin:0 0 17px;}
+  .story .measure > p:last-child{margin-bottom:0;}
+  .story .measure > p.pull{margin:4px 0 21px;}
+
+  /* ---- story photo (wraps, magazine-style) ---- */
+  .photo-slot{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+  }
+  .photo-slot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .story-photo{
+    width:270px;
+    margin:5px 0 14px;
+  }
+  .story-photo.float-right{float:right; margin-left:28px;}
+  .story-photo.float-left{float:left; margin-right:28px;}
+  .story-photo.ratio-4-5{aspect-ratio:4/5;}
+  .story-photo.ratio-4-3{aspect-ratio:4/3; width:320px;}
+  .story-photo figcaption{
+    margin-top:10px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  @media (max-width:640px){
+    .story-photo.float-right,
+    .story-photo.float-left{
+      float:none;
+      width:100%;
+      max-width:360px;
+      margin:6px auto 18px;
+    }
+  }
+
+  .pull{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:clamp(19px,2.2vw,23px);
+    color:var(--ink);
+    line-height:1.4;
+    max-width:36ch;
+    margin-block:4px;
+  }
+
+  /* ---- close CTA ---- */
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(72px,10vw,120px);
+    text-align:center;
+  }
+  .close .pull{
+    color:var(--paper-on-pine);
+    font-size:clamp(24px,3.4vw,34px);
+    max-width:680px;
+    margin-inline:auto;
+    line-height:1.4;
+  }
+  .close .btn{margin-top:38px;}
+  .close .motto{
+    margin-top:30px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:14px;
+    color:rgba(239,233,220,0.6);
+    letter-spacing:0.02em;
+  }
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html" class="active">Beyond</a></li>
+    <li><a href="ponders.html">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- INTRO -->
+<section class="beyond-intro wrap">
+  <div class="beyond-intro-inner">
+    <span class="eyebrow">Beyond</span>
+    <h1>Some of what this work does doesn&rsquo;t show up in a description of services.</h1>
+    <p class="kicker">They may show up in a doorway in Tennessee, in a shaman&rsquo;s therapy room, or in the quiet of a street that doesn&rsquo;t know why it feels different today. These are a few of those things.</p>
+  </div>
+</section>
+
+<!-- STORIES -->
+<div class="stories">
+
+  <section class="story-band">
+  <div class="wrap story">
+    <h2>It happens in the most unlikely places</h2>
+    <div class="measure">
+      <p>We were visiting good friends who live in a log home in the east Tennessee hills &mdash; a couple dealing with ongoing health issues. The house was beautiful and remote, nested in trees, no close neighbors. It was also full of Alexa pods, every room, and underneath it all, a gridline intersection sitting directly below the bedroom where they slept as well as a spring that flowed underneath.</p>
+      <figure class="photo-slot story-photo ratio-4-5 float-right">
+        <img src="assets/img/26a1ded7d52f.jpg" alt="A window looking out over pine trees from inside the log home, with maps spread across the table in the foreground">
+      </figure>
+      <p>I spent the first day in the basement &mdash; electrical panel, well water filtration, washer and dryer, two refrigerators, a WiFi modem. Geopathic stress points, architectural stress points. The kind of invisible load that accumulates quietly over years and shows up in the body before it shows up anywhere else.</p>
+      <p>The second day, the husband was sick in bed with a respiratory infection. That&rsquo;s where I went to work.</p>
+      <p>I found my first stress point in the bedroom doorway &mdash; and as I stood there, his wife appeared in that exact spot. She looked at me with the kind of polite skepticism I recognize. &ldquo;I don&rsquo;t really feel anything,&rdquo; she said.</p>
+      <p>I asked her to hold her arm out. I was going to muscle test her.</p>
+      <p>At that spot in the doorway, her arm dropped. A few feet away, it held. I placed the BioGeometry&reg; solution on the stress point I had found. I asked her to hold her arm out again. It tested strong.</p>
+      <p>She stood there for a moment. Then: &ldquo;Keep working &mdash; I&rsquo;m liking this.&rdquo;</p>
+      <p>The next morning, her husband came into the kitchen looking like himself again.</p>
+      <p class="pull">You don&rsquo;t have to feel it for it to be working. But sometimes &mdash; you do.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="story-band">
+  <div class="wrap story">
+    <h2>Sometimes the elephant <strong>is</strong> the room</h2>
+    <div class="measure">
+      <p>She was a shaman and worked in the world of energy medicine with clients on a daily basis. However, she was seeing multiple physicians for the health problems she was battling. She was taking more supplements than I could count, working with multiple therapies, multiple modalities, years of sincere and disciplined seeking.</p>
+      <figure class="photo-slot story-photo ratio-4-5 float-left">
+        <img src="assets/img/cf9f8bcd84cb.jpg" alt="The desk setup in the shaman's own therapy room">
+      </figure>
+      <p>And still, something wasn&rsquo;t resolving.</p>
+      <p>When she came to me, I listened to all of it. And then I said: &ldquo;I think it&rsquo;s time we talk about the elephant in the room. And it&rsquo;s your room.&rdquo;</p>
+      <p>Her health issues had forced her to stay at home to do her work, live her life. The space she was sleeping in, healing in, or trying to &mdash; had never been fully addressed except for the placing of specific crystals around the home. Nothing on the level of this work.</p>
+      <p>This work doesn&rsquo;t replace what you&rsquo;re already doing. It&rsquo;s not another modality to add to the stack. It&rsquo;s the thing that makes the stack make sense. The foundation the rest of it has been waiting for.</p>
+      <p>Sometimes the missing piece isn&rsquo;t a supplement, or a practitioner, or a protocol.</p>
+      <p class="pull">Sometimes it&rsquo;s the room.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="story-band">
+  <div class="wrap story">
+    <h2>My 115-year-old laboratory</h2>
+    <div class="measure">
+      <p>My own home was where I first understood what that really meant.</p>
+      <p>Our house is 115 years old: original floors, plaster and lath walls, wavy glass windows. We were restoring it carefully &mdash; preserving what mattered, replacing only what had to go. But something in the space felt tense in a way that was easy to feel and hard to explain. For years, my wife had been waking at 1:30 or 2 a.m., moving to the guest room, unable to come back to sleep in our bed. We&rsquo;d stopped thinking of it as a problem.</p>
+      <figure class="photo-slot story-photo ratio-4-5 float-right">
+        <img src="assets/img/2a930b07e575.jpg" alt="The front porch of Bobby's 115-year-old home, with hanging flower baskets and wind chimes">
+      </figure>
+      <p>It had simply become the way things were.</p>
+      <p>The house became my laboratory &mdash; not because of its age, but because it gave me a place to learn in real time, in my own space, on my own terms. When I began addressing the grid lines in earnest, the nighttime waking stopped. Later, after practitioner training, I returned with a more complete set of tools, and something in the house settled even further.</p>
+      <p class="pull">It was as if the house took a long deep breath in, exhaled slowly, and dropped its shoulders.</p>
+      <p>That&rsquo;s when I understood what this work could do &mdash; not just for clients, but for people who have lived with tension so long they&rsquo;ve forgotten what ease feels like.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="story-band">
+  <div class="wrap story">
+    <h2>Out of the blue</h2>
+    <div class="measure">
+      <p>She approached me after a talk, already thinking about the new place they were preparing to move into &mdash; and already uneasy about the electrical situation there, including solar panels positioned close to the house.</p>
+      <p>Then, with a kind of tired humor, she mentioned it would help if she could get her partner moving so they could actually relocate. She was managing an entire homestead &mdash; livestock, outbuildings, all of it &mdash; and on his days off, he had taken to sitting on the couch, absorbed in the internet. The momentum had all but stalled.</p>
+      <figure class="photo-slot story-photo ratio-4-5 float-left">
+        <img src="assets/img/5dea5ebfde61.jpg" alt="Her partner sitting on the couch, phone charging nearby, looking out the window">
+      </figure>
+      <p>I offered to look at the house they were still living in first.</p>
+      <p>What I found in the area where her partner spent his time was a layered zone of geopathic and EMF stress &mdash; the router, the cords, and the position of the space all contributing to an environment that pulled energy down rather than supporting it. I balanced the electrical panel, addressed the room, and worked through the stress patterns in the home.</p>
+      <p>She didn&rsquo;t tell her partner what had been done.</p>
+      <p>A few days later, out of the blue, he turned to her and said: &ldquo;We need to get going on getting this stuff moved.&rdquo;</p>
+      <p class="pull">It wasn&rsquo;t that someone convinced him. Nothing visible had changed. But the space had &mdash; and something in him responded.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="story-band">
+  <div class="wrap story">
+    <h2>Clarity begins at home</h2>
+    <div class="measure">
+      <p>There&rsquo;s a principle in this work that doesn&rsquo;t get talked about enough &mdash; maybe because it sounds too simple, or too large.</p>
+      <p>When a space comes into balance, it doesn&rsquo;t stop at the walls.</p>
+      <p>I&rsquo;ve seen this in my own yard.</p>
+      <p>There&rsquo;s a ginkgo in our yard that puzzled me for years. It was young when we planted it, and as it grew, it leaned &mdash; not toward the light, not away from the house in any way I could account for. Just away. From something. I noted it and moved on.</p>
+      <figure class="photo-slot story-photo ratio-4-5 float-right">
+        <img src="assets/img/bf7222dde6bf.jpg" alt="The ginkgo tree in Bobby's yard, growing straight among the surrounding plantings">
+      </figure>
+      <p>Around the same time, one of five compact strawberry bushes along our front boundary died. The others were fine. Same soil, same water, same exposure. That one just didn&rsquo;t make it. I had no explanation.</p>
+      <p>It wasn&rsquo;t until I began working on our own home &mdash; mapping the gridlines, identifying the stress points &mdash; that I understood what I&rsquo;d been looking at. From inside my home, I followed the line as it ran directly alongside the ginkgo and continued straight toward where that bush had stood. The tree had been growing around a vertical wall of stress it could feel and I couldn&rsquo;t see. The bush had been sitting in it.</p>
+      <p>I placed a solution on the line inside the house &mdash; addressing what I had measured there. The correction wasn&rsquo;t made in the yard at all.</p>
+      <p>The ginkgo has been growing straight ever since. We removed the strawberry bushes and replanted the border with junipers. All five are thriving.</p>
+      <p>I&rsquo;ve watched it happen quietly in other ways too &mdash; in the margins of sessions that were supposed to be about something else. A client settles their home. A relationship that had been strained starts breathing again. A neighbor who&rsquo;d been difficult becomes easier. Nothing dramatic. Just &mdash; something shifts in the surrounding field, the way a tuning fork will start another tuning fork singing without ever touching it.</p>
+      <p class="pull">Resonance doesn&rsquo;t need permission to travel. And it doesn&rsquo;t stop at the property line.</p>
+      <p>A home that is whole and coherent and quietly humming at the right frequency doesn&rsquo;t just serve the people inside it. It becomes something the street can lean on without knowing why.</p>
+      <p>Most of us are already trying to be that &mdash; a source of steadiness for the people around us. We give outward from the self: in our relationships, our work, our communities.</p>
+      <p>What if the home is where that starts? What if the most quietly radical act of care for the people around you is to tend, with real precision and real knowledge, to the space you return to every night?</p>
+      <p>Not as an escape from the world. As a contribution to it.</p>
+    </div>
+  </div>
+  </section>
+
+</div>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <p class="pull">The light needs somewhere to land &mdash; and then it keeps going.</p>
+  <a href="contact.html" class="btn btn-copper">Let&rsquo;s Begin</a>
+  <div class="motto">the light needs somewhere to land.</div>
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>

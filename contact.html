@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Get in touch with Bobby Jones to talk about what you've been noticing in your own home.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — Let's Talk</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:860px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:16px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{
+    background:var(--copper);
+    color:#FBF6EC;
+  }
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+
+  section{position:relative;}
+
+  /* ---- intro ---- */
+  .contact-intro{padding-block:clamp(52px,7vw,88px) clamp(28px,4vw,40px);}
+  .contact-intro-inner{max-width:640px;}
+  .contact-intro h1{margin-top:20px; font-size:clamp(32px,4.4vw,48px);}
+  .contact-intro .kicker{
+    margin-top:16px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+
+  /* ---- contact layout ---- */
+  .contact-layout{
+    padding-block:clamp(20px,3vw,32px) clamp(72px,9vw,110px);
+    display:grid;
+    grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
+    gap:clamp(40px,6vw,72px);
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .contact-layout{grid-template-columns:1fr;}
+  }
+
+  /* ---- form ---- */
+  .form-card{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:clamp(26px,4vw,40px);
+  }
+  .form-lede{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:22px;
+  }
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:7px;
+  }
+  .field input,
+  .field textarea{
+    width:100%;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:13px 14px;
+    font-family:"Public Sans", sans-serif;
+    font-size:15.5px;
+    color:var(--ink);
+    resize:vertical;
+  }
+  .field textarea{min-height:96px;}
+  .field input::placeholder,
+  .field textarea::placeholder{color:var(--ink-soft); opacity:0.55;}
+  .field input:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--copper-deep);
+    box-shadow:0 0 0 3px rgba(160,99,47,0.14);
+  }
+  .form-card .btn{width:100%; margin-top:6px;}
+
+  /* ---- info column ---- */
+  .contact-info{padding-top:clamp(4px,1vw,10px);}
+  .contact-info p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.65;
+    margin-bottom:20px;
+  }
+  .contact-info p.italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    color:var(--ink);
+    font-size:16.5px;
+  }
+  .contact-info p.detail{
+    color:var(--ink);
+    font-size:15.5px;
+  }
+  .contact-info a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .contact-info a:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html">Ponders</a></li>
+    <li><a href="contact.html" class="active">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- INTRO -->
+<section class="contact-intro wrap">
+  <div class="contact-intro-inner">
+    <span class="eyebrow">Contact</span>
+    <h1>Let&rsquo;s talk</h1>
+    <p class="kicker">Bring what you&rsquo;ve noticed. We&rsquo;ll go from there.</p>
+  </div>
+</section>
+
+<!-- FORM + INFO -->
+<section class="contact-layout wrap">
+
+  <form class="form-card" id="contact-form">
+    <div class="field">
+      <label for="cf-name">Name</label>
+      <input id="cf-name" type="text" name="name" placeholder="Your name">
+    </div>
+    <div class="field">
+      <label for="cf-email">Email*</label>
+      <input id="cf-email" type="email" name="email" placeholder="you@email.com" required>
+    </div>
+    <div class="field">
+      <label for="cf-phone">Phone</label>
+      <input id="cf-phone" type="tel" name="phone" placeholder="(503) 555-0100">
+    </div>
+    <div class="field">
+      <label for="cf-location">City or Zip Code</label>
+      <input id="cf-location" type="text" name="location" placeholder="Portland, OR">
+    </div>
+    <div class="field">
+      <label for="cf-noticing">What have you been noticing?</label>
+      <textarea id="cf-noticing" name="noticing" placeholder="Tell me a bit about what's going on."></textarea>
+    </div>
+    <div class="field">
+      <label for="cf-source">How did you hear about us?</label>
+      <textarea id="cf-source" name="source" placeholder="Referral, search, social, talk, etc."></textarea>
+    </div>
+    <div class="field" style="position:absolute; left:-9999px;" aria-hidden="true">
+      <label for="cf-hp">Leave this field empty</label>
+      <input id="cf-hp" type="text" name="_hp" tabindex="-1" autocomplete="off">
+    </div>
+    <button type="submit" class="btn btn-copper" id="cf-submit">Send It Over</button>
+    <p id="cf-status" style="margin-top:14px; font-size:14.5px; display:none;"></p>
+  </form>
+  <script>
+    (function(){
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('cf-status');
+      var submitBtn = document.getElementById('cf-submit');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if (form._hp && form._hp.value) return; // honeypot tripped, silently drop
+        var data = Object.fromEntries(new FormData(form).entries());
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+        status.style.display = 'none';
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).then(function(res){
+          if (!res.ok) throw new Error('bad-status');
+          return res.json();
+        }).then(function(){
+          form.reset();
+          status.textContent = "Thanks — that's on its way. I typically respond within one business day.";
+          status.style.color = 'var(--ink)';
+          status.style.display = 'block';
+        }).catch(function(){
+          status.textContent = "Something went wrong sending that. You can also reach me directly at bobby@thespaceswithin.com.";
+          status.style.color = 'var(--copper-deep)';
+          status.style.display = 'block';
+        }).finally(function(){
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send It Over';
+        });
+      });
+    })();
+  </script>
+
+  <div class="contact-info">
+    <p>Most people who reach out aren&rsquo;t sure yet. They just know something feels off &mdash; and that&rsquo;s exactly the right place to start.</p>
+    <p class="italic">Your first conversation is complimentary &mdash; no pressure, no pitch. Just a chance to talk through what you&rsquo;ve been noticing and see if this work is a fit.</p>
+    <p class="italic">I typically respond within one business day.</p>
+    <p class="detail">Phone: <a href="tel:+15035685033">(503) 568-5033</a></p>
+    <p class="detail">Bobby Jones, Licensed BioGeometry&reg;-EHS Associate-Practitioner</p>
+    <p>I serve the greater Portland Oregon metro area and surrounding communities within a radius of 150 miles.</p>
+    <p>Anything else? You can also reach me at <a href="mailto:bobby@thespaceswithin.com">bobby@thespaceswithin.com</a></p>
+  </div>
+
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>

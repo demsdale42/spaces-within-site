@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Documented studies and field projects behind BioGeometry® — from Swiss villages to peer-reviewed Wi-Fi exposure research.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — Research</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:680px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:820px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow / labels ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{
+    background:var(--copper);
+    color:#FBF6EC;
+  }
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  section{position:relative;}
+
+  /* ---- intro ---- */
+  .research-intro{padding-block:clamp(56px,8vw,96px) clamp(36px,5vw,52px);}
+  .research-intro-inner{max-width:680px;}
+  .research-intro h1{margin-top:26px; font-size:clamp(30px,4vw,44px); max-width:20ch;}
+  .research-intro .kicker{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:58ch;
+  }
+
+  /* ---- on this page ---- */
+  .toc{padding-block:0 clamp(40px,6vw,64px); border-bottom:1px solid var(--line); padding-bottom:clamp(28px,4vw,40px);}
+  .toc-label{
+    font-size:12.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+    display:block;
+  }
+  .toc-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .toc-list a{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .toc-list a:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  /* ---- article sections ---- */
+  .article{padding-block:0;}
+  .article-section{
+    padding-block:clamp(40px,6vw,60px);
+    border-top:1px solid var(--line);
+    scroll-margin-top:24px;
+  }
+  .article-section h2{font-size:clamp(23px,2.6vw,28px); max-width:26ch;}
+  .article-section .measure{margin-top:20px; display:flow-root;}
+  .article-section .measure > p{color:var(--ink-soft); font-size:16px; margin:0 0 16px;}
+  .article-section .measure > p:last-child{margin-bottom:0;}
+  .article-section .measure p.lead{color:var(--ink); font-size:16.5px;}
+
+  .citation{
+    font-size:13.5px;
+    font-style:italic;
+    color:var(--ink-soft);
+    line-height:1.5;
+    padding-left:14px;
+    border-left:2px solid var(--line);
+  }
+
+  /* ---- research photo (wraps, magazine-style) ---- */
+  .photo-slot{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+  }
+  .photo-slot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .research-photo{
+    width:260px;
+    margin:5px 0 14px;
+    aspect-ratio:4/5;
+  }
+  .research-photo.float-right{float:right; margin-left:26px;}
+  .research-photo.float-left{float:left; margin-right:26px;}
+  @media (max-width:640px){
+    .research-photo.float-right,
+    .research-photo.float-left{
+      float:none;
+      width:100%;
+      max-width:340px;
+      margin:6px auto 18px;
+    }
+  }
+
+  /* ---- featured study ---- */
+  .featured{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:clamp(28px,4vw,44px);
+  }
+  .featured .eyebrow{margin-bottom:10px;}
+  .featured h2{font-size:clamp(22px,2.4vw,26px); max-width:28ch;}
+
+  /* ---- disclaimer box ---- */
+  .disclaimer-box{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:clamp(24px,3.4vw,34px);
+  }
+  .disclaimer-box h2{font-size:18px; margin-bottom:12px;}
+  .disclaimer-box p{font-size:14.5px; color:var(--ink-soft); line-height:1.6;}
+
+  /* ---- close CTA ---- */
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+    text-align:center;
+  }
+  .close h2{color:var(--paper-on-pine); font-size:clamp(26px,3.2vw,36px); max-width:600px; margin-inline:auto; font-style:italic; font-weight:500;}
+  .close .btn{margin-top:34px;}
+  .close .fineprint{
+    margin-top:32px;
+    font-size:13px;
+    color:rgba(239,233,220,0.6);
+    max-width:520px;
+    margin-inline:auto;
+    line-height:1.5;
+  }
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- INTRO -->
+<section class="research-intro wrap">
+  <div class="research-intro-inner">
+    <span class="eyebrow">Research</span>
+    <h1>The evidence behind the work.</h1>
+    <p class="kicker">The science behind BioGeometry&reg; is still emerging &mdash; but it is not absent. What follows is a selection of documented projects and peer-reviewed studies chosen for one reason: they represent the clearest available evidence. Real communities. Measurable outcomes. Controlled laboratory findings.</p>
+  </div>
+</section>
+
+<!-- ON THIS PAGE -->
+<nav class="toc wrap" aria-label="On this page">
+  <span class="toc-label">On This Page</span>
+  <ul class="toc-list">
+    <li><a href="#hemberg">Hemberg &amp; Hirschberg</a></li>
+    <li><a href="#wifi">Featured: Wi-Fi exposure study</a></li>
+    <li><a href="#virus-c">Virus C project</a></li>
+    <li><a href="#poultry">Poultry project &amp; Nutrinor</a></li>
+    <li><a href="#nutrinor-dairy">Nutrinor &mdash; dairy cattle</a></li>
+    <li><a href="#lake-guenevere">Lake Guenevere restoration</a></li>
+    <li><a href="#building-materials">Building materials &amp; indoor air</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE -->
+<section class="article wrap">
+
+  <div class="article-section" id="hemberg">
+    <h2>Hemberg &amp; Hirschberg</h2>
+    <div class="measure">
+      <p class="lead">In August 2003, the Swiss village of Hemberg had a problem: residents living near a newly installed antenna were reporting sleeplessness, headaches, trouble concentrating &mdash; enough of a pattern that the Mediation Authority for Mobile Communication and Environment (OMK), together with Swisscom, agreed to bring in BioGeometry as an experimental harmonization project. What followed wasn&rsquo;t a quiet clinical trial &mdash; it was tracked with a resident questionnaire. Sleep improved. Headaches eased. People reported more energy. And the village noticed something else entirely: birds and bats that had disappeared from the area came back.</p>
+      <figure class="photo-slot research-photo float-right">
+        <img src="assets/img/ec68d0de0038.jpg" alt="Alpine dairy cattle grazing in the Swiss countryside near Hemberg and Hirschberg">
+      </figure>
+      <p>Worth saying plainly: this was a small, self-selected group of residents surveyed before and after &mdash; not a blinded clinical study &mdash; and the researchers said as much themselves, calling for a larger, more rigorous follow-up. But for the people living there, the change was real enough to report, and real enough for the canton to try it again.</p>
+      <p>Two years later, in May 2005, the nearby village of Hirschberg got its own version of the same treatment &mdash; this time commissioned directly by the local government rather than through mediation. Nobody was tracking livestock health going in; it wasn&rsquo;t part of the study design. But residents noticed something anyway, and by July 2008, two local papers were reporting it: the cows in the area had stopped having miscarriages, and people were back to sleeping through the night. It was never measured &mdash; no baseline, no vet records &mdash; just an outcome real enough that the local press covered it on its own.</p>
+      <p class="citation">Source: Mediation Authority for Mobile Communication and Environment (OMK) / Swisscom-commissioned BioGeometry study, Hemberg, Switzerland, August 2003; resident questionnaire conducted by Dr. med. Yvonne Gilli, autumn 2004.</p>
+      <p class="citation">Source: Local government-commissioned BioGeometry study, Hirschberg, Switzerland, May 2005; livestock outcome reported in the Appenzeller Zeitung and Tagblatt, July 2008.</p>
+    </div>
+  </div>
+
+  <div class="article-section" id="wifi">
+    <div class="featured">
+      <span class="eyebrow">Featured Study</span>
+      <h2>BioGeometry&reg; shapes and Wi-Fi exposure in animal models</h2>
+      <div class="measure" style="margin-top:18px;">
+        <p class="lead">Two peer-reviewed studies &mdash; published in 2018 and 2019 &mdash; looked at what prolonged Wi-Fi exposure actually does inside a living body, and whether BioGeometry&reg; geometric forms could reverse it. The results were measurable, specific, and could not be attributed to placebo.</p>
+        <figure class="photo-slot research-photo float-left">
+          <img src="assets/img/993051b79fef.jpg" alt="A person sitting beneath a Free Wi-Fi sign outside a closed cafe">
+        </figure>
+        <p>Rats exposed to Wi-Fi radiation showed rising cellular stress, declining antioxidant defenses, and measurably reduced levels of melatonin, dopamine, and serotonin. Anxiety behaviors increased. Spatial memory deteriorated. When BioGeometry&reg; forms were introduced into the same environment &mdash; with the radiation source unchanged &mdash; every one of these markers reversed, returning toward normal ranges.</p>
+        <p>What the studies were measuring, in plain language, is the same short list that shows up in every conversation about modern life: sleep that doesn&rsquo;t restore, mood that sits slightly off, a mind that feels slower than it used to. These aren&rsquo;t complaints without a cause. In rats &mdash; creatures that have no opinions about geometric forms and no capacity for placebo response &mdash; the cause was measurable, and so was the correction. That&rsquo;s not a small finding. It&rsquo;s a reason to take the question seriously.</p>
+        <p class="citation">Citations:<br>
+        Sharaf, N.E.; El-Sawy, M.S.; Ahmed, H.H.; Metwally, F.M.; Hegazy, N.M.; El-Mishad, A.M. Bio-geometrical shapes: A new option for protection against neurodegenerative insult of Wi-Fi radiation. <em>Bioscience Research</em>, 15(3): 2481&ndash;2488. 2018.<br><br>
+        Sharaf, N.E.; Galal, A.F.; El-Sawy, M.S.; Shalby, A.B.; Sayed, A.H.; Ahmed, H.H. Role of designed Bio-Geometrical forms in antagonizing neurobehavioral burden of Wi-Fi radiation: Evidence-based experimental study. <em>Biomedical &amp; Pharmacology Journal</em>, 12(3): 1217&ndash;1234. 2019. DOI: 10.13005/bpj/1751</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-section" id="virus-c">
+    <h2>Virus C project</h2>
+    <div class="measure">
+      <p class="lead">In April 1999, Dr. Taha Khalifa &mdash; Dean of the Faculty of Pharmacy at El Azhar University &mdash; put BioGeometry up against Hepatitis C, tested head-to-head against the pharmaceutical and alternative treatments already in use, in a pilot group of 300 patients. It won: a 90% reduction in the relevant liver enzyme markers, the strongest result of anything tested in the trial. Saudi Arabia&rsquo;s Orbit Satellite Channel carried the announcement, and researchers proposed a second phase &mdash; 3,000 patients &mdash; to build on what the pilot had shown.</p>
+      <p class="citation">Source: Dr. Taha Khalifa, Faculty of Pharmacy, El Azhar University, Cairo, April 1999.</p>
+    </div>
+  </div>
+
+  <div class="article-section" id="poultry">
+    <h2>Poultry project &amp; Nutrinor</h2>
+    <div class="measure">
+      <p class="lead">At Ain Shams University, researchers raised two flocks side by side &mdash; one on the standard regimen of antibiotics, vaccines, and hormones, the other on nothing but BioGeometry&rsquo;s environmental protocols. The unmedicated flock didn&rsquo;t just keep pace. They outgrew the medicated birds &mdash; 1.85 kg, against 1.5 kg for the conventional flock, in the same stretch of time. No drugs. No hormones. Just a different environment.</p>
+      <figure class="photo-slot research-photo float-right">
+        <img src="assets/img/af633da8c63a.jpg" alt="Free-range hen and chicks">
+      </figure>
+      <p>Between August 2013 and October 2014, Nutrinor Coop&eacute;rative in Quebec ran an experiment most poultry farms wouldn&rsquo;t dare: raise nine consecutive batches of chickens &mdash; more than 150,000 birds &mdash; without a single antibiotic or anticoccidial, using BioGeometry&rsquo;s methodology instead. The mortality rates held, batch after batch, matching or beating the antibiotic-treated flocks, with comparable weights and growth times. Then, to be sure it wasn&rsquo;t a fluke of the experimental henhouse, they proved it again at full commercial scale &mdash; two more batches, 45,000 birds, same results, standard production henhouse. Nine consecutive successes doesn&rsquo;t happen by accident.</p>
+      <p class="citation">Source: Prof. Dr. Ahmed Hussein, Ain Shams University, published in Masharef magazine.</p>
+      <p class="citation">Source: Letter from Nutrinor Coop&eacute;rative to BioGeometry Canada, October 21, 2014 (Robin Boudreault and Chantal B&eacute;langer).</p>
+    </div>
+  </div>
+
+  <div class="article-section" id="nutrinor-dairy">
+    <h2>Nutrinor &mdash; dairy cattle</h2>
+    <div class="measure">
+      <p class="lead">Alongside the chicken research, Nutrinor also watched something quieter: somatic cell counts in its dairy herd &mdash; the standard measure dairy farmers use to gauge inflammation and infection in the udder, most often from mastitis. Through 2013 and 2014, as BioGeometry&rsquo;s environmental solutions went in, those counts came down. The source document calls this preliminary research, not a closed study like the poultry work &mdash; but the direction was the same: less infection, healthier udders, across the herd.</p>
+      <p class="citation">Source: BioGeometry Canada, &ldquo;Cow Milk Leukocyte Count Research &mdash; Preliminary Research with Nutrinor Cooperative (Quebec, Canada),&rdquo; 2014.</p>
+    </div>
+  </div>
+
+  <div class="article-section" id="lake-guenevere">
+    <h2>Lake Guenevere restoration</h2>
+    <div class="measure">
+      <p class="lead">For three decades, the fourteen-acre Lake Guenevere in St. Cloud, Florida had been chemically sprayed for algae and weeds almost every month &mdash; long enough that several feet of decomposed sediment had settled on the lake bottom, and the smell had become part of daily life for the Camelot community around it. In December 2014, the homeowners&rsquo; association agreed to stop the chemicals entirely and let BioGeometry Canada try something different.</p>
+      <p>The work wasn&rsquo;t a single placement and walk-away. Twice in 2015, the shape placed in the lake was physically disturbed &mdash; once moved by a fisherman, once removed entirely by a kid in a boat &mdash; and each time, the team had to come back, track down what had shifted, and reset it before the lake&rsquo;s condition held again. That&rsquo;s not a flaw in the process; it&rsquo;s the same measure-adjust-remeasure rhythm behind everything else on this site. A living space doesn&rsquo;t stay solved once and for all &mdash; it needs checking back in on, especially when something in the environment changes.</p>
+      <p>By September 2015, the active work was done. From there, the lake&rsquo;s improved condition &mdash; clearer water, no more odor, more fish and birds &mdash; held on its own for most of another year, confirmed in person along the way by an Environmental Scientist IV from the St. Johns River Water Management District. The community saved roughly $8,000 in treatment costs they no longer needed to spend.</p>
+      <p>Chemical spraying didn&rsquo;t resume until August 2016 &mdash; eleven months after BioGeometry&rsquo;s active work had concluded &mdash; and not because the water quality slipped. It came down to aesthetics: some residents wanted fewer lily pads, which water-management staff and the project report both note are actually beneficial to a lake&rsquo;s health, not a sign anything had gone wrong.</p>
+      <p class="citation">Source: &ldquo;Lake Guenevere BioGeometry Environmental Harmonization Project,&rdquo; BioGeometry Canada, Inc. and Apex Engineering, Inc., March 2017; letter from the Camelot Homeowners Association, October 31, 2016.</p>
+    </div>
+  </div>
+
+  <div class="article-section" id="building-materials">
+    <h2>Building materials &amp; indoor air</h2>
+    <div class="measure">
+      <p class="lead">Egyptian researchers built a stress test out of a rat&rsquo;s own cage: house adult male rats for twelve weeks in cages made from ordinary construction materials &mdash; red brick, cement, ceramic tile, interior paint, the same materials most homes are built from &mdash; and see what the indoor air actually does to a body over time. The rats in unprotected cages showed elevated thyroid hormone levels and real tissue damage in their lungs, liver, and kidneys. Rats housed in identical cages fitted with BioGeometry balancing elements came back close to the health of rats living in plain, untreated cages. Same materials. Different outcome.</p>
+      <p class="citation">Source: Sharaf, N.E., El-Sawy, M.S., Metwally, F.M., El-Khayat, Z., and Farag, A., &ldquo;Protective Role of BioGeometry Against Indoor Pollutants of Some Egyptian Building Materials in Adult Male Rats,&rdquo; World Journal of Medical Sciences, 2014, 10(3): 337&ndash;346.</p>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="disclaimer-box">
+      <h2>Disclaimer</h2>
+      <p>BioGeometry&reg; is not a substitute for medical care, diagnosis, or treatment. The studies and projects described here reflect outcomes reported in their original sources; individual results vary, and none of this is intended to diagnose, treat, cure, or prevent any condition. All services are educational and environmental in nature.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <h2>The research tells part of the story. The other part happens in your home.</h2>
+  <a href="contact.html" class="btn btn-copper">Bring It Into Your Home</a>
+  <p class="fineprint">BioGeometry&reg; is not a substitute for medical care, diagnosis, or treatment. All services are educational and environmental in nature.</p>
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>

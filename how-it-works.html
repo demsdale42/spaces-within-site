@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What actually happens during a Spaces Within home assessment, from the first call to the final walkthrough.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — How It Works</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:640px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:640px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow / labels ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{
+    background:var(--copper);
+    color:#FBF6EC;
+  }
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  /* ---- image placeholder / photo slot ---- */
+  .photo-slot{
+    position:relative;
+    border:1px dashed var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    min-height:220px;
+  }
+  .photo-slot::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(120% 90% at 25% 20%, rgba(160,99,47,0.16), transparent 60%),
+      radial-gradient(140% 100% at 80% 100%, rgba(34,64,58,0.20), transparent 55%),
+      var(--paper-2);
+  }
+  .photo-tag{
+    position:relative;
+    z-index:1;
+    margin:14px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:6px 10px;
+  }
+  .photo-slot.photo-filled{
+    border-style:solid;
+    align-items:stretch;
+  }
+  .photo-slot.photo-filled::before{background:none;}
+  .photo-slot.photo-filled img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 38%;
+  }
+  .photo-slot.ratio-4-3{aspect-ratio:4/3; min-height:0;}
+  .photo-slot.ratio-3-4{aspect-ratio:3/4; min-height:0;}
+  .photo-slot.ratio-5-4{aspect-ratio:5/4; min-height:0;}
+
+  section{position:relative;}
+
+  /* ---- intro (matches About's bio-intro pattern) ---- */
+  .hiw-intro{padding-block:clamp(56px,8vw,96px) clamp(40px,6vw,64px);}
+  .hiw-intro-inner{max-width:640px;}
+  .hiw-intro .photo-slot{max-width:640px;}
+  .hiw-intro h1{margin-top:26px; font-size:clamp(30px,4vw,44px); max-width:16ch;}
+  .hiw-intro .kicker{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:52ch;
+  }
+
+  /* ---- grounding paragraph ---- */
+  .grounding{padding-block:0 clamp(48px,7vw,84px);}
+  .grounding .measure{max-width:640px;}
+  .grounding p{font-size:16.5px; color:var(--ink-soft);}
+
+  /* ---- stages ---- */
+  .stages{
+    background:var(--paper-2);
+    padding-block:clamp(56px,9vw,100px);
+    border-block:1px solid var(--line);
+  }
+  .stages h2{font-size:clamp(26px,3vw,34px); max-width:680px;}
+  .stage-list{margin-top:12px;}
+  .stage{padding-block:clamp(30px,4vw,40px); border-top:1px solid var(--line);}
+  .stage:last-child{border-bottom:1px solid var(--line);}
+  .stage-inner{display:grid; grid-template-columns:1fr; gap:18px; align-items:center;}
+  .stage.with-photo .stage-inner{grid-template-columns:1.3fr 0.7fr; gap:clamp(28px,4vw,52px); align-items:start;}
+  .stage h3{font-size:19px; font-weight:560; margin-bottom:10px;}
+  .stage p{color:var(--ink-soft); font-size:16px;}
+  .stage-text-group{display:flex; flex-direction:column; gap:28px;}
+  @media (max-width:760px){
+    .stage.with-photo .stage-inner{grid-template-columns:1fr;}
+  }
+
+  /* ---- where do you start / tiers ---- */
+  .start{padding-block:clamp(56px,9vw,100px);}
+  .start h2{font-size:clamp(26px,3vw,34px); max-width:680px;}
+  .start > .wrap-intro{max-width:680px;}
+  .start > .wrap-intro p{color:var(--ink-soft); font-size:16.5px; margin-top:14px;}
+  .tiers-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(24px,4vw,44px);
+    margin-top:44px;
+  }
+  .tier-card{padding-top:20px; border-top:1px solid var(--line);}
+  .tier-card h3{font-size:18px; font-weight:560; margin-bottom:8px;}
+  .tier-card p{color:var(--ink-soft); font-size:15.5px;}
+  @media (max-width:860px){
+    .tiers-grid{grid-template-columns:1fr;}
+  }
+  .start-close{margin-top:36px; max-width:640px;}
+  .start-close p{color:var(--ink-soft); font-size:16.5px; margin-top:14px;}
+  .start-close p:first-child{margin-top:0;}
+  .start-close p.emph{color:var(--ink); font-weight:600;}
+
+  /* ---- close CTA ---- */
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+    text-align:center;
+  }
+  .close h2{color:var(--paper-on-pine); font-size:clamp(28px,3.6vw,40px); max-width:680px; margin-inline:auto;}
+  .close p.lede{margin-top:18px; color:rgba(239,233,220,0.82); font-size:16.5px; max-width:560px; margin-inline:auto;}
+  .close .btn{margin-top:34px;}
+  .close .soft-link{color:rgba(239,233,220,0.75); border-color:rgba(239,233,220,0.3); display:inline-block; margin-top:22px;}
+  .close .soft-link:hover{color:#F1ECE2; border-color:rgba(239,233,220,0.7);}
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html" class="active">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- INTRO -->
+<section class="hiw-intro wrap">
+  <div class="hiw-intro-inner">
+    <span class="eyebrow">How It Works</span>
+    <div class="photo-slot photo-filled ratio-5-4">
+      <img src="assets/img/1652ac3c8872.jpg" alt="Two wicker chairs with cushions on a covered porch, surrounded by greenery">
+    </div>
+    <h1>Every home is already saying something.</h1>
+    <p class="kicker">This is Call and Response, in practice. In how you sleep, which room you avoid, what never quite resolves no matter what else you&rsquo;ve tried &mdash; this is how that gets heard, measured, and answered.</p>
+  </div>
+</section>
+
+<!-- GROUNDING -->
+<section class="grounding wrap">
+  <div class="measure">
+    <p>Two things hold true throughout. It&rsquo;s never framed as one stressor instead of the other &mdash; most homes carry some combination of electromagnetic and geopathic stress, and addressing only one leaves the other still speaking. And this is grounded in research, and honest about where that research is still catching up &mdash; the goal is never to overclaim what any of it can promise.</p>
+  </div>
+</section>
+
+<!-- STAGES -->
+<section class="stages wrap">
+  <span class="eyebrow">In Practice</span>
+  <h2>How it unfolds.</h2>
+  <div class="stage-list">
+
+    <div class="stage">
+      <div class="stage-inner">
+        <div>
+          <h3>Start with a call</h3>
+          <p>Not a text thread, not a form &mdash; a free call. Texting and email take too long to actually share what matters: what you&rsquo;ve noticed about your sleep, your space, how different rooms make you feel. Nothing here requires you to already have language for what&rsquo;s wrong. Just what you&rsquo;ve noticed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage with-photo">
+      <div class="stage-inner">
+        <div>
+          <h3>Home assessment</h3>
+          <p>Bobby walks the space room by room, starting where the electromagnetic load is highest &mdash; the electrical panel, routers, major appliances &mdash; then maps the geopathic stress points beneath and around it. Not one or the other; most homes carry both, and the assessment treats them that way from the start. The same rigor he once brought to tracing contaminants through groundwater, now brought to the space you live in every day.</p>
+        </div>
+        <div class="photo-slot photo-filled ratio-4-3">
+          <img src="assets/img/be82c9f922b9.jpg" alt="Measurement points marked with tape across a bedroom floor, leading toward the bed">
+        </div>
+      </div>
+    </div>
+
+    <div class="stage with-photo">
+      <div class="stage-inner stage-inner-multi">
+        <div class="stage-text-group">
+          <div class="stage-text-item">
+            <h3>Optimal solution placement</h3>
+            <p>BioGeometry&reg; solutions go exactly where the reading calls for them &mdash; not a general clearing, but the placement that fits what was actually measured. The placements themselves are small and non-invasive: nothing drilled, wired, or altered in your home.</p>
+          </div>
+          <div class="stage-text-item">
+            <h3>Confirm</h3>
+            <p>Immediately after placement, Bobby re-measures to confirm the reading holds &mdash; the same call-and-response rhythm described on the About page: measure, place a solution, re-measure, adjust. The aim isn&rsquo;t to eliminate the field or wall it off &mdash; it&rsquo;s to change its quality, so the space, and the body in it, can settle into coherence instead of staying braced against it.</p>
+          </div>
+        </div>
+        <div class="photo-slot photo-filled ratio-3-4">
+          <img src="assets/img/73d2d2601040.jpg" alt="Bobby's dowsing and measurement instruments laid out on a wood table">
+        </div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-inner">
+        <div>
+          <h3>Settle</h3>
+          <p>Bobby returns two to three weeks later &mdash; not because anything is unfinished, but to allow the changes to create resonance within the space, and within its inhabitants. The measure of success isn&rsquo;t a number on a meter. It&rsquo;s a nervous system that finally gets permission to stand down instead of staying on alert.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHERE DO YOU START -->
+<section class="start wrap">
+  <div class="wrap-intro">
+    <span class="eyebrow">Where Do You Start?</span>
+    <h2>That depends less on your home and more on where you are.</h2>
+    <p>If you&rsquo;re curious but not yet convinced &mdash; if part of you is still wondering whether any of this will make a difference &mdash; the Introductory Consultation is designed for exactly that. It focuses on a single primary space, usually the bedroom, because that&rsquo;s where the body does its most important work. Sleep is when we shift into the parasympathetic state &mdash; the mode where healing, regulation, and recovery actually happen. If the environment is working against that, everything else is harder. Starting there isn&rsquo;t starting small. It&rsquo;s starting where it matters most.</p>
+  </div>
+
+  <div class="tiers-grid">
+    <div class="tier-card">
+      <h3>Introductory Consultation</h3>
+      <p>For anyone still wondering whether this will make a difference. Covers one primary space &mdash; usually the bedroom &mdash; where sleep, and the recovery that depends on it, actually happens.</p>
+    </div>
+    <div class="tier-card">
+      <h3>Essential</h3>
+      <p>Extends that same work to the full home.</p>
+    </div>
+    <div class="tier-card">
+      <h3>Essential PLUS</h3>
+      <p>For situations with more layers &mdash; heavier EMF environments, significant geopathic stress, or homes where the initial assessment reveals more complexity than expected. Sometimes that becomes clear in the first conversation. Sometimes Bobby only knows once he&rsquo;s there.</p>
+    </div>
+  </div>
+
+  <div class="start-close">
+    <p>The follow-up included in every tier isn&rsquo;t just a check-in. It&rsquo;s also a natural moment to look at the rest of the home with fresh eyes &mdash; and to decide together whether there&rsquo;s more to address.</p>
+    <p class="emph">There&rsquo;s no wrong place to start. There&rsquo;s just the place that feels right for where you are right now.</p>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <h2>You&rsquo;ve done the reading. The next step is a call.</h2>
+  <p class="lede">The first call is free, and it&rsquo;s the same starting point no matter how much or how little work follows.</p>
+  <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
+  <br>
+  <a href="faq.html" class="soft-link">Not ready yet? Take the self&#8209;assessment first &rarr;</a>
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>

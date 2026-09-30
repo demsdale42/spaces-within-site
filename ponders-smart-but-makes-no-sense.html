@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="They sent a letter calling it an upgrade. A closer look at what a smart meter actually does, what it costs to opt out, and why the default was never really a choice.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — Smart — But Makes No Sense</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:680px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:860px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons / links ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{background:var(--copper); color:#FBF6EC;}
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  section{position:relative;}
+
+  /* ---- intro ---- */
+  .ponders-intro{padding-block:clamp(56px,8vw,96px) clamp(36px,5vw,52px);}
+  .ponders-intro-inner{max-width:680px;}
+  .ponders-intro h1{margin-top:22px; font-size:clamp(32px,4.4vw,48px);}
+  .ponders-intro .kicker{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:58ch;
+  }
+  .ponders-intro .kicker + .kicker{margin-top:14px;}
+  .ponders-intro .motto{
+    display:block;
+    margin-top:26px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:16px;
+    color:var(--copper-deep);
+  }
+
+  /* ---- ponders layout: posts + sidebar ---- */
+  .ponders-layout{
+    padding-block:clamp(8px,2vw,20px) clamp(72px,9vw,110px);
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+    gap:clamp(40px,6vw,72px);
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .ponders-layout{grid-template-columns:1fr;}
+  }
+
+  /* ---- post cards (index) ---- */
+  .post-list{display:flex; flex-direction:column;}
+  .post-card{
+    padding-block:clamp(30px,4vw,42px);
+    border-top:1px solid var(--line);
+  }
+  .post-card:first-child{border-top:none; padding-top:0;}
+  .card-photo{
+    width:100%;
+    aspect-ratio:3/2;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .card-photo img{width:100%; height:100%; object-fit:cover;}
+  .post-card .post-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .post-card h2{font-size:clamp(22px,2.6vw,27px);}
+  .post-card h2 a{text-decoration:none; color:var(--ink);}
+  .post-card h2 a:hover{color:var(--copper-deep);}
+  .post-card .excerpt{
+    margin-top:12px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.6;
+  }
+  .post-card .read-more{
+    display:inline-block;
+    margin-top:16px;
+  }
+
+  /* ---- sidebar ---- */
+  .sidebar-title{font-size:19px; margin-bottom:16px;}
+  .cat-list{list-style:none; margin:0; padding:0;}
+  .cat-list li{border-top:1px solid var(--line);}
+  .cat-list li:first-child{border-top:none;}
+  .cat-list a{
+    display:block;
+    padding-block:11px;
+    text-decoration:none;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .cat-list a:hover{color:var(--copper-deep);}
+  .cat-list a.current{color:var(--ink); font-weight:600;}
+
+  /* ---- full articles ---- */
+  .article{padding-block:0;}
+  .article-post{
+    padding-block:clamp(48px,7vw,72px);
+    border-top:1px solid var(--line);
+    scroll-margin-top:24px;
+  }
+  .article-post .back-link{margin-bottom:22px; display:inline-block;}
+  .article-post .post-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .article-post h2{font-size:clamp(26px,3.2vw,36px); max-width:22ch;}
+  .article-post .measure{margin-top:24px; display:flow-root;}
+  .article-post .measure > p{color:var(--ink-soft); font-size:16.5px; line-height:1.68; margin:0 0 17px;}
+  .article-post .measure > p:last-child{margin-bottom:0;}
+  .article-post .measure > p.lead{color:var(--ink); font-size:17px;}
+  .article-post .measure h3{
+    font-size:22px;
+    margin:30px 0 14px;
+    color:var(--ink);
+  }
+  .article-post .measure a{
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+  }
+  .article-post .measure a:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  .post-photo{
+    width:320px;
+    margin:5px 0 16px;
+    aspect-ratio:3/2;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .post-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .post-photo.float-right{float:right; margin-left:28px;}
+  .post-photo.float-left{float:left; margin-right:28px;}
+  @media (max-width:640px){
+    .post-photo.float-right, .post-photo.float-left{
+      float:none; width:100%; max-width:380px; margin:6px auto 20px;
+    }
+  }
+
+  /* ---- close CTA ---- */
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+    text-align:center;
+  }
+  .close h2{color:var(--paper-on-pine); font-size:clamp(26px,3.2vw,36px); max-width:600px; margin-inline:auto; font-style:italic; font-weight:500;}
+  .close .btn{margin-top:34px;}
+  .close .motto{
+    display:block;
+    margin-top:26px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:15px;
+    color:rgba(239,233,220,0.75);
+  }
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html" class="active">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE -->
+<section class="article wrap" style="padding-top:clamp(40px,6vw,64px);">
+
+  <div class="article-post" id="smart-but-makes-no-sense">
+    <a class="soft-link back-link" href="ponders.html">&larr; Back to Ponders</a>
+    <p class="post-meta">September 14, 2026 &nbsp;&middot;&nbsp; Spaces Within</p>
+    <h2>Smart &mdash; but makes no sense</h2>
+    <div class="measure">
+      <figure class="post-photo float-right">
+        <img src="assets/img/7d8740d8ba04.jpg" alt="Wall of separate utility meters mounted on a brick exterior wall">
+      </figure>
+      <p class="lead">They sent a letter.</p>
+      <p>It called it an upgrade.</p>
+      <p>I remember reading it and thinking &mdash; upgrade from what, exactly? My old analog meter had been on the side of my house for years, doing its job quietly, without complaint. It didn&rsquo;t need WiFi to do it. It didn&rsquo;t need to transmit anything to anyone. It just measured.</p>
+      <p>But utilities don&rsquo;t send letters asking permission. They send letters announcing decisions. And somewhere in the language of progress and efficiency and modernization, the word <em>smart</em> was being asked to carry the whole argument &mdash; framing a change that served the grid as something that was being done for me.</p>
+      <p>I want to sit with that word for a moment. Smart.</p>
+      <p>Smart meters. Smart grids. Smart homes. The word has become so attached to technology that we&rsquo;ve stopped noticing what it implies &mdash; that whatever came before was somehow less. That this new thing is on your side. Working for you. In your interest.</p>
+      <p>But smart, in this case, describes what the system gained. Not you.</p>
+      <p>But at what cost to me?</p>
+
+      <h3>What a smart meter actually does</h3>
+      <p>The analog meter was a mechanical device. A spinning disk, a set of dials, a number a technician would come read once a month. Simple. Passive. It measured, and it waited.</p>
+      <p>A smart meter &mdash; or what the industry more accurately calls Advanced Metering Infrastructure &mdash; does something fundamentally different. It doesn&rsquo;t just measure. It transmits.</p>
+      <p>Most smart meters communicate via radiofrequency (RF) signals, pulsing data back to the utility automatically, continuously, throughout the day and night. The frequency and intensity of those pulses varies by device and network, but studies have documented transmission bursts occurring anywhere from a few times per hour to tens of thousands of times per day &mdash; even when your household is drawing no power at all.</p>
+      <p>That last part is worth pausing on. The meter transmits whether you&rsquo;re using electricity or not. Because the data it&rsquo;s sending isn&rsquo;t just about your consumption &mdash; it&rsquo;s about the grid. Your meter is a node. And nodes stay active.</p>
+      <p>The California Council on Science and Technology, in a 2011 report commissioned by the state legislature, acknowledged that smart meters expose residents to RF radiation and noted that the health effects of long-term, chronic low-level exposure remained an open scientific question. The World Health Organization classifies radiofrequency electromagnetic fields as a Group 2B possible carcinogen &mdash; the same category as certain pesticides and lead. Not a verdict. But not nothing.</p>
+      <p>What makes smart meters different from your phone or your WiFi router &mdash; devices we&rsquo;ve at least made a conscious choice to bring into our homes &mdash; is that this one is fixed to your home and never goes quiet. Your router is inside. You can turn it off. Your phone is in your pocket by choice, and you can put it in another room.</p>
+      <p>Your smart meter is on the exterior wall of your home. You didn&rsquo;t choose it. There is no off switch.</p>
+
+      <h3>The Building Biology standard</h3>
+      <p>The Building Biology Institute &mdash; a professional organization that trains practitioners in the health impacts of the built environment &mdash; publishes what they call the SBM-2015 guidelines: a set of precautionary exposure limits for electromagnetic fields in sleeping areas.</p>
+      <p>Their threshold for radiofrequency radiation in a sleeping space is no concern below 0.1 &micro;W/m&sup2;, with levels above 1,000 &micro;W/m&sup2; classified as extreme concern.</p>
+      <p>Smart meters, measured at typical distances from the exterior wall, have been documented at levels ranging from hundreds to tens of thousands of &micro;W/m&sup2; depending on proximity, building materials, and transmission timing.</p>
+      <p>That gap &mdash; between what Building Biology considers safe for sleep and what a smart meter routinely emits through an exterior wall &mdash; is not a fringe concern. It&rsquo;s a measurement. And measurements don&rsquo;t have an agenda.</p>
+      <p>The placement question matters enormously here. A meter on the far end of a garage wall is a different conversation than one mounted on the exterior of a bedroom. Most homeowners don&rsquo;t know which they have. Most were never asked.</p>
+
+      <h3>What opting out looks like</h3>
+      <p>When I found out my meter had been replaced, I looked into my options. My local utility offered one: a non-transmitting digital meter. The cost was $80 to make the switch, plus $30 every month after that &mdash; because someone would need to come read it manually, the way meters had always been read before any of this was called smart.</p>
+      <p>I want to name that clearly. The default &mdash; the transmitting meter &mdash; costs nothing extra. The option to simply not have a broadcasting device on your home costs $80 upfront and $30 a month, indefinitely.</p>
+      <p>That&rsquo;s not a fee. That&rsquo;s a friction point. It&rsquo;s the utility making one choice easy and the other choice expensive. Not illegal. Not even unusual. But worth seeing for what it is.</p>
+      <p>I paid it. Not from fear. From clarity.</p>
+      <p>Around the same time, I swapped my wireless modem for a wired connection &mdash; CAT5, with a physical switch on the modem itself to cut the WiFi entirely when it&rsquo;s not needed. Not because I was alarmed. Because I&rsquo;d started asking a different question.</p>
+      <p>Not <em>is this dangerous?</em> But <em>is this necessary?</em></p>
+      <p>A lot of the wireless transmissions in a modern home isn&rsquo;t there because you chose it. It&rsquo;s there because it was the default. Because no one asked. Because the letter called it an upgrade and that was the end of the conversation.</p>
+
+      <h3>What&rsquo;s possible</h3>
+      <p>I&rsquo;m not suggesting you tear out your walls or move to a cabin.</p>
+      <p>What I am suggesting is that your home &mdash; the place where you sleep, recover, and spend more concentrated time than anywhere else &mdash; is worth understanding. Not in a technical, overwhelming way. But in the way you&rsquo;d want to understand anything that operates quietly in the background of your life.</p>
+      <p>There are ways to measure what&rsquo;s present in your space. There are ways to reduce what doesn&rsquo;t need to be there.</p>
+      <p>And there are approaches &mdash; some of them remarkably simple &mdash; that can shift the quality of a space in ways that go beyond just removing sources.</p>
+      <p>That&rsquo;s where I&rsquo;ll be taking this next.</p>
+      <p>For now: if you don&rsquo;t know where your meter is mounted, or how far it sits from the rooms where you spend the most time &mdash; that&rsquo;s worth knowing.</p>
+      <p>It&rsquo;s a small thing. But small things, it turns out, are often where the real story starts.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <h2>Curious what your own space might be telling you?</h2>
+  <a href="contact.html" class="btn btn-copper">Let&rsquo;s Talk</a>
+  <span class="motto">the light needs somewhere to land</span>
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>

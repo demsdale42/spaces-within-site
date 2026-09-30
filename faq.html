@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Answers to the most common questions about BioGeometry®-EHS assessments, cost, and what to expect.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — FAQ</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:640px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:640px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow / labels ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{
+    background:var(--copper);
+    color:#FBF6EC;
+  }
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+  p .soft-link{font-size:inherit;}
+
+  /* ---- image placeholder / photo slot ---- */
+  .photo-slot{
+    position:relative;
+    border:1px dashed var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    min-height:220px;
+  }
+  .photo-slot::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(120% 90% at 25% 20%, rgba(160,99,47,0.16), transparent 60%),
+      radial-gradient(140% 100% at 80% 100%, rgba(34,64,58,0.20), transparent 55%),
+      var(--paper-2);
+  }
+  .photo-tag{
+    position:relative;
+    z-index:1;
+    margin:14px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:6px 10px;
+  }
+  .photo-slot.photo-filled{
+    border-style:solid;
+    align-items:stretch;
+  }
+  .photo-slot.photo-filled::before{background:none;}
+  .photo-slot.photo-filled img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 38%;
+  }
+  .photo-slot.ratio-4-3{aspect-ratio:4/3; min-height:0;}
+  .photo-slot.ratio-3-4{aspect-ratio:3/4; min-height:0;}
+  .photo-slot.ratio-5-4{aspect-ratio:5/4; min-height:0;}
+
+  section{position:relative;}
+
+  /* ---- intro (matches How It Works / About intro pattern) ---- */
+  .faq-intro{padding-block:clamp(56px,8vw,96px) clamp(40px,6vw,64px);}
+  .faq-intro-inner{max-width:640px;}
+  .faq-intro .photo-slot{max-width:640px;}
+  .faq-intro h1{margin-top:26px; font-size:clamp(30px,4vw,44px); max-width:18ch;}
+  .faq-intro .kicker{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:52ch;
+  }
+
+  /* ---- accordion ---- */
+  .faq-section{
+    background:var(--paper-2);
+    padding-block:clamp(48px,8vw,84px);
+    border-block:1px solid var(--line);
+  }
+  .faq-list{margin-top:8px;}
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    cursor:pointer;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:24px;
+    padding-block:clamp(20px,3vw,26px);
+    list-style:none;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .faq-q{
+    font-family:"Newsreader", Georgia, serif;
+    font-weight:560;
+    font-size:18.5px;
+    color:var(--ink);
+    max-width:44ch;
+  }
+  .faq-item summary .faq-icon{
+    flex-shrink:0;
+    width:22px;
+    height:22px;
+    position:relative;
+    margin-top:4px;
+  }
+  .faq-item summary .faq-icon::before,
+  .faq-item summary .faq-icon::after{
+    content:"";
+    position:absolute;
+    background:var(--copper-deep);
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .faq-item summary .faq-icon::before{ left:0; top:50%; width:100%; height:1.5px; transform:translateY(-50%); }
+  .faq-item summary .faq-icon::after{ top:0; left:50%; width:1.5px; height:100%; transform:translateX(-50%); }
+  .faq-item[open] summary .faq-icon::after{ opacity:0; transform:translateX(-50%) rotate(90deg); }
+  .faq-answer{
+    max-width:640px;
+    padding-bottom:clamp(22px,3vw,30px);
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+  .faq-answer p + p{margin-top:14px;}
+
+  /* ---- close CTA ---- */
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+    text-align:center;
+  }
+  .close h2{color:var(--paper-on-pine); font-size:clamp(28px,3.6vw,40px); max-width:680px; margin-inline:auto;}
+  .close p.lede{margin-top:18px; color:rgba(239,233,220,0.82); font-size:16.5px; max-width:560px; margin-inline:auto;}
+  .close .btn{margin-top:34px;}
+  .close .soft-link{color:rgba(239,233,220,0.75); border-color:rgba(239,233,220,0.3); display:inline-block; margin-top:22px; white-space:normal; max-width:420px;}
+  .close .soft-link:hover{color:#F1ECE2; border-color:rgba(239,233,220,0.7);}
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- INTRO -->
+<section class="faq-intro wrap">
+  <div class="faq-intro-inner">
+    <span class="eyebrow">FAQ</span>
+    <div class="photo-slot photo-filled ratio-5-4">
+      <img src="assets/img/689f7b605de7.jpg" alt="An open front door onto a covered porch, with houseplants on the windowsill">
+    </div>
+    <h1>Questions people usually ask before that first call.</h1>
+    <p class="kicker">Everything below is answered plainly, with nothing overstated. Anything this doesn&rsquo;t cover, bring to the call itself &mdash; that one&rsquo;s free too.</p>
+  </div>
+</section>
+
+<!-- ACCORDION -->
+<section class="faq-section wrap">
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary><span class="faq-q">What is BioGeometry&reg;, exactly?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>BioGeometry&reg; is an environmental science developed by Dr. Ibrahim Karim &mdash; an Egyptian architect and scientist &mdash; that works with the quality of energy in a space rather than against it. Using precise geometric shapes and configurations, it identifies and balances invisible stressors in your home: man-made electromagnetic fields, geopathic stress zones, and disturbances in the subtle energy environment. It&rsquo;s research-backed, non-invasive, and it works whether or not you have a framework for understanding it.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">What is geopathic stress?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>Geopathic stress refers to natural disturbances in the earth&rsquo;s energy field &mdash; caused by underground water streams, geological fault lines, and disruptions in the earth&rsquo;s natural energy grid. These zones can intersect with living spaces in ways that affect sleep, mood, concentration, and general wellbeing over time. People often notice it as a room that consistently feels &ldquo;off,&rdquo; poor sleep tied to one specific spot in the house, or a houseplant that never seems to thrive in the same location no matter what changes &mdash; patterns worth paying attention to, not diagnoses in themselves.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">What about EMFs &mdash; are they actually harmful?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>The evidence is serious enough to warrant attention. In 2011, the World Health Organization&rsquo;s International Agency for Research on Cancer classified radio-frequency electromagnetic fields as a possible human carcinogen &mdash; a classification currently under priority re-evaluation.</p>
+        <p>What BioGeometry&reg; addresses isn&rsquo;t the presence of EMFs, which are effectively unavoidable in modern life, but the quality of the energy environment around them. That distinction matters &mdash; because it shifts the question from &ldquo;are EMFs dangerous?&rdquo; to &ldquo;what is this space doing to the people in it?&rdquo;</p>
+        <p>It could be the whole household &mdash; a child who struggles to settle, a partner who can&rsquo;t switch off, or simply a home where calm feels harder to find than it should.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">Do I need to believe in this for it to work?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>No. Skepticism is welcome &mdash; and honestly, it&rsquo;s a reasonable starting point. BioGeometry&reg; operates on principles of energy quality that function independently of belief. The Swiss village studies that form part of the research base involved entire communities, including plenty of people who arrived doubtful. The results were documented regardless. Which means if something has been bothering you, that matters more than where you stand on the theory.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">What does a session actually involve?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>It begins with a free call &mdash; a conversation about what you&rsquo;ve been noticing, the space, and how long you&rsquo;ve been there. From there, Bobby visits in person, walks through the home, identifies areas of imbalance using calibrated BioGeometry&reg; pendulums, and places precise geometric solutions. Two to three weeks later, he returns to verify the energy shift using the same tools. The full process is laid out step by step on the <a href="how-it-works.html" class="soft-link">How It Works page</a>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">What happens after the visit?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>Most people notice something within the first few days to weeks &mdash; better sleep, a room that finally feels right, a quiet but unmistakable sense that something has shifted. It tends to be subtle at first. Then you realize you&rsquo;ve stopped noticing the thing that used to bother you. There&rsquo;s often more to that than people expect &mdash; the Beyond page goes further.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">Does this work in apartments, or only houses?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>Both. The assessment and solutions apply equally to apartments and houses. All solutions are small, precise, and entirely non-invasive &mdash; nothing is drilled, wired, or permanently altered. They can be removed just as easily as they were placed, which means renters never need landlord permission.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">Does this address electric vehicles, chargers, or solar panels?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>Yes &mdash; EVs, home chargers, and solar inverters all add their own electromagnetic signature to a property, and it&rsquo;s become one of the more common questions people ask. The full picture, including the driveway visit option for vehicles, lives on the <a href="emfs.html" class="soft-link">EMFs &amp; Electro-Pollution page</a>, since that&rsquo;s where every source in and around the home gets covered together.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">What does a home assessment cost?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>A home assessment is priced relative to the scope of what it addresses. This isn&rsquo;t a surface-level inspection &mdash; it&rsquo;s a thorough, hands-on process that can meaningfully change the quality of your daily life, your sleep, and the long-term health of your home environment.</p>
+        <p>Pricing is specific to your home and what you&rsquo;re navigating, and depends on which starting point fits best &mdash; from the Introductory Consultation, which focuses on a single primary space (usually the bedroom), up through Essential and Essential PLUS for the full home. Every one of those starts the same way: a free call, with no obligation on either side, to decide together which starting point actually fits &mdash; and whether it&rsquo;s the right fit at all.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span class="faq-q">Is this a form of medical care?</span><span class="faq-icon"></span></summary>
+      <div class="faq-answer">
+        <p>No. BioGeometry&reg; is not a form of medical diagnosis or treatment, and nothing on this site should be taken as medical advice. It is a research-supported environmental science, and all claims are based solely on the extent of current scientific research findings. If you have a health concern, please consult a qualified medical professional.</p>
+        <p>Still have a question not covered here? Ask it on a free call &mdash; the same no-obligation first step whether or not it ends up going any further.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <h2>Didn&rsquo;t find your question here?</h2>
+  <p class="lede">Bring it to a free call &mdash; the same no-obligation first step no matter how much or how little follows it.</p>
+  <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
+  <br>
+  <a href="how-it-works.html" class="soft-link">Curious what actually happens during a visit? Read How It Works &rarr;</a>
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>

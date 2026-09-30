@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A home sleep study device sent my heart racing within minutes. A question worth asking: what if the device measuring your sleep is itself disrupting it?">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — What If the Device Is the Problem?</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:680px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:19px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  @media (max-width:860px){
+    .nav .nav-links{display:none;}
+  }
+
+  /* ---- eyebrow ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons / links ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{background:var(--copper); color:#FBF6EC;}
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  section{position:relative;}
+
+  /* ---- intro ---- */
+  .ponders-intro{padding-block:clamp(56px,8vw,96px) clamp(36px,5vw,52px);}
+  .ponders-intro-inner{max-width:680px;}
+  .ponders-intro h1{margin-top:22px; font-size:clamp(32px,4.4vw,48px);}
+  .ponders-intro .kicker{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:58ch;
+  }
+  .ponders-intro .kicker + .kicker{margin-top:14px;}
+  .ponders-intro .motto{
+    display:block;
+    margin-top:26px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:16px;
+    color:var(--copper-deep);
+  }
+
+  /* ---- ponders layout: posts + sidebar ---- */
+  .ponders-layout{
+    padding-block:clamp(8px,2vw,20px) clamp(72px,9vw,110px);
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+    gap:clamp(40px,6vw,72px);
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .ponders-layout{grid-template-columns:1fr;}
+  }
+
+  /* ---- post cards (index) ---- */
+  .post-list{display:flex; flex-direction:column;}
+  .post-card{
+    padding-block:clamp(30px,4vw,42px);
+    border-top:1px solid var(--line);
+  }
+  .post-card:first-child{border-top:none; padding-top:0;}
+  .card-photo{
+    width:100%;
+    aspect-ratio:3/2;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .card-photo img{width:100%; height:100%; object-fit:cover;}
+  .post-card .post-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .post-card h2{font-size:clamp(22px,2.6vw,27px);}
+  .post-card h2 a{text-decoration:none; color:var(--ink);}
+  .post-card h2 a:hover{color:var(--copper-deep);}
+  .post-card .excerpt{
+    margin-top:12px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.6;
+  }
+  .post-card .read-more{
+    display:inline-block;
+    margin-top:16px;
+  }
+
+  /* ---- sidebar ---- */
+  .sidebar-title{font-size:19px; margin-bottom:16px;}
+  .cat-list{list-style:none; margin:0; padding:0;}
+  .cat-list li{border-top:1px solid var(--line);}
+  .cat-list li:first-child{border-top:none;}
+  .cat-list a{
+    display:block;
+    padding-block:11px;
+    text-decoration:none;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .cat-list a:hover{color:var(--copper-deep);}
+  .cat-list a.current{color:var(--ink); font-weight:600;}
+
+  /* ---- full articles ---- */
+  .article{padding-block:0;}
+  .article-post{
+    padding-block:clamp(48px,7vw,72px);
+    border-top:1px solid var(--line);
+    scroll-margin-top:24px;
+  }
+  .article-post .back-link{margin-bottom:22px; display:inline-block;}
+  .article-post .post-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .article-post h2{font-size:clamp(26px,3.2vw,36px); max-width:22ch;}
+  .article-post .measure{margin-top:24px; display:flow-root;}
+  .article-post .measure > p{color:var(--ink-soft); font-size:16.5px; line-height:1.68; margin:0 0 17px;}
+  .article-post .measure > p:last-child{margin-bottom:0;}
+  .article-post .measure > p.lead{color:var(--ink); font-size:17px;}
+  .article-post .measure h3{
+    font-size:22px;
+    margin:30px 0 14px;
+    color:var(--ink);
+  }
+  .article-post .measure a{
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+  }
+  .article-post .measure a:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  .post-photo{
+    width:320px;
+    margin:5px 0 16px;
+    aspect-ratio:3/2;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .post-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .post-photo.float-right{float:right; margin-left:28px;}
+  .post-photo.float-left{float:left; margin-right:28px;}
+  @media (max-width:640px){
+    .post-photo.float-right, .post-photo.float-left{
+      float:none; width:100%; max-width:380px; margin:6px auto 20px;
+    }
+  }
+
+  /* ---- close CTA ---- */
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+    text-align:center;
+  }
+  .close h2{color:var(--paper-on-pine); font-size:clamp(26px,3.2vw,36px); max-width:600px; margin-inline:auto; font-style:italic; font-weight:500;}
+  .close .btn{margin-top:34px;}
+  .close .motto{
+    display:block;
+    margin-top:26px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:15px;
+    color:rgba(239,233,220,0.75);
+  }
+
+  footer{
+    padding-block:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html" class="active">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE -->
+<section class="article wrap" style="padding-top:clamp(40px,6vw,64px);">
+
+  <div class="article-post" id="what-if-the-device-is-the-problem">
+    <a class="soft-link back-link" href="ponders.html">&larr; Back to Ponders</a>
+    <p class="post-meta">August 27, 2026 &nbsp;&middot;&nbsp; Spaces Within</p>
+    <h2>What if the device is the problem?</h2>
+    <div class="measure">
+      <figure class="post-photo float-right">
+        <img src="assets/img/e7bdfbb3a958.jpg" alt="A man asleep in bed wearing the sensors and leads of a home sleep study device">
+      </figure>
+      <p class="lead">My wife had been watching me sleep &mdash; or trying to. She&rsquo;d noticed something in my breathing, a pattern that worried her, and eventually her concern became the nudge I needed. I signed up for a home sleep study.</p>
+      <p>I lasted about five minutes.</p>
+      <p>It was a home sleep study &mdash; the kind where they send you away with a small recorder to strap to your chest, leads fanning out across your skin, meant to monitor your heart and breathing through the night. Battery powered, the instructions said, as if that settled something. I turned off the light and waited for sleep. Instead, my heart began to race. Not anxiety. Not an unfamiliar pillow. Something immediate and physical. I pulled the device off and set it on the nightstand.</p>
+      <p>Within a few minutes, my heart had settled completely back to normal.</p>
+      <p>That moment has stayed with me. Einstein called it a thought experiment &mdash; a real, observed event used as a lever to ask a question the standard framework hasn&rsquo;t thought to ask. Mine is this: what if the device designed to study your sleep is itself disrupting it?</p>
+      <p>Most people assume that &ldquo;battery powered&rdquo; means electrically inert &mdash; that without a wall outlet involved, there&rsquo;s nothing significant happening in the electromagnetic sense. But that&rsquo;s not quite how it works.</p>
+      <p>A home sleep study device is doing several things simultaneously. It&rsquo;s generating its own low-frequency electrical field simply by operating. It&rsquo;s running current through leads pressed directly against your skin &mdash; in some devices, across your chest and near your throat. And depending on the model, it may be transmitting data wirelessly throughout the night. All of this, for six to eight hours, in direct contact with your body.</p>
+      <p>This isn&rsquo;t a flaw in the technology. It&rsquo;s just what the technology is. The question worth asking is whether that sustained, close-range exposure is electromagnetically neutral for everyone wearing it &mdash; or whether, for some people, it&rsquo;s anything but.</p>
+      <p>There&rsquo;s a growing body of research suggesting that a meaningful subset of the population responds to electromagnetic fields in ways that conventional medicine hasn&rsquo;t fully characterized yet. Elevated heart rate. Disrupted autonomic regulation. Fragmented sleep. These aren&rsquo;t fringe observations &mdash; they appear in peer-reviewed literature and are taken seriously by researchers in Scandinavia, Switzerland, and increasingly in North America. The condition is called Electrohypersensitivity, or EHS. The World Health Organization acknowledges it exists. The debate is about mechanism, not whether people are experiencing something real.</p>
+      <p>Now consider who gets referred for a sleep study.</p>
+      <p>Typically, it&rsquo;s someone who can&rsquo;t sleep through the night. Someone whose partner reports irregular breathing, or who wakes frequently and doesn&rsquo;t know why. Someone who is tired in ways that don&rsquo;t make sense given how much time they spend in bed.</p>
+      <p>The overlap with EHS symptoms is not subtle.</p>
+      <p>If a subset of sleep study patients are actually experiencing some degree of electromagnetic sensitivity, then strapping a broadcasting, lead-laden device to their chest for the night isn&rsquo;t a neutral act. It&rsquo;s a provocation. And the data collected during that study &mdash; the elevated arousal index, the fragmented sleep architecture, the irregular heart rhythms &mdash; may be capturing not their baseline, but their response to the device itself.</p>
+      <p>A CPAP machine prescribed on that basis isn&rsquo;t treating the problem. It&rsquo;s treating a measurement artifact.</p>
+      <p>None of this is an argument against sleep apnea as a real thing. It is real. For many people, treatment is genuinely life-changing. This is a smaller question than that &mdash; whether the environment we measure people in might be shaping what we find. Whether some of what gets recorded as pathology is actually sensitivity. A body doing exactly what bodies do when something in the space is asking them to stay on guard.</p>
+      <p>That&rsquo;s not a fringe idea. It&rsquo;s just one that medicine hasn&rsquo;t made room for yet.</p>
+      <p>If you&rsquo;ve been told your sleep is disordered &mdash; and something in you has never quite believed the explanation &mdash; it may be worth sitting with that. Not dismissing the diagnosis. Just asking whether the full picture has been seen.</p>
+      <p>Sometimes the problem isn&rsquo;t you. Sometimes it&rsquo;s the space.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <h2>Curious what your own space might be telling you?</h2>
+  <a href="contact.html" class="btn btn-copper">Let&rsquo;s Talk</a>
+  <span class="motto">the light needs somewhere to land</span>
+</section>
+
+<footer>
+  <div class="wrap">SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</div>
+</footer>
+
+</body>
+</html>
