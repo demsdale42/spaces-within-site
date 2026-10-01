@@ -10,13 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600&family=Newsreader:ital@1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pine: #1f2d2a;
-    --pine-soft: #2e3f3a;
-    --teal: #5a9088;
-    --copper: #ad6a43;
-    --paper: #faf6ef;
-    --paper-dim: #f1ebe0;
-    --rule: #ddd3c2;
+    --paper: #EBEADF;
+    --paper-2: #E1DFD1;
+    --paper-on-pine: #EFE9DC;
+    --ink: #211F1A;
+    --ink-soft: #5B5748;
+    --pine: #22403A;
+    --pine-deep: #173029;
+    --pine-text: #173029;
+    --moss: #7E8C71;
+    --moss-deep: #5F6E54;
+    --copper: #A0632F;
+    --copper-deep: #824F27;
+    --line: #CFC9B7;
   }
 
   * { box-sizing: border-box; }
@@ -28,7 +34,7 @@
   body {
     margin: 0;
     background: var(--paper);
-    color: var(--pine-soft);
+    color: var(--ink);
     font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 18px;
     line-height: 1.68;
@@ -36,6 +42,7 @@
   }
 
   a { color: var(--copper); }
+  a:hover { color: var(--copper-deep); }
 
   .topbar {
     padding: 18px 20px;
@@ -47,7 +54,7 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--teal);
+    color: var(--moss-deep);
     text-decoration: none;
   }
 
@@ -61,7 +68,7 @@
   .titleblock {
     text-align: center;
     padding: 56px 0 48px;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid var(--line);
     margin-bottom: 56px;
   }
   .eyebrow {
@@ -70,7 +77,7 @@
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--teal);
+    color: var(--moss-deep);
     margin: 0 0 20px;
   }
   h1.booktitle {
@@ -78,7 +85,7 @@
     font-weight: 600;
     font-size: clamp(32px, 8vw, 46px);
     line-height: 1.15;
-    color: var(--pine);
+    color: var(--pine-text);
     margin: 0 0 18px;
     text-wrap: balance;
   }
@@ -87,16 +94,14 @@
     font-style: italic;
     font-weight: 500;
     font-size: clamp(17px, 4vw, 20px);
-    color: var(--pine-soft);
-    opacity: 0.75;
+    color: var(--ink-soft);
     margin: 0 0 26px;
     text-wrap: balance;
   }
   .byline {
     font-family: 'Public Sans', sans-serif;
     font-size: 14.5px;
-    color: var(--pine-soft);
-    opacity: 0.85;
+    color: var(--ink-soft);
     margin: 0;
   }
 
@@ -118,7 +123,7 @@
     font-weight: 600;
     font-size: clamp(24px, 5.5vw, 30px);
     line-height: 1.2;
-    color: var(--pine);
+    color: var(--pine-text);
     margin: 0 0 22px;
     text-wrap: balance;
   }
@@ -134,7 +139,7 @@
     font-style: italic;
     font-size: clamp(18px, 4.6vw, 21px);
     line-height: 1.5;
-    color: var(--pine);
+    color: var(--pine-text);
     margin: 28px 0;
     padding: 2px 0 2px 20px;
     border-left: 3px solid var(--copper);
@@ -144,7 +149,7 @@
   .closing {
     text-align: center;
     padding: 64px 0 8px;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--line);
     margin-top: 8px;
   }
   .closing-quote {
@@ -152,7 +157,7 @@
     font-style: italic;
     font-weight: 500;
     font-size: clamp(20px, 5vw, 24px);
-    color: var(--pine);
+    color: var(--pine-text);
     margin: 0 0 18px;
     text-wrap: balance;
   }
@@ -162,12 +167,12 @@
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--teal);
+    color: var(--moss-deep);
     margin: 0 0 40px;
   }
 
   .cta {
-    background: var(--paper-dim);
+    background: var(--paper-2);
     border-radius: 14px;
     padding: 32px 28px;
     margin-top: 8px;
@@ -176,7 +181,7 @@
     font-family: 'Fraunces', serif;
     font-size: 19px;
     font-style: italic;
-    color: var(--pine);
+    color: var(--pine-text);
     margin: 0 0 22px;
   }
   .cta-button {
@@ -184,8 +189,8 @@
     font-family: 'Public Sans', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: var(--paper);
-    background: var(--pine);
+    color: var(--paper-on-pine);
+    background: var(--pine-deep);
     text-decoration: none;
     padding: 13px 28px;
     border-radius: 999px;
@@ -194,12 +199,11 @@
   .cta-contact {
     font-family: 'Public Sans', sans-serif;
     font-size: 14px;
-    color: var(--pine-soft);
-    opacity: 0.85;
+    color: var(--ink-soft);
     line-height: 1.8;
   }
   .cta-contact a {
-    color: var(--pine-soft);
+    color: var(--ink-soft);
   }
 
   .download {
@@ -209,7 +213,7 @@
     font-size: 13.5px;
   }
   .download a {
-    color: var(--teal);
+    color: var(--moss-deep);
     text-decoration: none;
     border-bottom: 1px solid currentColor;
   }
