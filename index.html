@@ -509,6 +509,9 @@
     gap:clamp(32px,5vw,72px);
     align-items:center;
   }
+  @media (max-width:720px){
+    .bobby-grid{grid-template-columns:1fr;}
+  }
   .bobby .photo-slot{aspect-ratio:3/4; min-height:300px; border-color:rgba(239,233,220,0.35);}
   .bobby .photo-slot::before{background:radial-gradient(120% 90% at 30% 10%, rgba(255,255,255,0.10), transparent 60%), rgba(0,0,0,0.08);}
   .bobby .photo-tag{background:var(--moss-deep); border-color:rgba(239,233,220,0.3); color:var(--paper-on-pine);}
