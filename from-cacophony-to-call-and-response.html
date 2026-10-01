@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Cacophony to Call and Response — Spaces Within</title>
+<meta name="description" content="A short read from Bobby Jones, BioGeometry®-EHS Associate-Practitioner, on why some rooms let your body finally stand down — and some never do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pine: #1f2d2a;
+    --pine-soft: #2e3f3a;
+    --teal: #5a9088;
+    --copper: #ad6a43;
+    --paper: #faf6ef;
+    --paper-dim: #f1ebe0;
+    --rule: #ddd3c2;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--pine-soft);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 18px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--copper); }
+
+  .topbar {
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .topbar a {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-decoration: none;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* Title block */
+  .titleblock {
+    text-align: center;
+    padding: 56px 0 48px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+  .eyebrow {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 20px;
+  }
+  h1.booktitle {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.15;
+    color: var(--pine);
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .booksubtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(17px, 4vw, 20px);
+    color: var(--pine-soft);
+    opacity: 0.75;
+    margin: 0 0 26px;
+    text-wrap: balance;
+  }
+  .byline {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14.5px;
+    color: var(--pine-soft);
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  /* Chapters */
+  .chapter {
+    margin-bottom: 58px;
+  }
+  .chapter-num {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin: 0 0 8px;
+  }
+  .chapter h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(24px, 5.5vw, 30px);
+    line-height: 1.2;
+    color: var(--pine);
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  .chapter p {
+    margin: 0 0 20px;
+  }
+  .chapter p:last-child {
+    margin-bottom: 0;
+  }
+
+  blockquote.pull {
+    font-family: 'Newsreader', 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(18px, 4.6vw, 21px);
+    line-height: 1.5;
+    color: var(--pine);
+    margin: 28px 0;
+    padding: 2px 0 2px 20px;
+    border-left: 3px solid var(--copper);
+  }
+
+  /* Closing */
+  .closing {
+    text-align: center;
+    padding: 64px 0 8px;
+    border-top: 1px solid var(--rule);
+    margin-top: 8px;
+  }
+  .closing-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(20px, 5vw, 24px);
+    color: var(--pine);
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .closing-mark {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 40px;
+  }
+
+  .cta {
+    background: var(--paper-dim);
+    border-radius: 14px;
+    padding: 32px 28px;
+    margin-top: 8px;
+  }
+  .cta p.lede {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--pine);
+    margin: 0 0 22px;
+  }
+  .cta-button {
+    display: inline-block;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--paper);
+    background: var(--pine);
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .cta-contact {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    color: var(--pine-soft);
+    opacity: 0.85;
+    line-height: 1.8;
+  }
+  .cta-contact a {
+    color: var(--pine-soft);
+  }
+
+  .download {
+    text-align: center;
+    margin-top: 26px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13.5px;
+  }
+  .download a {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 18px 64px; }
+    body { font-size: 17px; }
+    .titleblock { padding: 44px 0 36px; }
+    .cta { padding: 26px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar"><a href="https://thespaceswithin.com">Spaces Within</a></div>
+
+  <div class="wrap">
+
+    <div class="titleblock">
+      <p class="eyebrow">Spaces Within</p>
+      <h1 class="booktitle">From Cacophony to Call and Response</h1>
+      <p class="booksubtitle">A Different Way to Think About the Room You're Standing In</p>
+      <p class="byline">Bobby Jones, BioGeometry®-EHS Associate-Practitioner</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 1</p>
+      <h2>A Confession</h2>
+      <p>I should start with a confession, because it explains more about how I ended up doing this work than my résumé does.</p>
+      <p>In college, an English professor handed back an essay of mine with a note in the margin. He'd looked at my handwriting — genuinely looked at it, the way you look at something you're trying to solve — and written that what I'd produced wasn't calligraphy. It was cacography.</p>
+      <p>I told him I was pre-med, and I was just practicing my doctor's script. He probably assumed I was joking. I wasn't, not entirely — but I also didn't think much more about the word he'd used, not for years.</p>
+      <p>Cacography. Bad writing. Caco- is Greek for bad, harsh, ill-formed — and it shows up in a word I've spent most of my adult life since then actually thinking about, in a much more literal sense: cacophony.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 2</p>
+      <h2>Coffee Shop or Nightclub</h2>
+      <p>Before I explain anything else about what I do, let me ask you something.</p>
+      <p>If you needed to have a serious conversation — the kind where you actually need to be heard, and you need to really hear the other person back — where would you choose to have it? A quiet coffee shop? Or a nightclub, on a Friday night, with the music at full volume and everyone around you shouting just to be heard themselves?</p>
+      <p>You already know the answer. Nobody picks the nightclub. Not because the music is bad, and not because the people in it don't matter — but because some environments make real communication possible, and some make it structurally impossible, no matter how much both people in the conversation want to connect.</p>
+      <p>Here's the part most people never think to apply that instinct to: your own bedroom, every single night, is having that same kind of conversation — except it's your nervous system doing the talking, and your body doing the listening. The question your body is asking, every night, is a simple one: is it safe to rest now? And most homes, without anyone ever choosing it, are answering that question at something closer to nightclub volume than coffee shop.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 3</p>
+      <h2>What Cacophony Actually Is</h2>
+      <p>Cacophony isn't really about loudness. It's a harsh, jarring mixture of sounds with no arrangement to them — a lot of things talking at once, none of them organized into anything a listener can actually follow.</p>
+      <p>That's also, it turns out, a precise description of a lot of modern homes. Wifi. Cell signal. A dozen appliances running at once. Wiring that was never routed with much thought. Underneath all of it, in many homes, something older: geopathic stress — earth energy patterns running through a house the way a current runs through water, whether or not anyone built around them on purpose.</p>
+      <p>None of it is loud the way a siren is loud. You won't hear any of it. But your nervous system — older, more literal, less interested in your opinion about what should and shouldn't bother you — picks all of it up anyway. I call it EMF-smog, because that's closer to the truth than any of the softer words people usually reach for. It's not a metaphor. It's an actual mixture of signals with no coherence to it, sitting in the exact rooms where you're trying to rest.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 4</p>
+      <h2>The Saxophone</h2>
+      <p>Here's an opinion of mine that has nothing to do with your house, or at least it didn't seem to for a long time: I think the saxophone is the most overused instrument in jazz.</p>
+      <p>A screaming solo riff, up front, competing for all the air in the room — that's the version of a saxophone I can do without. But the same instrument, played quieter, sitting inside a full arrangement, supporting the whole piece instead of trying to be the whole piece — that version I love.</p>
+      <p>The instrument didn't change between those two versions. What changed was the role it had been given, and whether anyone had actually arranged it into the piece or just let it dominate.</p>
+      <p>I think about the electronics in your home the same way. Nobody needs to unplug their life. Your router isn't the enemy any more than the saxophone is. The question was never whether the instrument belongs in the room. It's whether it's been placed and arranged — or just left to run at full volume, unmanaged, competing with everything else for the same airspace your body is trying to rest in.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 5</p>
+      <h2>Melody, Flourish, Arrangement</h2>
+      <p>I trained in a system called BioGeometry®, specifically its Environmental Home Solutions branch — the training every licensed practitioner in this field shares, the way every jazz musician learns the same underlying standards before they ever play a note of their own. That's the melody. Everyone plays from it.</p>
+      <p>What I bring to that training — a background tracing invisible contamination as a hydrogeologist, two decades of reading nervous systems as a chiropractor, a body that's been unusually sensitive to this kind of stress since I was a teenager — is my own flourish on that melody. My particular way of playing it.</p>
+      <p>But there's a third piece, and it's the one most conversations about this work skip entirely: arrangement. A cacophonous home doesn't need fewer instruments. It needs each one given its proper place, so the whole thing can be heard as one coherent piece instead of noise competing with itself. That's the actual work. Not less signal. Better arrangement.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 6</p>
+      <h2>What Your Body Is Listening For</h2>
+      <p>Watch an animal that lives with predators, and you'll notice something: it doesn't fully rest just anywhere. It returns, again and again, to specific places — places that let it stand down from vigilance, if only for a while. Herds have this. It's not sentimentality. It's survival math: an animal that can't tell whether it's safe can't afford to stop watching, and an animal that never stops watching never fully recovers.</p>
+      <p>Human nervous systems work the same way, whether or not we like being compared to herd animals. A home under geopathic or electromagnetic stress keeps the body in a low-grade state of vigilance — not panic, just enough unresolved static that the body never quite gets the all-clear it's been waiting for.</p>
+      <p>That matters more than it sounds like it should, because real repair — the kind that happens in the deepest stages of sleep, theta and delta — only happens once the body has actually stood down. A body that's still listening for the other shoe to drop doesn't get to go that deep, no matter how many hours it spends in bed.</p>
+      <p>There's a statistic I think about often: some research puts the share of disease connected to stress north of 90 percent. I'd put it more precisely — it's not the stress itself. It's our response to stress. And a body that never gets to stop responding is a body that never gets to heal.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 7</p>
+      <h2>Call and Response</h2>
+      <p>I call what I do Call and Response, and I want to be honest about why, because it's not just a nice phrase — it's the actual mechanism, described three different ways.</p>
+      <p>A home under stress is making a call your body can't ignore, whether or not you can consciously hear it. My work changes what that call is, so your body's response can finally be rest instead of vigilance.</p>
+      <p>It's also literally what happens between me and a client. Your story — what you've noticed about your sleep, your mood, the rooms you avoid without knowing why — is the call. What I find when I measure your space is my response.</p>
+      <p>And it's the most literal description of how I actually work in a room: measure, place a solution, re-measure, adjust, and repeat — an actual back-and-forth between practitioner and space, until the reading settles.</p>
+      <blockquote class="pull">Most healing doesn't fail because the body doesn't know what to do. It fails because the body never gets permission to do it. My work isn't to fix you. It's to give your body back a place safe enough to do what it already knows how to do.</blockquote>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 8</p>
+      <h2>How This Actually Works</h2>
+      <p>There's no ceremony to what I do, and that's deliberate. I'm not discounting practices like feng shui, smudging, or crystal work — plenty of people find real value in them. But what I do is closer to fieldwork than ritual: I move through a space quietly, take measurements with calibrated tools, and look for where geopathic stress, electromagnetic fields, and room geometry are overlapping in ways that keep a nervous system on alert. Then I place small, unobtrusive geometric solutions at the points that need them, and I come back weeks later to verify the change held — not because anything is unfinished, but because bodies take time to catch up to a changed environment.</p>
+      <p>Sometimes I'll also use a technique called muscle testing — an arm held out for resistance, testing weak at a stress point and strong again once a solution is placed. It's not required for the work to be real. As I like to tell people: you don't have to feel it for it to be working. But sometimes, you do — and when a client feels that shift happen in real time, under their own arm, it tends to be more convincing than anything I could tell them.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 9</p>
+      <h2>A Story From My Own Bedroom</h2>
+      <p>For years, my wife woke at 1:30 or 2 in the morning.</p>
+      <p>She'd get up to use the bathroom, return to bed, and find that sleep simply wouldn't come back. Not because she wasn't tired. Not because anything was wrong, exactly. The bed just wouldn't hold her anymore. So she'd move upstairs to the guest room, and sleep would return almost immediately. We stopped talking about it after a while. It had become part of the architecture of our nights — a quiet workaround that worked, even if neither of us could explain why.</p>
+      <p>Around the same time, she'd begun noticing something else. My breathing, she said, sounded irregular when I slept. Not every night. But often enough that it stayed with her. She didn't push hard, but the concern was there — the kind that sits quietly at the back of a relationship and occasionally surfaces. Eventually I agreed to a home sleep study.</p>
+      <p>The device arrived in a box. Leads for the chest, a sensor for the throat, a small battery-powered recorder to wear through the night. I put it on, and almost immediately my heart began to race. Not anxiety exactly — something more physical than that. I lay there waiting for it to pass. It didn't, not fully, not for a while. When I finally removed the device, my heart rate returned to normal.</p>
+      <p>I never completed the study.</p>
+      <p>What I didn't know then — what I hadn't yet learned — was that our bedroom was already under stress. Not the stress of a difficult week or a restless mind. Something older and more structural than that: earth energy grid lines running through the space, concentrated in a way that the body registers even when the conscious mind has long since stopped noticing.</p>
+      <p>My wife's body had noticed. She just hadn't had the language for it. Moving upstairs wasn't a decision so much as an instinct — the body finding its own answer before anyone thought to ask the right question.</p>
+      <p>My body noticed too, the night of the sleep study. What the device recorded — or failed to record — was the physiology of a man lying in a stressed space, wearing unfamiliar electrical equipment, in the small hours of the morning. Whether my breathing had genuinely been irregular, or whether what my wife had heard was the body doing what bodies do under that kind of accumulated pressure — I'll never know for certain. What I do know is this: once I applied my training in BioGeometry® and addressed the grid lines running through the house, her nighttime waking stopped. And she hasn't mentioned my breathing since.</p>
+      <p>No diagnosis. No prescription. No CPAP humming on the bedside table.</p>
+      <p>Just a space that was finally allowed to settle.</p>
+    </div>
+
+    <div class="chapter">
+      <p class="chapter-num">Chapter 10</p>
+      <h2>Back to the Handwriting</h2>
+      <p>I want to close where I started, because it was never really a story about handwriting.</p>
+      <p>My professor looked at what I'd written and called it disordered — cacography, bad writing — because he didn't know what he was looking at. It wasn't actually disordered. It was mine, unread by someone without the right frame for it.</p>
+      <p>I think a lot of stressed homes get the same treatment, usually from the person living in them. Nothing looks wrong. Nothing sounds wrong. There's no obvious fire to put out — just a room you avoid without knowing why, a bed that stops holding you at 2 a.m., a body that never quite lets down its guard no matter how tired it is. It's easy to read all of that as nothing, the way my professor almost read my handwriting as nothing more than bad penmanship.</p>
+      <p>It isn't nothing. It's a space that hasn't been arranged yet — still making a call nobody's answered correctly.</p>
+      <p>If any of this sounded familiar — a room you avoid, sleep that won't fully arrive, a body that's been trying to tell you something for longer than you've been listening — that's worth paying attention to. You don't need to have this all figured out before reaching out. That's exactly where the conversation starts.</p>
+    </div>
+
+    <div class="closing">
+      <p class="closing-quote">&ldquo;The light needs somewhere to land.&rdquo;</p>
+      <p class="closing-mark">Spaces Within</p>
+
+      <div class="cta">
+        <p class="lede">That's exactly where the conversation starts.</p>
+        <a class="cta-button" href="https://thespaceswithin.com/contact.html">Let's talk</a>
+        <p class="cta-contact">
+          (503) 568-5033 &middot; <a href="mailto:bobby@thespaceswithin.com">bobby@thespaceswithin.com</a><br>
+          Bobby Jones &middot; BioGeometry®-EHS Associate-Practitioner &middot; <a href="https://thespaceswithin.com">thespaceswithin.com</a>
+        </p>
+      </div>
+
+      <p class="download"><a href="./from-cacophony-to-call-and-response.pdf">Download the PDF version</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>
