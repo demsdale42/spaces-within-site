@@ -348,18 +348,23 @@
   }
   .hero-copy h1.tagline{
     font-family:"Newsreader", Georgia, serif;
-    font-size:clamp(26px, 3.6vw, 40px);
+    font-size:clamp(28px, 3.7vw, 54px);
     font-style:normal;
     font-weight:420;
     font-optical-sizing:auto;
-    letter-spacing:-0.005em;
-    margin-top:16px;
+    letter-spacing:-0.01em;
+    line-height:1.1;
+    margin-top:18px;
     max-width:16ch;
   }
   .hero-copy .kicker{
-    font-size:15px;
-    margin-top:16px;
-    max-width:42ch;
+    font-size:clamp(16px, 1.6vw, 24px);
+    line-height:1.5;
+    margin-top:20px;
+    max-width:36ch;
+  }
+  .hero-copy .eyebrow{
+    font-size:clamp(12px, 1.05vw, 15px);
   }
   .on-pine.tagline, .on-pine.kicker{color:var(--paper-on-pine);}
   /* hero sits on a light photo: dark text (scoped so The Turn keeps its pine styling) */
@@ -592,7 +597,7 @@
   <div class="hero-copy wrap">
     <span class="eyebrow on-pine">BioGeometry&reg;-EHS Home Assessments</span>
     <h1 class="tagline on-pine">&ldquo;The light needs somewhere to land.&rdquo;</h1>
-    <p class="kicker on-pine">A home assessment for the room that never quite lets you rest &mdash; and the body that&rsquo;s been trying to tell you so.</p>
+    <p class="kicker on-pine">Your body already knows how to rest. A home assessment to find what&rsquo;s been standing in the way.</p>
   </div>
 </section>
 
