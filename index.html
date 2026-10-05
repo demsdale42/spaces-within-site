@@ -325,24 +325,21 @@
   .hero-photo{
     position:relative;
     width:100%;
-    aspect-ratio:16/10;
-    min-height:340px;
-    max-height:78vh;
+    height:min(92vh, 62vw);
+    min-height:520px;
     overflow:hidden;
-    background:var(--pine-deep);
+    background:var(--paper-2);
   }
   .hero-photo img{
     width:100%; height:100%;
     object-fit:cover;
-    object-position:center 28%;
-    filter:saturate(0.72) contrast(1.04) brightness(0.97) sepia(0.08);
+    object-position:center 8%;
   }
   .hero-scrim{
     position:absolute; inset:0;
     background:
-      radial-gradient(46% 62% at 22% 78%, rgba(8,16,13,0.86) 0%, rgba(8,16,13,0.62) 48%, transparent 78%),
-      linear-gradient(0deg, rgba(12,24,20,0.82) 0%, rgba(12,24,20,0.38) 34%, rgba(20,35,30,0.06) 58%, transparent 75%),
-      linear-gradient(100deg, rgba(12,24,20,0.30) 0%, transparent 45%);
+      radial-gradient(65% 75% at 12% 100%, rgba(235,234,223,0.92) 0%, rgba(235,234,223,0.6) 45%, transparent 78%),
+      linear-gradient(0deg, rgba(235,234,223,0.75) 0%, rgba(235,234,223,0.3) 28%, transparent 48%);
   }
   .hero-copy{
     position:absolute;
@@ -365,6 +362,10 @@
     max-width:42ch;
   }
   .on-pine.tagline, .on-pine.kicker{color:var(--paper-on-pine);}
+  /* hero sits on a light photo: dark text (scoped so The Turn keeps its pine styling) */
+  .hero-copy .on-pine.tagline{color:#173029;}
+  .hero-copy .on-pine.kicker{color:#2b3a33;}
+  .hero-copy .eyebrow.on-pine{color:#824F27;}
   .hero-mark{
     position:absolute;
     bottom:clamp(28px,5vw,56px);
@@ -375,11 +376,13 @@
     font-size:clamp(17px,2.5vw,27px);
     letter-spacing:0.14em;
     text-transform:uppercase;
-    color:rgba(251,248,241,0.35);
+    color:rgba(23,48,41,0.35);
     text-align:right;
   }
   @media (max-width:640px){
     .hero-mark{display:none;}
+    .hero-photo{height:auto; aspect-ratio:4/5; min-height:0;}
+    .hero-photo img{object-position:82% 0%;}
   }
 
   /* ---- section 2: the turn ---- */
@@ -583,7 +586,7 @@
 <section class="hero-full">
   <span class="hero-mark">Spaces Within</span>
   <div class="hero-photo">
-    <img src="assets/img/3d8dda50258d.jpg" alt="" />
+    <img src="assets/img/2a1b8a06d302.jpg" alt="" />
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-copy wrap">
