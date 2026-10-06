@@ -340,6 +340,18 @@
   }
   /* headlines: lighter weight, matching the homepage */
   h1,h2{font-weight:450; letter-spacing:-0.012em;}
+  /* plate captions, matching the homepage "Plate I" style */
+  .plate{margin:0; min-width:0;}
+  .plate figcaption{margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); line-height:1.5;}
+  .plate.float-right{float:right; margin:5px 0 14px 28px;}
+  .plate.float-left{float:left; margin:5px 28px 14px 0;}
+  .plate.float-right figcaption,.plate.float-left figcaption{width:0; min-width:100%;}
+  .plate .story-photo,.plate .research-photo,.plate .post-photo{margin:0;}
+  .photo-row .plate{flex:0 1 420px; max-width:420px;}
+  @media (max-width:640px){
+    .plate.float-right,.plate.float-left{float:none; width:100%; max-width:360px; margin:6px auto 18px;}
+    .plate .story-photo,.plate .research-photo,.plate .post-photo{width:100%;}
+  }
 </style>
 </head>
 <body>
@@ -419,9 +431,7 @@
     <div class="measure">
       <p>My own home was where I first understood what that really meant.</p>
       <p>Our house is 115 years old: original floors, plaster and lath walls, wavy glass windows. We were restoring it carefully &mdash; preserving what mattered, replacing only what had to go. But something in the space felt tense in a way that was easy to feel and hard to explain. For years, my wife had been waking at 1:30 or 2 a.m., moving to the guest room, unable to come back to sleep in our bed. We&rsquo;d stopped thinking of it as a problem.</p>
-      <figure class="photo-slot story-photo ratio-4-5 float-right">
-        <img src="assets/img/2a930b07e575.jpg" alt="The front porch of Bobby's 115-year-old home, with hanging flower baskets and wind chimes">
-      </figure>
+      <figure class="plate float-right"><div class="photo-slot story-photo ratio-4-5"><img src="assets/img/2a930b07e575.jpg" alt="The front porch of Bobby's 115-year-old home, with hanging flower baskets and wind chimes"></div><figcaption>Plate I &mdash; The porch, 115 years on</figcaption></figure>
       <p>It had simply become the way things were.</p>
       <p>The house became my laboratory &mdash; not because of its age, but because it gave me a place to learn in real time, in my own space, on my own terms. When I began addressing the grid lines in earnest, the nighttime waking stopped. Later, after practitioner training, I returned with a more complete set of tools, and something in the house settled even further.</p>
       <p class="pull">It was as if the house took a long deep breath in, exhaled slowly, and dropped its shoulders.</p>
@@ -456,9 +466,7 @@
       <p>When a space comes into balance, it doesn&rsquo;t stop at the walls.</p>
       <p>I&rsquo;ve seen this in my own yard.</p>
       <p>There&rsquo;s a ginkgo in our yard that puzzled me for years. It was young when we planted it, and as it grew, it leaned &mdash; not toward the light, not away from the house in any way I could account for. Just away. From something. I noted it and moved on.</p>
-      <figure class="photo-slot story-photo ratio-4-5 float-right">
-        <img src="assets/img/bf7222dde6bf.jpg" alt="The ginkgo tree in Bobby's yard, growing straight among the surrounding plantings">
-      </figure>
+      <figure class="plate float-right"><div class="photo-slot story-photo ratio-4-5"><img src="assets/img/bf7222dde6bf.jpg" alt="The ginkgo tree in Bobby's yard, growing straight among the surrounding plantings"></div><figcaption>Plate II &mdash; The ginkgo, avoiding a gridline</figcaption></figure>
       <p>Around the same time, one of five compact strawberry bushes along our front boundary died. The others were fine. Same soil, same water, same exposure. That one just didn&rsquo;t make it. I had no explanation.</p>
       <p>It wasn&rsquo;t until I began working on our own home &mdash; mapping the gridlines, identifying the stress points &mdash; that I understood what I&rsquo;d been looking at. From inside my home, I followed the line as it ran directly alongside the ginkgo and continued straight toward where that bush had stood. The tree had been growing around a vertical wall of stress it could feel and I couldn&rsquo;t see. The bush had been sitting in it.</p>
       <p>I placed a solution on the line inside the house &mdash; addressing what I had measured there. The correction wasn&rsquo;t made in the yard at all.</p>

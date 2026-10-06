@@ -358,6 +358,18 @@
   }
   /* headlines: lighter weight, matching the homepage */
   h1,h2{font-weight:450; letter-spacing:-0.012em;}
+  /* plate captions, matching the homepage "Plate I" style */
+  .plate{margin:0; min-width:0;}
+  .plate figcaption{margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); line-height:1.5;}
+  .plate.float-right{float:right; margin:5px 0 14px 28px;}
+  .plate.float-left{float:left; margin:5px 28px 14px 0;}
+  .plate.float-right figcaption,.plate.float-left figcaption{width:0; min-width:100%;}
+  .plate .story-photo,.plate .research-photo,.plate .post-photo{margin:0;}
+  .photo-row .plate{flex:0 1 420px; max-width:420px;}
+  @media (max-width:640px){
+    .plate.float-right,.plate.float-left{float:none; width:100%; max-width:360px; margin:6px auto 18px;}
+    .plate .story-photo,.plate .research-photo,.plate .post-photo{width:100%;}
+  }
 </style>
 </head>
 <body>
@@ -385,9 +397,7 @@
 <section class="faq-intro wrap">
   <div class="faq-intro-inner">
     <span class="eyebrow">FAQ</span>
-    <div class="photo-slot photo-filled ratio-5-4">
-      <img src="assets/img/689f7b605de7.jpg" alt="An open front door onto a covered porch, with houseplants on the windowsill">
-    </div>
+    <figure class="plate"><div class="photo-slot photo-filled ratio-5-4"><img src="assets/img/689f7b605de7.jpg" alt="An open front door onto a covered porch, with houseplants on the windowsill"></div><figcaption>Plate I &mdash; The open door</figcaption></figure>
     <h1>Questions people usually ask before that first call.</h1>
     <p class="kicker">Everything below is answered plainly, with nothing overstated. Anything this doesn&rsquo;t cover, bring to the call itself &mdash; that one&rsquo;s free too.</p>
   </div>

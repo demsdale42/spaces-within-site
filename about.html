@@ -698,6 +698,18 @@
   /* headlines: lighter weight, matching the homepage */
   h1,h2{font-weight:450; letter-spacing:-0.012em;}
   h1 em{color:var(--copper-deep); font-weight:450;}
+  /* plate captions, matching the homepage "Plate I" style */
+  .plate{margin:0; min-width:0;}
+  .plate figcaption{margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); line-height:1.5;}
+  .plate.float-right{float:right; margin:5px 0 14px 28px;}
+  .plate.float-left{float:left; margin:5px 28px 14px 0;}
+  .plate.float-right figcaption,.plate.float-left figcaption{width:0; min-width:100%;}
+  .plate .story-photo,.plate .research-photo,.plate .post-photo{margin:0;}
+  .photo-row .plate{flex:0 1 420px; max-width:420px;}
+  @media (max-width:640px){
+    .plate.float-right,.plate.float-left{float:none; width:100%; max-width:360px; margin:6px auto 18px;}
+    .plate .story-photo,.plate .research-photo,.plate .post-photo{width:100%;}
+  }
 </style>
 </head>
 <body>
@@ -725,9 +737,7 @@
 <section class="bio-intro wrap">
   <div class="bio-intro-inner">
     <span class="eyebrow">About</span>
-    <div class="photo-slot photo-filled" aria-hidden="true">
-      <img src="assets/img/bdca3ad735b8.jpg" alt="" />
-    </div>
+    <figure class="plate"><div class="photo-slot photo-filled"><img src="assets/img/bdca3ad735b8.jpg" alt="Bobby Jones in a cap and glasses, studying a painting in a museum" /></div><figcaption>Plate I &mdash; Bobby, looking closely</figcaption></figure>
     <h1>Everything has led me <em>to here.</em></h1>
     <p class="byline">Bobby Jones &middot; BioGeometry&reg;-EHS Associate-Practitioner</p>
     <p class="kicker">He's been noticing things most people don't, since long before he had a word for it. None of it looked connected while it was happening &mdash; but every strange, unexplained moment turns out to have been pointing somewhere. This is where it pointed.</p>

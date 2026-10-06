@@ -352,6 +352,18 @@
   }
   /* headlines: lighter weight, matching the homepage */
   h1,h2{font-weight:450; letter-spacing:-0.012em;}
+  /* plate captions, matching the homepage "Plate I" style */
+  .plate{margin:0; min-width:0;}
+  .plate figcaption{margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); line-height:1.5;}
+  .plate.float-right{float:right; margin:5px 0 14px 28px;}
+  .plate.float-left{float:left; margin:5px 28px 14px 0;}
+  .plate.float-right figcaption,.plate.float-left figcaption{width:0; min-width:100%;}
+  .plate .story-photo,.plate .research-photo,.plate .post-photo{margin:0;}
+  .photo-row .plate{flex:0 1 420px; max-width:420px;}
+  @media (max-width:640px){
+    .plate.float-right,.plate.float-left{float:none; width:100%; max-width:360px; margin:6px auto 18px;}
+    .plate .story-photo,.plate .research-photo,.plate .post-photo{width:100%;}
+  }
 </style>
 </head>
 <body>
@@ -379,9 +391,7 @@
 <section class="hiw-intro wrap">
   <div class="hiw-intro-inner">
     <span class="eyebrow">How It Works</span>
-    <div class="photo-slot photo-filled ratio-5-4">
-      <img src="assets/img/1652ac3c8872.jpg" alt="Two wicker chairs with cushions on a covered porch, surrounded by greenery">
-    </div>
+    <figure class="plate"><div class="photo-slot photo-filled ratio-5-4"><img src="assets/img/1652ac3c8872.jpg" alt="Two wicker chairs with cushions on a covered porch, surrounded by greenery"></div><figcaption>Plate I &mdash; Two chairs on the porch</figcaption></figure>
     <h1>Every home is already saying something.</h1>
     <p class="kicker">This is Call and Response, in practice. In how you sleep, which room you avoid, what never quite resolves no matter what else you&rsquo;ve tried &mdash; this is how that gets heard, measured, and answered.</p>
   </div>
@@ -433,9 +443,7 @@
             <p>Immediately after placement, Bobby re-measures to confirm the reading holds &mdash; the same call-and-response rhythm described on the About page: measure, place a solution, re-measure, adjust. The aim isn&rsquo;t to eliminate the field or wall it off &mdash; it&rsquo;s to change its quality, so the space, and the body in it, can settle into coherence instead of staying braced against it.</p>
           </div>
         </div>
-        <div class="photo-slot photo-filled ratio-3-4">
-          <img src="assets/img/73d2d2601040.jpg" alt="Bobby's dowsing and measurement instruments laid out on a wood table">
-        </div>
+        <figure class="plate"><div class="photo-slot photo-filled ratio-3-4"><img src="assets/img/73d2d2601040.jpg" alt="Bobby's dowsing and measurement instruments laid out on a wood table"></div><figcaption>Plate II &mdash; The instruments, laid out</figcaption></figure>
       </div>
     </div>
 
