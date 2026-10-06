@@ -24,7 +24,7 @@
     --copper:#A0632F;
     --copper-deep:#824F27;
     --line:#CFC9B7;
-    --paper-on-pine:#EFE9DC;
+    --paper-on-pine:#EFE9DC; --on-copper:#FBF6EC;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark){
@@ -41,7 +41,7 @@
       --copper:#C68A54;
       --copper-deep:#DDA26C;
       --line:#33312A;
-      --paper-on-pine:#EAE5D8;
+      --paper-on-pine:#EAE5D8; --on-copper:#171613;
       color-scheme: dark;
     }
   }
@@ -58,7 +58,7 @@
     --copper:#C68A54;
     --copper-deep:#DDA26C;
     --line:#33312A;
-    --paper-on-pine:#EAE5D8;
+    --paper-on-pine:#EAE5D8; --on-copper:#171613;
     color-scheme: dark;
   }
 
@@ -209,7 +209,7 @@
     border:1px solid transparent;
     transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .btn-copper{background:var(--copper); color:#FBF6EC;}
+  .btn-copper{background:var(--copper); color:var(--on-copper);}
   .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
   .soft-link{
     font-size:14.5px;
