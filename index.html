@@ -330,14 +330,13 @@
   section{position:relative;}
 
   /* ---- section 1: hero (specimen sheet: photo plate + headline) ---- */
-  .hero-d1{--nav:75px; --pt:clamp(16px,3.6vh,38px); padding-top:var(--pt);}
+  .hero-d1{--nav:75px; --pt:clamp(40px,7.2vh,84px); padding-top:var(--pt);}
   .hero-d1 .hero-inner{max-width:1120px; margin-inline:auto; padding-inline:clamp(20px,5vw,64px);}
   .hero-d1-grid{
     display:grid;
     grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
-    gap:clamp(28px,4vw,56px);
-    height:min(740px, max(470px, calc(100vh - var(--nav) - var(--pt) - 202px)));
-    margin-bottom:18px;
+    gap:clamp(40px,5.4vw,88px);
+    height:min(720px, max(500px, calc(100vh - var(--nav) - var(--pt) - 64px)));
   }
   .hero-plate{margin:0; display:flex; flex-direction:column; min-height:0;}
   .hero-plate-img{position:relative; flex:1; min-height:0; overflow:hidden; background:var(--paper-2);}
@@ -346,9 +345,9 @@
   .hero-plate figcaption{
     margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
   }
-  .hero-d1-copy{display:flex; flex-direction:column; justify-content:center; min-width:0; padding-bottom:26px;}
+  .hero-d1-copy{display:flex; flex-direction:column; justify-content:center; min-width:0; padding-bottom:30px;}
   .hero-d1-copy .eyebrow{
-    display:flex; align-items:center; gap:14px; margin-bottom:clamp(12px,2.2vh,22px);
+    display:flex; align-items:center; gap:14px; margin-bottom:clamp(20px,3.2vh,34px);
     font-size:clamp(11.5px,0.95vw,13.5px);
   }
   .hero-d1-copy .eyebrow::after{content:""; flex:1; height:1px; background:var(--line);}
@@ -357,29 +356,29 @@
     font-weight:440;
     font-optical-sizing:auto;
     font-size:clamp(32px, min(3.9vw, 6.8vh), 60px);
-    line-height:1.04;
+    line-height:1.08;
     letter-spacing:-0.018em;
     color:var(--pine-text);
   }
   .hero-d1-copy h1 em{color:var(--copper-deep); font-weight:440;}
   .hero-d1-copy .kicker{
     font-size:clamp(15.5px, min(1.2vw, 2.4vh), 19px);
-    line-height:1.6; margin-top:clamp(14px,2.6vh,26px); max-width:31em; color:var(--ink);
+    line-height:1.65; margin-top:clamp(22px,3.6vh,36px); max-width:31em; color:var(--ink);
   }
   .hero-d1-copy .hero-area{
     font-family:"Newsreader", Georgia, serif; font-style:italic; font-weight:440;
-    font-size:clamp(15px,1.15vw,17.5px); line-height:1.4; margin-top:clamp(10px,1.8vh,16px); color:var(--copper-deep);
+    font-size:clamp(15px,1.15vw,17.5px); line-height:1.4; margin-top:clamp(14px,2.4vh,22px); color:var(--copper-deep);
   }
-  .hero-d1-copy .hero-cta{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:clamp(16px,3vh,28px);}
+  .hero-d1-copy .hero-cta{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:clamp(28px,4.4vh,44px);}
   .hero-d1-copy .btn{font-size:clamp(14px,1.05vw,15.5px); padding:clamp(11px,1.8vh,15px) clamp(18px,1.6vw,26px);}
   .btn-outline-hero{background:transparent; border-color:var(--pine-text); color:var(--pine-text); border-width:1.5px;}
   .btn-outline-hero:hover{background:var(--paper-2); transform:translateY(-1px);}
   .hero-creds{
     max-width:1120px; margin:0 auto; padding-inline:clamp(20px,5vw,64px);
+    margin-top:clamp(36px,6vh,64px); padding-bottom:clamp(48px,7vw,96px);
   }
-  .hero-creds-lead{margin:0 0 8px; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);}
+  .hero-creds-lead{margin:0 0 12px; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);}
   .hero-creds-lead strong{color:var(--pine-text); font-weight:700;}
-  .hero-d1{padding-bottom:28px;}
   .hero-creds ul{
     list-style:none; margin:0; padding:0;
     display:grid; grid-template-columns:1fr 1fr 1.4fr;
@@ -390,6 +389,7 @@
     font-family:"Newsreader", Georgia, serif; font-size:clamp(16px,1.4vw,20px); line-height:1.25; color:var(--ink);
   }
   .hero-creds li + li{border-left:1px solid var(--line); padding-left:2vw;}
+  .hero-creds li strong{font-weight:600; color:var(--pine-text);}
   .hero-creds li b{font-family:"Public Sans", sans-serif; font-size:11.5px; letter-spacing:0.18em; font-weight:700; color:var(--copper-deep);}
   @media (max-width:900px){
     .hero-d1{padding-top:22px;}
@@ -406,7 +406,7 @@
     .hero-creds li, .hero-creds li + li{border-left:0; padding:14px 0; border-top:0;}
     .hero-creds li + li{border-top:1px solid var(--line);}
     .hero-creds ul{border-bottom:1px solid var(--pine-text);}
-    .hero-creds{padding-bottom:6px;}
+    .hero-creds{padding-bottom:44px;}
   }
 
 
@@ -631,7 +631,7 @@
         <figcaption>Plate I &mdash; The room, listening</figcaption>
       </figure>
       <div class="hero-d1-copy">
-        <span class="eyebrow">BioGeometry&reg;-EHS Home Assessments</span>
+        <span class="eyebrow">Beneath. Within. You.</span>
         <h1>Sleep better anywhere but home? <em>Your house may be telling you something.</em></h1>
         <p class="kicker">A home assessment finds what&rsquo;s keeping your body on alert, from the ground beneath your house to the fields within it, and puts solutions in place so your home lets you rest.</p>
         <p class="hero-area">In-home assessments across greater Portland and within 150 miles.</p>
@@ -647,7 +647,7 @@
     <ul>
       <li><b>I</b>Former hydrogeologist</li>
       <li><b>II</b>20 years in chiropractic</li>
-      <li><b>III</b>Licensed BioGeometry&reg;&#8209;EHS Associate&#8209;Practitioner</li>
+      <li><b>III</b><span>Licensed <strong>BioGeometry&reg;&#8209;EHS</strong> Associate&#8209;Practitioner</span></li>
     </ul>
   </div>
 </section>
