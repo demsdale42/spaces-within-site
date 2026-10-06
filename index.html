@@ -7,9 +7,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spaces Within">
 <meta property="og:title" content="Spaces Within | BioGeometry&reg;-EHS Home Assessments">
-<meta property="og:description" content="Your body already knows how to rest. A home assessment to find what&rsquo;s been standing in the way.">
+<meta property="og:description" content="Sleep better anywhere but home? A home assessment finds what is keeping your body on alert and puts solutions in place. In-home assessments across greater Portland and within 150 miles.">
 <meta property="og:url" content="https://thespaceswithin.com/">
-<meta property="og:image" content="https://thespaceswithin.com/assets/img/c1a6ab7f8bb9.jpg">
+<meta property="og:image" content="https://thespaceswithin.com/assets/img/8b5c56f71d8a.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -329,87 +329,86 @@
 
   section{position:relative;}
 
-  /* ---- section 1: hero (full-bleed photo) ---- */
-  .hero-full{position:relative; overflow:hidden; --nav:76px; --hh:min(112vh, 72vw); --lift:max(0px, calc(var(--hh) - 100vh + var(--nav)));}
-  .hero-photo{
-    position:relative;
-    width:100%;
-    height:var(--hh);
-    min-height:520px;
-    overflow:hidden;
-    background:var(--paper-2);
+  /* ---- section 1: hero (specimen sheet: photo plate + headline) ---- */
+  .hero-d1{--nav:75px; --pt:clamp(16px,3.6vh,38px); padding-top:var(--pt);}
+  .hero-d1 .hero-inner{max-width:1120px; margin-inline:auto; padding-inline:clamp(20px,5vw,64px);}
+  .hero-d1-grid{
+    display:grid;
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+    gap:clamp(28px,4vw,56px);
+    height:min(740px, max(470px, calc(100vh - var(--nav) - var(--pt) - 202px)));
+    margin-bottom:18px;
   }
-  .hero-photo picture{display:block; width:100%; height:100%;}
-  .hero-photo img{
-    width:100%; height:100%;
-    object-fit:cover;
-    object-position:center 8%;
+  .hero-plate{margin:0; display:flex; flex-direction:column; min-height:0;}
+  .hero-plate-img{position:relative; flex:1; min-height:0; overflow:hidden; background:var(--paper-2);}
+  .hero-plate-img picture{position:absolute; inset:0; display:block;}
+  .hero-plate-img img{width:100%; height:100%; object-fit:cover; object-position:64% 26%;}
+  .hero-plate figcaption{
+    margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
   }
-  .hero-scrim{
-    position:absolute; left:0; right:0; bottom:calc(var(--lift) - 140px); height:calc(min(var(--hh), calc(100vh - var(--nav))) + 140px);
-    -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%), linear-gradient(to right,#000 34%,transparent 58%);
-    mask-image:linear-gradient(to bottom,#000 80%,transparent 100%), linear-gradient(to right,#000 34%,transparent 58%);
-    -webkit-mask-composite:source-in; mask-composite:intersect;
-    background:
-      radial-gradient(65% 75% at 12% 100%, rgba(235,234,223,0.92) 0%, rgba(235,234,223,0.6) 45%, transparent 78%),
-      linear-gradient(0deg, rgba(235,234,223,0.75) 0%, rgba(235,234,223,0.3) 28%, transparent 48%);
+  .hero-d1-copy{display:flex; flex-direction:column; justify-content:center; min-width:0; padding-bottom:26px;}
+  .hero-d1-copy .eyebrow{
+    display:flex; align-items:center; gap:14px; margin-bottom:clamp(12px,2.2vh,22px);
+    font-size:clamp(11.5px,0.95vw,13.5px);
   }
-  .hero-copy{
-    position:absolute;
-    left:0; right:0; bottom:var(--lift);
-    padding-bottom:clamp(28px,5vw,56px);
-  }
-  .hero-copy h1.tagline{
+  .hero-d1-copy .eyebrow::after{content:""; flex:1; height:1px; background:var(--line);}
+  .hero-d1-copy h1{
     font-family:"Newsreader", Georgia, serif;
-    font-size:clamp(28px, 3.7vw, 54px);
-    font-style:normal;
-    font-weight:420;
+    font-weight:440;
     font-optical-sizing:auto;
-    letter-spacing:-0.01em;
-    line-height:1.1;
-    margin-top:18px;
-    max-width:16ch;
+    font-size:clamp(32px, min(3.9vw, 6.8vh), 60px);
+    line-height:1.04;
+    letter-spacing:-0.018em;
+    color:var(--pine-text);
   }
-  .hero-copy .kicker{
-    font-size:clamp(16px, 1.6vw, 24px);
-    line-height:1.5;
-    margin-top:20px;
-    max-width:36ch;
+  .hero-d1-copy h1 em{color:var(--copper-deep); font-weight:440;}
+  .hero-d1-copy .kicker{
+    font-size:clamp(15.5px, min(1.2vw, 2.4vh), 19px);
+    line-height:1.6; margin-top:clamp(14px,2.6vh,26px); max-width:31em; color:var(--ink);
   }
-  .hero-copy .eyebrow{
-    font-size:clamp(12px, 1.05vw, 15px);
+  .hero-d1-copy .hero-area{
+    font-family:"Newsreader", Georgia, serif; font-style:italic; font-weight:440;
+    font-size:clamp(15px,1.15vw,17.5px); line-height:1.4; margin-top:clamp(10px,1.8vh,16px); color:var(--copper-deep);
   }
-  .on-pine.tagline, .on-pine.kicker{color:var(--paper-on-pine);}
-  /* hero sits on a light photo: dark text (scoped so The Turn keeps its pine styling) */
-  .hero-copy .on-pine.tagline{color:#173029;}
-  .hero-copy .on-pine.kicker{color:#2b3a33;}
-  .hero-copy .eyebrow.on-pine{color:#824F27;}
-  .hero-mark{
-    display:none;
-    position:absolute;
-    bottom:calc(var(--lift) + clamp(28px,5vw,56px));
-    right:clamp(20px,5vw,64px);
-    z-index:1;
-    font-family:"Fraunces", serif;
-    font-weight:600;
-    font-size:clamp(17px,2.5vw,27px);
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:#F6F1E4;
-    text-shadow:0 1px 14px rgba(23,48,41,.55),0 0 2px rgba(23,48,41,.35);
-    text-align:right;
+  .hero-d1-copy .hero-cta{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:clamp(16px,3vh,28px);}
+  .hero-d1-copy .btn{font-size:clamp(14px,1.05vw,15.5px); padding:clamp(11px,1.8vh,15px) clamp(18px,1.6vw,26px);}
+  .btn-outline-hero{background:transparent; border-color:var(--pine-text); color:var(--pine-text); border-width:1.5px;}
+  .btn-outline-hero:hover{background:var(--paper-2); transform:translateY(-1px);}
+  .hero-creds{
+    max-width:1120px; margin:0 auto; padding-inline:clamp(20px,5vw,64px);
   }
-  @media (max-width:640px){
-    .hero-mark{display:none;}
-    .hero-photo{height:auto; aspect-ratio:1/1; min-height:0;}
-    .hero-photo img{object-position:center 0%;}
-    .hero-scrim{display:none;}
-    .hero-copy{position:static; padding-top:22px; padding-bottom:36px;}
-    /* text sits on the page background here, not on the photo: follow the theme tokens */
-    .hero-copy .on-pine.tagline{color:var(--ink);}
-    .hero-copy .on-pine.kicker{color:var(--ink-soft);}
-    .hero-copy .eyebrow.on-pine{color:var(--copper-deep);}
+  .hero-creds-lead{margin:0 0 8px; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);}
+  .hero-creds-lead strong{color:var(--pine-text); font-weight:700;}
+  .hero-d1{padding-bottom:28px;}
+  .hero-creds ul{
+    list-style:none; margin:0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr 1.4fr;
+    border-top:1px solid var(--pine-text); border-bottom:1px solid var(--line);
   }
+  .hero-creds li{
+    display:flex; gap:14px; align-items:baseline; padding:clamp(12px,2vh,20px) 2vw clamp(12px,2vh,20px) 0;
+    font-family:"Newsreader", Georgia, serif; font-size:clamp(16px,1.4vw,20px); line-height:1.25; color:var(--ink);
+  }
+  .hero-creds li + li{border-left:1px solid var(--line); padding-left:2vw;}
+  .hero-creds li b{font-family:"Public Sans", sans-serif; font-size:11.5px; letter-spacing:0.18em; font-weight:700; color:var(--copper-deep);}
+  @media (max-width:900px){
+    .hero-d1{padding-top:22px;}
+    .hero-d1-grid{grid-template-columns:minmax(0,1fr); height:auto; gap:22px;}
+    .hero-plate{max-width:560px;}
+    .hero-plate-img{flex:none; aspect-ratio:1/1;}
+    .hero-d1-copy{padding-bottom:6px;}
+    .hero-d1-copy h1{font-size:clamp(32px,9vw,46px);}
+    .hero-d1-copy .kicker{font-size:clamp(16px,4.2vw,19px);}
+    .hero-d1-copy .hero-cta{flex-direction:column; align-items:stretch; margin-top:22px;}
+    .hero-d1-copy .btn{justify-content:center; text-align:center; font-size:15.5px; padding:15px 22px;}
+    .hero-creds{margin-top:26px;}
+    .hero-creds ul{grid-template-columns:1fr;}
+    .hero-creds li, .hero-creds li + li{border-left:0; padding:14px 0; border-top:0;}
+    .hero-creds li + li{border-top:1px solid var(--line);}
+    .hero-creds ul{border-bottom:1px solid var(--pine-text);}
+    .hero-creds{padding-bottom:6px;}
+  }
+
 
   /* ---- section 2: the turn ---- */
   .turn{
@@ -451,6 +450,17 @@
     color:var(--pine-text);
     border-left:2px solid var(--copper);
     padding-left:22px;
+  }
+  .story blockquote .quote-by{
+    display:block;
+    margin-top:12px;
+    font-family:"Public Sans", sans-serif;
+    font-style:normal;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
   }
   .story p{font-size:16.5px; color:var(--ink-soft);}
   .story p + p{margin-top:16px;}
@@ -523,18 +533,18 @@
     .story-grid > .photo-slot{order:1;}
     .story-grid > div:last-child{order:2;}
     .bobby-grid > .photo-slot{order:1;}
-    .bobby-grid > div:last-child{order:2;}
+    .bobby-grid > div:first-child{order:2;}
   }
 
   /* ---- section 6: bobby briefly ---- */
   .bobby{
-    background:var(--moss);
+    background:var(--pine);
     color:var(--paper-on-pine);
     padding-block:clamp(64px,9vw,110px);
   }
   .bobby-grid{
     display:grid;
-    grid-template-columns:0.8fr 1.2fr;
+    grid-template-columns:1.2fr 0.8fr;
     gap:clamp(32px,5vw,72px);
     align-items:center;
   }
@@ -542,8 +552,10 @@
     .bobby-grid{grid-template-columns:1fr;}
   }
   .bobby .photo-slot{aspect-ratio:3/4; min-height:300px; border-color:rgba(239,233,220,0.35);}
+  /* black-and-white portrait with a light warm (sepia) tone to sit with the paper and copper palette; change sepia(.3) to adjust */
+  .bobby .photo-slot img{filter:grayscale(1) sepia(.3) contrast(1.06) brightness(1.02);}
   .bobby .photo-slot::before{background:radial-gradient(120% 90% at 30% 10%, rgba(255,255,255,0.10), transparent 60%), rgba(0,0,0,0.08);}
-  .bobby .photo-tag{background:var(--moss-deep); border-color:rgba(239,233,220,0.3); color:var(--paper-on-pine);}
+  .bobby .photo-tag{background:var(--pine-deep); border-color:rgba(239,233,220,0.3); color:var(--paper-on-pine);}
   .bobby h2{color:var(--paper-on-pine); font-size:clamp(26px,3vw,34px);}
   .bobby p{color:rgba(239,233,220,0.85); font-size:16.5px; margin-top:16px;}
 
@@ -555,7 +567,7 @@
   .close h2{font-size:clamp(28px,3.6vw,40px); max-width:680px; margin-inline:auto;}
   .close p.lede{margin-top:18px; color:var(--ink-soft); font-size:16.5px; max-width:560px; margin-inline:auto;}
   .close .btn{margin-top:34px;}
-  .close .faq-link{display:inline-block; margin-top:22px;}
+  .close .faq-link{display:block; width:max-content; margin:22px auto 0;}
   .close .final-tag{
     margin-top:88px;
     font-size:clamp(15px,1.6vw,17px);
@@ -609,15 +621,34 @@
 </nav>
 
 <!-- SECTION 1 — HERO -->
-<section class="hero-full">
-  <div class="hero-photo">
-    <picture><source media="(max-width:640px)" srcset="assets/img/312be86ba092.jpg"><img src="assets/img/719111a9196f.jpg" alt="" /></picture>
-    <div class="hero-scrim"></div>
+<section class="hero-d1">
+  <div class="hero-inner">
+    <div class="hero-d1-grid">
+      <figure class="hero-plate">
+        <div class="hero-plate-img">
+          <picture><source media="(max-width:900px)" srcset="assets/img/eeabbd754ec1.jpg"><img src="assets/img/028947e6b70e.jpg" alt="A woman in a white blouse looking toward the light in a bright bedroom" /></picture>
+        </div>
+        <figcaption>Plate I &mdash; The room, listening</figcaption>
+      </figure>
+      <div class="hero-d1-copy">
+        <span class="eyebrow">BioGeometry&reg;-EHS Home Assessments</span>
+        <h1>Sleep better anywhere but home? <em>Your house may be telling you something.</em></h1>
+        <p class="kicker">A home assessment finds what&rsquo;s keeping your body on alert, from the ground beneath your house to the fields within it, and puts solutions in place so your home lets you rest.</p>
+        <p class="hero-area">In-home assessments across greater Portland and within 150 miles.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
+          <a href="https://bobby-a8gbcxqi.scoreapp.com" target="_blank" rel="noopener" class="btn btn-outline-hero">Take the 3&#8209;Minute Self&#8209;Assessment</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="hero-copy wrap">
-    <span class="eyebrow on-pine">BioGeometry&reg;-EHS Home Assessments</span>
-    <h1 class="tagline on-pine">&ldquo;The light needs somewhere to land.&rdquo;</h1>
-    <p class="kicker on-pine">Your body already knows how to rest. A home assessment to find what&rsquo;s been standing in the way.</p>
+  <div class="hero-creds">
+    <p class="hero-creds-lead">Home assessments by <strong>Bobby Jones</strong></p>
+    <ul>
+      <li><b>I</b>Former hydrogeologist</li>
+      <li><b>II</b>20 years in chiropractic</li>
+      <li><b>III</b>Licensed BioGeometry&reg;&#8209;EHS Associate&#8209;Practitioner</li>
+    </ul>
   </div>
 </section>
 
@@ -651,8 +682,23 @@
       <p>A woman moved into a new apartment and, a month later, still hadn&rsquo;t unpacked. Not because she was busy. Something in her wouldn&rsquo;t settle &mdash; she avoided her closet without knowing why, and sleep never quite arrived.</p>
       <p>When Bobby assessed the space, he found earth gridlines crossing her bed, an electrical panel and wifi router positioned right where she slept, and a stress line running from the refrigerator straight through her bed and closet. None of it was visible. All of it was measurable.</p>
       <p>After the correction, she slept through the night for the first time since moving in.</p>
-      <blockquote>&ldquo;It&rsquo;s just nice to be home today. Not hampered by anxiety.&rdquo;</blockquote>
+      <blockquote>&ldquo;It&rsquo;s just nice to be home today. Not hampered by anxiety.&rdquo;<cite class="quote-by">&mdash; SL, Portland</cite></blockquote>
       <div class="story-foot"><a href="beyond.html" class="soft-link">Read more stories &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 — BOBBY, BRIEFLY -->
+<section class="bobby">
+  <div class="bobby-grid wrap">
+    <div>
+      <span class="eyebrow on-pine">Bobby, Briefly</span>
+      <h2>He tested this on his own home first.</h2>
+      <p>Bobby Jones traced invisible contamination through groundwater as a hydrogeologist, then spent two decades as a chiropractor watching patients improve in his office only to backslide within days of going home. He&rsquo;s a licensed BioGeometry&reg;-EHS Associate-Practitioner based in the Pacific Northwest &mdash; and long before any of that, his own body was sensitive to exactly this kind of stress.</p>
+      <div style="margin-top:22px;"><a href="about.html" class="soft-link on-pine">Read the full story &rarr;</a></div>
+    </div>
+    <div class="photo-slot photo-filled">
+      <img src="assets/img/e5d92efa8c60.jpg" alt="Bobby Jones outdoors among green bushes, wearing a cap and glasses" />
     </div>
   </div>
 </section>
@@ -662,10 +708,10 @@
   <div class="mechanism-grid wrap">
     <div>
       <span class="eyebrow">What&rsquo;s Actually Happening</span>
-      <h2>Most healing doesn&rsquo;t fail because the body doesn&rsquo;t know what to do.</h2>
+      <h2>Rest and restoration don&rsquo;t fail because the body doesn&rsquo;t know what to do.</h2>
     </div>
     <div>
-      <p>It fails because the body never gets permission to do it. A home under geopathic and electromagnetic stress keeps the nervous system on alert &mdash; the same low-grade vigilance that keeps an animal from fully resting near a predator. A body that can&rsquo;t stand down can&rsquo;t reach the depth of sleep where real repair happens.</p>
+      <p>They fail because the body never gets permission to do it. A home under geopathic and electromagnetic stress keeps the nervous system on alert &mdash; the same low-grade vigilance that keeps an animal from fully resting near a predator. A body that can&rsquo;t stand down can&rsquo;t reach the depth of sleep where real repair happens.</p>
       <p>This is the work Bobby calls Call and Response: finding where a space is keeping your body on alert, and giving it back a place safe enough to do what it already knows how to do.</p>
       <div class="mechanism-foot"><a href="how-it-works.html" class="soft-link">See how it works &rarr;</a></div>
     </div>
@@ -687,21 +733,6 @@
     </div>
   </div>
   <p class="who-close">Both are the same signal, at different volumes.<br>Not in you. In the room around you.</p>
-</section>
-
-<!-- SECTION 6 — BOBBY, BRIEFLY -->
-<section class="bobby">
-  <div class="bobby-grid wrap">
-    <div class="photo-slot photo-filled" aria-hidden="true">
-      <img src="assets/img/e5d92efa8c60.jpg" alt="" />
-    </div>
-    <div>
-      <span class="eyebrow on-pine">Bobby, Briefly</span>
-      <h2>He tested this on his own home first.</h2>
-      <p>Bobby Jones traced invisible contamination through groundwater as a hydrogeologist, then spent two decades as a chiropractor watching patients improve in his office only to backslide within days of going home. He&rsquo;s a licensed BioGeometry&reg;-EHS Associate-Practitioner based in the Pacific Northwest &mdash; and long before any of that, his own body was sensitive to exactly this kind of stress.</p>
-      <div style="margin-top:22px;"><a href="about.html" class="soft-link on-pine">Read the full story &rarr;</a></div>
-    </div>
-  </div>
 </section>
 
 <!-- SECTION 7 — CLOSE -->
