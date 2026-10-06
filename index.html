@@ -346,7 +346,10 @@
     object-position:center 8%;
   }
   .hero-scrim{
-    position:absolute; left:0; right:0; bottom:calc(var(--lift) - 140px); height:calc(min(var(--hh), calc(100vh - var(--nav))) + 140px); -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%); mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);
+    position:absolute; left:0; right:0; bottom:calc(var(--lift) - 140px); height:calc(min(var(--hh), calc(100vh - var(--nav))) + 140px);
+    -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%), linear-gradient(to right,#000 34%,transparent 58%);
+    mask-image:linear-gradient(to bottom,#000 80%,transparent 100%), linear-gradient(to right,#000 34%,transparent 58%);
+    -webkit-mask-composite:source-in; mask-composite:intersect;
     background:
       radial-gradient(65% 75% at 12% 100%, rgba(235,234,223,0.92) 0%, rgba(235,234,223,0.6) 45%, transparent 78%),
       linear-gradient(0deg, rgba(235,234,223,0.75) 0%, rgba(235,234,223,0.3) 28%, transparent 48%);
@@ -388,11 +391,12 @@
     right:clamp(20px,5vw,64px);
     z-index:1;
     font-family:"Fraunces", serif;
-    font-weight:560;
+    font-weight:600;
     font-size:clamp(17px,2.5vw,27px);
     letter-spacing:0.14em;
     text-transform:uppercase;
-    color:rgba(23,48,41,0.35);
+    color:#F6F1E4;
+    text-shadow:0 1px 14px rgba(23,48,41,.55),0 0 2px rgba(23,48,41,.35);
     text-align:right;
   }
   @media (max-width:640px){
@@ -606,9 +610,8 @@
 
 <!-- SECTION 1 — HERO -->
 <section class="hero-full">
-  <span class="hero-mark">Spaces Within</span>
   <div class="hero-photo">
-    <picture><source media="(max-width:640px)" srcset="assets/img/312be86ba092.jpg"><img src="assets/img/ebe6209a1870.jpg" alt="" /></picture>
+    <picture><source media="(max-width:640px)" srcset="assets/img/312be86ba092.jpg"><img src="assets/img/719111a9196f.jpg" alt="" /></picture>
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-copy wrap">
