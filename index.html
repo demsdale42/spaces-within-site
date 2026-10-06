@@ -566,6 +566,46 @@
   .bobby h2{color:var(--paper-on-pine); font-size:clamp(26px,3vw,34px);}
   .bobby p{color:rgba(239,233,220,0.85); font-size:16.5px; margin-top:16px;}
 
+  /* ---- clients, in their words ---- */
+  .voices{
+    background:var(--paper-2);
+    border-block:1px solid var(--line);
+    padding-block:clamp(56px,8vw,96px);
+  }
+  .voices-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(28px,4vw,56px);
+    margin-top:34px;
+  }
+  .voices blockquote{
+    margin:0;
+    min-width:0;
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:clamp(19px,2vw,22px);
+    line-height:1.45;
+    color:var(--pine-text);
+    border-left:2px solid var(--copper);
+    padding-left:22px;
+  }
+  .voices blockquote .quote-by{
+    display:block;
+    margin-top:14px;
+    font-family:"Public Sans", sans-serif;
+    font-style:normal;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .voices .emo{font-style:normal;}
+  @media (max-width:860px){
+    .voices-grid{grid-template-columns:1fr;}
+  }
+
   /* ---- section 7: close ---- */
   .close{
     padding-block:clamp(70px,10vw,120px);
@@ -749,6 +789,18 @@
     </div>
   </div>
   <p class="who-close">Both are the same signal, at different volumes.<br>Not in you. In the room around you.</p>
+</section>
+
+<!-- CLIENTS, IN THEIR WORDS -->
+<section class="voices">
+  <div class="wrap">
+    <span class="eyebrow">In Their Words</span>
+    <div class="voices-grid">
+      <blockquote>&ldquo;Keep working &mdash; I&rsquo;m liking this.&rdquo;<cite class="quote-by">&mdash; DF, Wilder, TN</cite></blockquote>
+      <blockquote>&ldquo;I slept better last night than I can remember. I felt so good, I didn&rsquo;t want to get out of bed.&rdquo;<cite class="quote-by">&mdash; JR, Calhoun, GA</cite></blockquote>
+      <blockquote>&ldquo;I think we both slept better &mdash; bed was easier to make. And G spent less time on the computer this morning <span class="emo" aria-label="smiley face" role="img">&#128578;</span>&rdquo;<cite class="quote-by">&mdash; LM, Portland, OR</cite></blockquote>
+    </div>
+  </div>
 </section>
 
 <!-- SECTION 7 — CLOSE -->
