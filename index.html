@@ -364,6 +364,7 @@
     color:var(--pine-text);
   }
   .hero-d1-copy h1 em{color:var(--copper-deep); font-weight:440;}
+  .hero-d1-copy h1 .hq, .hero-d1-copy h1 .ha{display:block; text-wrap:balance;}
   .hero-d1-copy .kicker{
     font-size:clamp(15.5px, min(1.2vw, 2.4vh), 19px);
     line-height:1.65; margin-top:clamp(22px,3.6vh,36px); max-width:31em; color:var(--ink);
@@ -547,14 +548,14 @@
   }
   .bobby-grid{
     display:grid;
-    grid-template-columns:1.2fr 0.8fr;
+    grid-template-columns:1fr 1fr;
     gap:clamp(32px,5vw,72px);
     align-items:center;
   }
   @media (max-width:720px){
     .bobby-grid{grid-template-columns:1fr;}
   }
-  .bobby .photo-slot{aspect-ratio:3/4; min-height:300px; border-color:rgba(239,233,220,0.35);}
+  .bobby .photo-slot{aspect-ratio:4/5; min-height:300px; border-color:rgba(239,233,220,0.35);}
   /* black-and-white portrait with a light warm (sepia) tone to sit with the paper and copper palette; change sepia(.3) to adjust */
   .bobby .photo-slot img{filter:grayscale(1) sepia(.3) contrast(1.06) brightness(1.02);}
   .bobby .photo-slot::before{background:radial-gradient(120% 90% at 30% 10%, rgba(255,255,255,0.10), transparent 60%), rgba(0,0,0,0.08);}
@@ -563,8 +564,8 @@
   .plate{margin:0; min-width:0;}
   .plate figcaption{margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);}
   .bobby .plate figcaption{color:rgba(239,233,220,0.72);}
-  .bobby h2{color:var(--paper-on-pine); font-size:clamp(26px,3vw,34px);}
-  .bobby p{color:rgba(239,233,220,0.85); font-size:16.5px; margin-top:16px;}
+  .bobby h2{color:var(--paper-on-pine); font-size:clamp(30px,3.7vw,44px);}
+  .bobby p{color:rgba(239,233,220,0.85); font-size:clamp(17px,1.5vw,19.5px); line-height:1.65; margin-top:18px;}
 
   /* ---- clients, in their words ---- */
   .voices{
@@ -682,7 +683,7 @@
       </figure>
       <div class="hero-d1-copy">
         <span class="eyebrow">Beneath. Within. You.</span>
-        <h1>Sleep better anywhere but home? <em>Your house may be telling you something.</em></h1>
+        <h1><span class="hq">Sleep better anywhere but home?</span> <em class="ha">Your house may be telling you something.</em></h1>
         <p class="kicker">A home assessment finds what&rsquo;s keeping your body on alert, from the ground beneath your house to the fields within it, and puts solutions in place so your home lets you rest.</p>
         <p class="hero-area">In-home assessments across greater Portland and within 150 miles.</p>
         <div class="hero-cta">
