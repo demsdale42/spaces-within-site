@@ -322,6 +322,33 @@
   .tier-card{padding-top:20px; border-top:1px solid var(--line);}
   .tier-card h3{font-size:18px; font-weight:560; margin-bottom:8px;}
   .tier-card p{color:var(--ink-soft); font-size:15.5px;}
+  .tier-price{
+    display:block;
+    min-height:36px;
+    margin-bottom:10px;
+    font-family:"Newsreader",serif;
+    font-weight:450;
+    font-size:clamp(24px,2.6vw,30px);
+    line-height:1.15;
+    letter-spacing:-0.012em;
+    color:var(--copper-deep);
+  }
+  .tier-price small{
+    font-family:"Public Sans", sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-right:6px;
+    vertical-align:0.15em;
+  }
+  .tier-price.tier-price-note{
+    font-style:italic;
+    font-size:clamp(19px,1.9vw,22px);
+    line-height:1.5;
+    color:var(--copper-deep);
+  }
   @media (max-width:860px){
     .tiers-grid{grid-template-columns:1fr;}
   }
@@ -468,14 +495,17 @@
   <div class="tiers-grid">
     <div class="tier-card">
       <h3>Introductory Consultation</h3>
+      <span class="tier-price">$500</span>
       <p>For anyone still wondering whether this will make a difference. Covers one primary space &mdash; usually the bedroom &mdash; where sleep, and the recovery that depends on it, actually happens.</p>
     </div>
     <div class="tier-card">
       <h3>Essential</h3>
-      <p>Extends that same work to the full home.</p>
+      <span class="tier-price"><small>From</small>$1,200</span>
+      <p>Extends that same work to the full home. Priced by the size of the home, the number of rooms, and the electromagnetic sources found.</p>
     </div>
     <div class="tier-card">
       <h3>Essential PLUS</h3>
+      <span class="tier-price tier-price-note">Set after the site visit</span>
       <p>For situations with more layers &mdash; heavier EMF environments, significant geopathic stress, or homes where the initial assessment reveals more complexity than expected. Sometimes that becomes clear in the first conversation. Sometimes Bobby only knows once he&rsquo;s there.</p>
     </div>
   </div>
