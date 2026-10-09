@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spaces Within">
 <meta property="og:title" content="Spaces Within | BioGeometry&reg;-EHS Home Assessments">
-<meta property="og:description" content="Sleep better anywhere but home? A home assessment finds what is keeping your body on alert and puts solutions in place. In-home assessments across greater Portland and within 150 miles.">
+<meta property="og:description" content="When rest just won&rsquo;t come, a home assessment looks at the room you sleep in: the ground beneath it, the fields within it, and how your body responds. In-home assessments across greater Portland and within 150 miles.">
 <meta property="og:url" content="https://thespaceswithin.com/">
 <meta property="og:image" content="https://thespaceswithin.com/assets/img/8b5c56f71d8a.jpg">
 <meta property="og:image:width" content="1200">
@@ -630,6 +630,68 @@
     color:var(--ink-soft);
   }
 
+
+  /* ---- new in v25: sleep-range copy ---- */
+  .nights{padding-block:clamp(64px,9vw,110px);}
+  .nights h2,.offer h2{font-size:clamp(26px,3vw,34px); max-width:720px; font-weight:450; letter-spacing:-0.012em;}
+  .nights h2 em,.offer h2 em{color:var(--copper-deep); font-weight:450;}
+  .nights-grid{
+    list-style:none; margin:44px 0 0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(24px,3.4vw,44px) clamp(28px,4vw,56px);
+  }
+  .nights-grid li{
+    padding-top:18px; border-top:1px solid var(--line); min-width:0;
+    font-family:"Newsreader", Georgia, serif; font-weight:440;
+    font-size:clamp(18px,1.7vw,21px); line-height:1.4; color:var(--pine-text);
+  }
+  .nights-close{
+    margin-top:40px; padding-top:28px; border-top:1px solid var(--line);
+    font-family:"Newsreader",serif; font-style:italic;
+    font-size:clamp(19px,2.2vw,23px); color:var(--ink-soft); text-align:center; text-wrap:balance;
+  }
+  .offer{
+    background:var(--paper-2); border-block:1px solid var(--line);
+    padding-block:clamp(64px,9vw,110px);
+  }
+  .steps{
+    list-style:none; margin:44px 0 0; padding:0;
+    display:grid; grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:clamp(18px,2.4vw,32px);
+  }
+  .steps li{border-top:1px solid var(--pine-text); padding-top:16px; display:grid; gap:8px; align-content:start; min-width:0;}
+  .steps li b{font-family:"Public Sans",sans-serif; font-size:11.5px; letter-spacing:0.18em; font-weight:700; color:var(--copper-deep);}
+  .steps li strong{font-family:"Newsreader",Georgia,serif; font-weight:560; font-size:19px; line-height:1.2; color:var(--pine-text);}
+  .steps li span{font-size:15px; line-height:1.55; color:var(--ink-soft);}
+  .offer-note{margin-top:34px; max-width:680px; text-wrap:pretty; color:var(--ink-soft); font-size:16.5px;}
+  .tiers{
+    margin-top:44px;
+    display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:clamp(18px,2.4vw,32px);
+  }
+  .tier{border:1px solid var(--line); background:var(--paper); padding:24px 24px 26px; display:grid; gap:8px; align-content:start; min-width:0;}
+  .tier-name{font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  .tier-price{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:clamp(26px,2.6vw,32px); line-height:1.1; color:var(--pine-text);}
+  .tier p{font-size:15.5px; color:var(--ink-soft); line-height:1.55;}
+  .offer-cta{margin-top:40px; display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px;}
+  .offer-cta p{color:var(--ink-soft); font-size:15.5px; max-width:34em;}
+  .checkfirst{padding-block:clamp(36px,5vw,56px) 0;}
+  .checkfirst p{
+    max-width:720px; margin-inline:auto; padding:18px 22px;
+    border:1px solid var(--line); border-left:2px solid var(--copper);
+    font-size:15px; line-height:1.6; color:var(--ink-soft); background:var(--paper-2);
+  }
+  .checkfirst p strong{color:var(--pine-text); font-weight:600;}
+  @media (max-width:980px){
+    .steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tiers{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nights-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .offer-cta .btn{width:100%; justify-content:center; text-align:center;}
+  }
+
   footer{
     border-top:1px solid var(--line);
     padding-block:28px;
@@ -687,12 +749,12 @@
       </figure>
       <div class="hero-d1-copy">
         <span class="eyebrow">Beneath. Within. You.</span>
-        <h1><span class="hq">Sleep better anywhere but home?</span> <em class="ha">Your house may be telling you something.</em></h1>
-        <p class="kicker">A home assessment finds what&rsquo;s keeping your body on alert, from the ground beneath your house to the fields within it, and puts solutions in place so your home lets you rest.</p>
-        <p class="hero-area">In-home assessments across greater Portland and within 150 miles.</p>
+        <h1><span class="hq">When rest just won&rsquo;t come.</span> <em class="ha">Your house may be telling you something.</em></h1>
+        <p class="kicker">A home assessment looks at the ground beneath your house, the fields within it, and how your body responds, then puts solutions in place so your home has a chance to let you rest.</p>
+        <p class="hero-area">In-home assessments across greater Portland and within 150 miles. From $500 for a single room.</p>
         <div class="hero-cta">
-          <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
-          <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-outline-hero">Take the 2&#8209;Minute Sleep Quiz</a>
+          <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the 2&#8209;Minute Sleep Quiz</a>
+          <a href="contact.html" class="btn btn-outline-hero">Book a Free Call</a>
         </div>
       </div>
     </div>
@@ -720,9 +782,24 @@
   <div class="turn-inner wrap">
     <span class="eyebrow on-pine">The Turn</span>
     <h2>The elephant in the room <em>is the room.</em></h2>
-    <p>If you&rsquo;ve rearranged the furniture, changed the sheets, tried everything you know to feel better in your own home &mdash; and it still doesn&rsquo;t quite let you rest &mdash; the problem might not be you. It might be the room.</p>
+    <p>If you&rsquo;ve tried the usual things &mdash; melatonin, magnesium, the apps, the sleep-hygiene list &mdash; and your nights still aren&rsquo;t what you want, it may not be a personal failing. It may be that nobody has ever thought to look at the room.</p>
     <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a>
   </div>
+</section>
+
+<!-- SECTION 2b — DOES THIS SOUND LIKE YOUR NIGHT -->
+<section class="nights wrap">
+  <span class="eyebrow">Sound Familiar?</span>
+  <h2>Does this sound like <em>your night?</em></h2>
+  <ul class="nights-grid">
+    <li>Tired and wired: you&rsquo;re worn out all day, then wide awake the moment your head hits the pillow.</li>
+    <li>You wake at 3am and can&rsquo;t get back to sleep.</li>
+    <li>You sleep through, but wake up tired anyway.</li>
+    <li>You&rsquo;ve tried melatonin, magnesium, the apps. It helped for a while, or not at all.</li>
+    <li>You sleep better in a hotel, on vacation, at a friend&rsquo;s place. Anywhere but home.</li>
+    <li>You used to sleep fine, but lately you can&rsquo;t sleep in your own bed. Maybe it started with a move, a new bed, or a new cell phone tower in the neighborhood.</li>
+  </ul>
+  <p class="nights-close">Most of what people try looks at you: your habits, your thoughts, your chemistry. This looks at the room too.</p>
 </section>
 
 <!-- SECTION 3 — ONE STORY -->
@@ -738,10 +815,48 @@
       <span class="eyebrow">One Story</span>
       <h2>The apartment she couldn&rsquo;t unpack.</h2>
       <p>A woman moved into a new apartment and, a month later, still hadn&rsquo;t unpacked. Not because she was busy. Something in her wouldn&rsquo;t settle &mdash; she avoided her closet without knowing why, and sleep never quite arrived.</p>
-      <p>When Bobby assessed the space, he found earth gridlines crossing her bed, an electrical panel and wifi router positioned right where she slept, and a stress line running from the refrigerator straight through her bed and closet. None of it was visible. All of it was measurable.</p>
+      <p>When Bobby assessed the space, he found earth gridlines crossing her bed, an electrical panel and wifi router positioned right where she slept, and a stress line running from the refrigerator straight through her bed and closet. None of it was visible. All of it showed up in the reading.</p>
       <p>After the correction, she slept through the night for the first time since moving in.</p>
       <blockquote>&ldquo;It&rsquo;s just nice to be home today. Not hampered by anxiety.&rdquo;<cite class="quote-by">&mdash; SL, Portland</cite></blockquote>
       <div class="story-foot"><a href="beyond.html" class="soft-link">Read more stories &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3b — WHAT HAPPENS AND WHAT IT COSTS -->
+<section class="offer">
+  <div class="wrap">
+    <span class="eyebrow">What Happens</span>
+    <h2>A free call, one visit, a follow-up. <em>And what it costs.</em></h2>
+    <ol class="steps">
+      <li><b>1</b><strong>A free call</strong><span>Tell Bobby what you&rsquo;ve noticed about your sleep, your space, and how different rooms feel. You don&rsquo;t need the right words.</span></li>
+      <li><b>2</b><strong>The assessment</strong><span>Bobby walks the space room by room and maps what&rsquo;s beneath and within it.</span></li>
+      <li><b>3</b><strong>Solutions placed</strong><span>Small BioGeometry&reg; solutions go where the reading calls for them. Nothing drilled, wired, or altered.</span></li>
+      <li><b>4</b><strong>Re-measured</strong><span>Right after placement, to confirm the reading holds.</span></li>
+      <li><b>5</b><strong>The follow-up</strong><span>Two to three weeks later, included in every tier.</span></li>
+    </ol>
+    <p class="offer-note">Most people notice something within the first few days to weeks. It tends to be subtle at first. Renters never need landlord permission, since the solutions come out as easily as they go in.</p>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tier-name">Introductory Consultation</span>
+        <span class="tier-price">$500</span>
+        <p>One primary space, usually the bedroom. For anyone still wondering whether this will make a difference.</p>
+      </div>
+      <div class="tier">
+        <span class="tier-name">Essential</span>
+        <span class="tier-price">From $1,200</span>
+        <p>The whole home. Priced by size, number of rooms, and the electromagnetic sources found.</p>
+      </div>
+      <div class="tier">
+        <span class="tier-name">Essential PLUS</span>
+        <span class="tier-price">Set after the visit</span>
+        <p>For homes with more layers: heavier EMF environments or significant geopathic stress.</p>
+      </div>
+    </div>
+    <div class="offer-cta">
+      <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
+      <p>You don&rsquo;t have to decide anything tonight. The first call is free, with no obligation on either side.</p>
+      <a href="how-it-works.html" class="soft-link">See the full process &rarr;</a>
     </div>
   </div>
 </section>
@@ -772,8 +887,8 @@
       <h2>The body already knows how to rest and reset, <em>once it has permission.</em></h2>
     </div>
     <div>
-      <p>A home under geopathic and electromagnetic stress keeps the nervous system on alert &mdash; the same low-grade vigilance that keeps an animal from fully resting near a predator. A body that can&rsquo;t stand down can&rsquo;t reach the depth of sleep where real repair happens.</p>
-      <p>This is the work Bobby titled Call and Response: finding where a space is keeping your body on alert, and giving it back a place safe enough to do what it already knows how to do.</p>
+      <p>A home under geopathic and electromagnetic stress may keep the nervous system on alert, stuck in overdrive &mdash; the same low-grade vigilance that keeps an animal from fully resting near a predator. A body that can&rsquo;t stand down may not reach the depth of sleep where real repair happens.</p>
+      <p>This is the work Bobby titled Call and Response: finding where a space may be keeping your body on alert, and giving it back a place safe enough to do what it already knows how to do.</p>
       <div class="mechanism-foot"><a href="how-it-works.html" class="soft-link">See how it works &rarr;</a></div>
     </div>
   </div>
@@ -786,14 +901,14 @@
   <div class="who-grid">
     <div class="who-col">
       <span class="num">One</span>
-      <p>If you&rsquo;ve been told your labs are fine, or that it&rsquo;s probably just stress, and that explanation never actually made the feeling go away &mdash; you&rsquo;re not imagining it. You&rsquo;re just looking in the wrong place.</p>
+      <p>If you&rsquo;ve been told your labs are fine, or that it&rsquo;s probably just stress, and that explanation never actually made the feeling go away &mdash; you&rsquo;re not imagining it. You may just be looking in the wrong place.</p>
     </div>
     <div class="who-col">
       <span class="num">Or</span>
       <p>Maybe it&rsquo;s simpler than that. Nothing&rsquo;s technically wrong. There&rsquo;s no test that would catch it, nothing you&rsquo;d bring to a doctor. You just don&rsquo;t feel fully at ease in your own home, and you can&rsquo;t quite say why.</p>
     </div>
   </div>
-  <p class="who-close">Both are the same signal, at different volumes.<br>Not in you. In the room around you.</p>
+  <p class="who-close">Both are the same signal, at different volumes.<br>Not a failing in you. Something to notice in the room around you.</p>
 </section>
 
 <!-- CLIENTS, IN THEIR WORDS -->
@@ -804,9 +919,13 @@
       <blockquote>&ldquo;Keep working &mdash; I&rsquo;m liking this.&rdquo;<cite class="quote-by">&mdash; DF, Wilder, TN</cite></blockquote>
       <blockquote>&ldquo;I slept better last night than I can remember. I felt so good, I didn&rsquo;t want to get out of bed.&rdquo;<cite class="quote-by">&mdash; JR, Calhoun, GA</cite></blockquote>
       <blockquote>&ldquo;I think we both slept better &mdash; bed was easier to make. And G spent less time on the computer this morning <span class="emo" aria-label="smiley face" role="img">&#128578;</span>&rdquo;<cite class="quote-by">&mdash; LM, Portland, OR</cite></blockquote>
-      <blockquote class="voices-story">Soon after the assessment and the placement of the solutions, her hot flashes stopped. Before Bobby&rsquo;s visit, they were waking her three or four times a night. She couldn&rsquo;t think of another reason they would have ended so abruptly.<cite class="quote-by">&mdash; LM, Portland, OR, by phone</cite></blockquote>
     </div>
   </div>
+</section>
+
+<!-- CHECK WITH YOUR DOCTOR FIRST -->
+<section class="checkfirst wrap">
+  <p><strong>Before you book:</strong> check with your doctor first if you wake gasping for air, your heart races or pounds at night, your sleep changed when you started or stopped a medication, or it came with pregnancy, postpartum, or menopause. A home assessment looks at your space, not your health. It isn&rsquo;t medical care, and it works best alongside your doctor&rsquo;s.</p>
 </section>
 
 <!-- SECTION 7 — CLOSE -->
@@ -814,6 +933,7 @@
   <h2>Not sure where to start?</h2>
   <p class="lede">Answer a few honest questions about your sleep, your space, and how your home actually feels &mdash; and find out what it&rsquo;s telling you.</p>
   <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a>
+  <a href="contact.html" class="soft-link faq-link">Or book a free call &rarr;</a>
   <a href="faq.html" class="soft-link faq-link">Still have questions? See the FAQ &rarr;</a>
   <p class="final-tag display-italic">&ldquo;The light needs somewhere to land.&rdquo;</p>
 </section>
