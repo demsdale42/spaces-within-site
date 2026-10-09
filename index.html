@@ -120,9 +120,8 @@
   .nav .word{
     font-family:"Fraunces", serif;
     font-weight:560;
-    font-size:19px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
+    font-size:22px;
+    letter-spacing:0.005em;
   }
   .nav ul{
     list-style:none;
@@ -632,7 +631,8 @@
 
 
   /* ---- new in v25: sleep-range copy ---- */
-  .nights{padding-block:clamp(64px,9vw,110px);}
+  .nights{padding-block:clamp(64px,9vw,110px) clamp(36px,5vw,60px);}
+  .nights + .story{padding-top:clamp(36px,5vw,60px);}
   .nights h2,.offer h2{font-size:clamp(26px,3vw,34px); max-width:720px; font-weight:450; letter-spacing:-0.012em;}
   .nights h2 em,.offer h2 em{color:var(--copper-deep); font-weight:450;}
   .nights-grid{
@@ -692,14 +692,34 @@
     .offer-cta .btn{width:100%; justify-content:center; text-align:center;}
   }
 
-  footer{
+  footer.site-foot{
     border-top:1px solid var(--line);
-    padding-block:28px;
+    background:var(--paper-2);
+    padding-block:clamp(44px,6vw,64px) clamp(32px,4vw,44px);
     text-align:center;
-    font-size:13px;
     color:var(--ink-soft);
-    letter-spacing:.03em;
+    font-size:13.5px;
+    line-height:1.6;
   }
+  .site-foot .sf-word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:clamp(24px,2.4vw,28px);
+    letter-spacing:0.005em;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .site-foot .sf-tag{
+    margin:10px 0 0;
+    font-family:"Newsreader", serif;
+    font-style:italic;
+    font-size:clamp(17px,1.8vw,19px);
+    color:var(--copper-deep);
+  }
+  .site-foot .sf-line{margin:22px 0 0;}
+  .site-foot .sf-contact{margin:6px 0 0;}
+  .site-foot .sf-contact a{color:inherit; text-decoration:none; border-bottom:1px solid var(--line);}
+  .site-foot .sf-contact a:hover{color:var(--ink);}
 
   /* ---- design-note badges (visible only to Bobby reviewing the comp) ---- */
   .devnote{
@@ -935,10 +955,16 @@
   <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a>
   <a href="contact.html" class="soft-link faq-link">Or book a free call &rarr;</a>
   <a href="faq.html" class="soft-link faq-link">Still have questions? See the FAQ &rarr;</a>
-  <p class="final-tag display-italic">&ldquo;The light needs somewhere to land.&rdquo;</p>
 </section>
 
-<footer>SPACES WITHIN &nbsp;&middot;&nbsp; Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</footer>
+<footer class="site-foot">
+  <div class="wrap">
+    <a href="index.html" class="sf-word">Spaces Within</a>
+    <p class="sf-tag">beneath. within. you.</p>
+    <p class="sf-line">Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</p>
+    <p class="sf-contact"><a href="tel:+15035685033">(503) 568-5033</a> &nbsp;&middot;&nbsp; <a href="mailto:bobby@thespaceswithin.com">bobby@thespaceswithin.com</a></p>
+  </div>
+</footer>
 
 <script>
 (function(){
