@@ -400,19 +400,31 @@
     font-size:13.5px;
     line-height:1.6;
   }
+  .site-foot .sf-lock{
+    display:inline-block;
+    text-align:left;
+    line-height:1;
+  }
   .site-foot .sf-word{
+    display:inline-block;
     font-family:"Fraunces", serif;
     font-weight:560;
-    font-size:clamp(24px,2.4vw,28px);
+    font-size:clamp(26px,2.6vw,30px);
     letter-spacing:0.005em;
     color:var(--ink);
     text-decoration:none;
+    line-height:1.1;
   }
+  /* tagline sits under the wordmark, starts after "Sp", and is tracked out to end under the final "n" (sized by the small script at the bottom) */
   .site-foot .sf-tag{
-    margin:10px 0 0;
+    display:block;
+    width:max-content;
+    margin-top:2px;
+    white-space:nowrap;
     font-family:"Newsreader", serif;
     font-style:italic;
-    font-size:clamp(17px,1.8vw,19px);
+    font-size:16px;
+    line-height:1.2;
     color:var(--copper-deep);
   }
   .site-foot .sf-line{margin:22px 0 0;}
@@ -595,8 +607,10 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <a href="index.html" class="sf-word">Spaces Within</a>
-    <p class="sf-tag">beneath. within. you.</p>
+    <div class="sf-lock">
+      <a href="index.html" class="sf-word">Spaces Within</a>
+      <span class="sf-tag">beneath. within. you.</span>
+    </div>
     <p class="sf-line">Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</p>
     <p class="sf-contact"><a href="tel:+15035685033">(503) 568-5033</a> &nbsp;&middot;&nbsp; <a href="mailto:bobby@thespaceswithin.com">bobby@thespaceswithin.com</a></p>
   </div>
@@ -617,6 +631,28 @@
       toggle.setAttribute('aria-expanded','false');
     }
   });
+})();
+</script>
+<script>
+/* footer lockup: tuck "beneath. within. you." under Spaces Within, from just after the "p" to the end of the "n" */
+(function(){
+  function fit(){
+    var w=document.querySelector('.sf-word'), t=document.querySelector('.sf-tag');
+    if(!w||!t||!w.firstChild) return;
+    var r=document.createRange(); r.setStart(w.firstChild,0); r.setEnd(w.firstChild,2);
+    var off=r.getBoundingClientRect().width, W=w.getBoundingClientRect().width, avail=W-off;
+    if(avail<60) return;
+    t.style.letterSpacing='0px'; t.style.marginRight='0px'; t.style.marginLeft=off+'px'; t.style.fontSize='16px';
+    var n0=t.getBoundingClientRect().width, fs=16*(avail*0.8)/n0;
+    fs=Math.max(12,Math.min(20,fs)); t.style.fontSize=fs+'px';
+    var n=t.getBoundingClientRect().width, len=t.textContent.length;
+    var ls=Math.max(0,(avail-n)/(len-1));
+    t.style.letterSpacing=ls+'px'; t.style.marginRight=(-ls)+'px';
+  }
+  fit();
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
 })();
 </script>
 </body>
