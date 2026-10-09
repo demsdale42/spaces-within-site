@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BioGeometry®-EHS home assessments in the Pacific Northwest with Bobby Jones — find and correct the invisible stress in your home.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spaces Within">
+<meta property="og:title" content="Spaces Within | BioGeometry&reg;-EHS Home Assessments">
+<meta property="og:description" content="When rest just won&rsquo;t come, a home assessment looks at the room you sleep in: the ground beneath it, the fields within it, and how your body responds. In-home assessments across greater Portland and within 150 miles.">
+<meta property="og:url" content="https://thespaceswithin.com/">
+<meta property="og:image" content="https://thespaceswithin.com/assets/img/8b5c56f71d8a.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC;
+    --on-copper:#FBF6EC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8;
+      --on-copper:#171613;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8;
+    --on-copper:#171613;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:640px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:22px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:22px;
+    letter-spacing:0.005em;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav-links{display:flex;}
+  .nav{position:relative;}
+
+  .nav-toggle{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    padding:0;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:2px;
+    cursor:pointer;
+  }
+  .nav-toggle-bars,
+  .nav-toggle-bars::before,
+  .nav-toggle-bars::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:1.5px;
+    background:var(--ink);
+    position:relative;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .nav-toggle-bars::before{position:absolute; top:-6px;}
+  .nav-toggle-bars::after{position:absolute; top:6px;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars{background:transparent;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before{transform:translateY(6px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg);}
+
+  @media (max-width:640px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      flex-direction:column;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+      padding:8px clamp(20px,5vw,64px) 20px;
+      gap:4px;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .22s ease;
+      z-index:5;
+    }
+    .nav-links.is-open{max-height:480px;}
+    .nav-links li{width:100%;}
+    .nav-links li a{display:block; padding-block:11px; border-bottom:1px solid var(--line);}
+    .nav-links li:last-child a{border-bottom:none;}
+  }
+
+  /* ---- eyebrow / labels ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+  .eyebrow.on-pine{color:#D3A46E;}
+
+  /* ---- ring motif ---- */
+  .rings{position:absolute; inset:0; overflow:hidden; pointer-events:none;}
+  .rings svg{position:absolute;}
+  @media (prefers-reduced-motion: no-preference){
+    .ring-pulse circle{
+      animation: ringGrow 9s ease-out infinite;
+      transform-origin:center;
+    }
+    .ring-pulse circle:nth-child(2){animation-delay:1.6s;}
+    .ring-pulse circle:nth-child(3){animation-delay:3.2s;}
+    .ring-pulse circle:nth-child(4){animation-delay:4.8s;}
+    @keyframes ringGrow{
+      0%{opacity:0; transform:scale(0.55);}
+      12%{opacity:.55;}
+      100%{opacity:0; transform:scale(1.35);}
+    }
+  }
+
+  /* ---- buttons ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{
+    background:var(--copper);
+    color:var(--on-copper);
+  }
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .btn-ghost-pine{
+    background:transparent;
+    border-color:rgba(239,233,220,0.4);
+    color:var(--paper-on-pine);
+  }
+  .btn-ghost-pine:hover{border-color:rgba(239,233,220,0.9);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+  .soft-link.on-pine{color:rgba(239,233,220,0.75); border-color:rgba(239,233,220,0.3);}
+  .soft-link.on-pine:hover{color:#F1ECE2; border-color:rgba(239,233,220,0.7);}
+
+  /* ---- image placeholder ---- */
+  .photo-slot{
+    position:relative;
+    border:1px dashed var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    min-height:220px;
+  }
+  .photo-slot::before{
+    content:"";
+    position:absolute; inset:0;
+  }
+  .photo-slot.hero::before{
+    background:
+      radial-gradient(120% 90% at 25% 20%, rgba(160,99,47,0.16), transparent 60%),
+      radial-gradient(140% 100% at 80% 100%, rgba(34,64,58,0.20), transparent 55%),
+      var(--paper-2);
+  }
+  .photo-slot.warm::before{
+    background:
+      radial-gradient(120% 90% at 70% 15%, rgba(160,99,47,0.14), transparent 60%),
+      var(--paper-2);
+  }
+  .photo-slot.portrait::before{
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(34,64,58,0.16), transparent 65%),
+      var(--paper-2);
+  }
+  .photo-tag{
+    position:relative;
+    z-index:1;
+    margin:14px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:6px 10px;
+  }
+  .photo-slot.photo-filled{
+    border-style:solid;
+    align-items:stretch;
+  }
+  .photo-slot.photo-filled::before{background:none;}
+  .photo-slot.photo-filled img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 30%;
+  }
+  .photo-slot.light-scene{
+    border-style:solid;
+    border-color:var(--line);
+    align-items:stretch;
+  }
+  .photo-slot.light-scene::before{background:none;}
+  .photo-slot.light-scene svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:block;
+  }
+
+  section{position:relative;}
+
+  /* ---- section 1: hero (specimen sheet: photo plate + headline) ---- */
+  .hero-d1{--nav:75px; --pt:clamp(40px,7.2vh,84px); padding-top:var(--pt);}
+  .hero-d1 .hero-inner{max-width:1120px; margin-inline:auto; padding-inline:clamp(20px,5vw,64px);}
+  .hero-d1-grid{
+    display:grid;
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+    gap:clamp(40px,5.4vw,88px);
+    height:min(720px, max(500px, calc(100vh - var(--nav) - var(--pt) - 64px)));
+  }
+  .hero-plate{margin:0; display:flex; flex-direction:column; min-height:0;}
+  .hero-plate-img{position:relative; flex:1; min-height:0; overflow:hidden; background:var(--paper-2);}
+  .hero-plate-img picture{position:absolute; inset:0; display:block;}
+  .hero-plate-img img{width:100%; height:100%; object-fit:cover; object-position:64% 26%;}
+  .hero-plate figcaption{
+    margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .hero-d1-copy{display:flex; flex-direction:column; justify-content:center; min-width:0; padding-bottom:30px;}
+  .hero-d1-copy .eyebrow{
+    display:flex; align-items:center; gap:14px; margin-bottom:clamp(20px,3.2vh,34px);
+    font-size:clamp(11.5px,0.95vw,13.5px);
+  }
+  .hero-d1-copy .eyebrow::after{content:""; flex:1; height:1px; background:var(--line);}
+  .hero-d1-copy h1{
+    font-family:"Newsreader", Georgia, serif;
+    font-weight:440;
+    font-optical-sizing:auto;
+    font-size:clamp(32px, min(3.9vw, 6.8vh), 60px);
+    line-height:1.08;
+    letter-spacing:-0.018em;
+    color:var(--pine-text);
+  }
+  .hero-d1-copy h1 em{color:var(--copper-deep); font-weight:440;}
+  .hero-d1-copy h1 .hq, .hero-d1-copy h1 .ha{display:block; text-wrap:balance;}
+  .hero-d1-copy .kicker{
+    font-size:clamp(15.5px, min(1.2vw, 2.4vh), 19px);
+    line-height:1.65; margin-top:clamp(22px,3.6vh,36px); max-width:31em; color:var(--ink);
+  }
+  .hero-d1-copy .hero-area{
+    font-family:"Newsreader", Georgia, serif; font-style:italic; font-weight:440;
+    font-size:clamp(15px,1.15vw,17.5px); line-height:1.4; margin-top:clamp(14px,2.4vh,22px); color:var(--copper-deep);
+  }
+  .hero-d1-copy .hero-cta{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:clamp(28px,4.4vh,44px);}
+  .hero-d1-copy .btn{font-size:clamp(14px,1.05vw,15.5px); padding:clamp(11px,1.8vh,15px) clamp(18px,1.6vw,26px);}
+  .btn-outline-hero{background:transparent; border-color:var(--pine-text); color:var(--pine-text); border-width:1.5px;}
+  .btn-outline-hero:hover{background:var(--paper-2); transform:translateY(-1px);}
+  .hero-creds{
+    max-width:1120px; margin:0 auto; padding-inline:clamp(20px,5vw,64px);
+    margin-top:clamp(36px,6vh,64px); padding-bottom:clamp(48px,7vw,96px);
+  }
+  .hero-creds-lead{margin:0 0 12px; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);}
+  .hero-creds-lead strong{color:var(--pine-text); font-weight:700;}
+  .hero-creds ul{
+    list-style:none; margin:0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr 1.4fr;
+    border-top:1px solid var(--pine-text); border-bottom:1px solid var(--line);
+  }
+  .hero-creds li{
+    display:flex; gap:14px; align-items:baseline; padding:clamp(12px,2vh,20px) 2vw clamp(12px,2vh,20px) 0;
+    font-family:"Newsreader", Georgia, serif; font-size:clamp(16px,1.4vw,20px); line-height:1.25; color:var(--ink);
+  }
+  .hero-creds li + li{border-left:1px solid var(--line); padding-left:2vw;}
+  .hero-creds li strong{font-weight:600; color:var(--pine-text);}
+  .hero-creds li b{font-family:"Public Sans", sans-serif; font-size:11.5px; letter-spacing:0.18em; font-weight:700; color:var(--copper-deep);}
+  @media (max-width:900px){
+    .hero-d1{padding-top:22px;}
+    .hero-d1-grid{grid-template-columns:minmax(0,1fr); height:auto; gap:22px;}
+    .hero-plate{max-width:560px;}
+    .hero-plate-img{flex:none; aspect-ratio:1/1;}
+    .hero-d1-copy{padding-bottom:6px;}
+    .hero-d1-copy h1{font-size:clamp(32px,9vw,46px);}
+    .hero-d1-copy .kicker{font-size:clamp(16px,4.2vw,19px);}
+    .hero-d1-copy .hero-cta{flex-direction:column; align-items:stretch; margin-top:22px;}
+    .hero-d1-copy .btn{justify-content:center; text-align:center; font-size:15.5px; padding:15px 22px;}
+    .hero-creds{margin-top:26px;}
+    .hero-creds ul{grid-template-columns:1fr;}
+    .hero-creds li, .hero-creds li + li{border-left:0; padding:14px 0; border-top:0;}
+    .hero-creds li + li{border-top:1px solid var(--line);}
+    .hero-creds ul{border-bottom:1px solid var(--pine-text);}
+    .hero-creds{padding-bottom:44px;}
+  }
+
+
+  /* ---- section 2: the turn ---- */
+  .turn{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,10vw,120px);
+  }
+  .turn .rings svg{opacity:.5;}
+  .turn-inner{position:relative; z-index:1; text-align:center; max-width:760px; margin-inline:auto;}
+  .turn h2{
+    color:var(--paper-on-pine);
+    font-size:clamp(30px, 4.6vw, 52px);
+    font-weight:560;
+  }
+  .turn p{
+    color:rgba(239,233,220,0.82);
+    font-size:clamp(16px, 1.6vw, 19px);
+    margin-top:22px;
+  }
+  .turn .btn{margin-top:38px;}
+
+  /* ---- section 3: one story ---- */
+  .story{padding-block:clamp(64px,9vw,110px);}
+  .story-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:clamp(32px,5vw,72px);
+    align-items:center;
+  }
+  .story .photo-slot{aspect-ratio:1/1; min-height:280px;}
+  .story .photo-slot.photo-filled img{object-position:85% center;}
+  .story h2{font-size:clamp(26px,3vw,34px); margin-bottom:16px;}
+  .story blockquote{
+    margin:26px 0 0;
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:clamp(20px,2.4vw,26px);
+    color:var(--pine-text);
+    border-left:2px solid var(--copper);
+    padding-left:22px;
+  }
+  .story blockquote .quote-by{
+    display:block;
+    margin-top:12px;
+    font-family:"Public Sans", sans-serif;
+    font-style:normal;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .story p{font-size:16.5px; color:var(--ink-soft);}
+  .story p + p{margin-top:16px;}
+  .story-foot{margin-top:28px;}
+
+  /* ---- section 4: whats actually happening ---- */
+  .mechanism{
+    background:var(--paper-2);
+    padding-block:clamp(64px,9vw,110px);
+    border-block:1px solid var(--line);
+  }
+  .mechanism-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:clamp(32px,5vw,72px);
+  }
+  .mechanism h2{font-size:clamp(26px,3vw,34px);}
+  .mechanism .ring-static{opacity:.65;}
+  .mechanism p{color:var(--ink-soft); font-size:16.5px;}
+  .mechanism p + p{margin-top:16px;}
+  .mechanism .method-tag{
+    display:inline-block;
+    margin-top:22px;
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--pine-text);
+  }
+  .mechanism-foot{margin-top:22px;}
+
+  /* ---- section 5: who this is for ---- */
+  .who{padding-block:clamp(64px,9vw,110px);}
+  .who h2{font-size:clamp(26px,3vw,34px); max-width:680px;}
+  .who-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(28px,4vw,56px);
+    margin-top:44px;
+  }
+  .who-col{
+    padding-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .who-col .num{
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    color:var(--copper-deep);
+    font-size:15px;
+    display:block;
+    margin-bottom:10px;
+  }
+  .who-col p{color:var(--ink-soft); font-size:16.5px;}
+  .who-close{
+    margin-top:40px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    font-size:clamp(19px,2.2vw,23px);
+    color:var(--pine-text);
+    text-align:center;
+  }
+  @media (max-width:720px){
+    .who-grid{grid-template-columns:1fr;}
+    .hero-grid, .story-grid, .mechanism-grid, .bobby-grid{
+      grid-template-columns:1fr;
+    }
+    .hero-grid > div:first-child{order:2;}
+    .hero-grid > .photo-slot{order:1;}
+    .story-grid > .plate{order:1;}
+    .story-grid > div:last-child{order:2;}
+    .bobby-grid > .plate{order:1;}
+    .bobby-grid > div:first-child{order:2;}
+  }
+
+  /* ---- section 6: bobby briefly ---- */
+  .bobby{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+  }
+  .bobby-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(32px,5vw,72px);
+    align-items:center;
+  }
+  @media (max-width:720px){
+    .bobby-grid{grid-template-columns:1fr;}
+  }
+  .bobby .photo-slot{aspect-ratio:4/5; min-height:300px; border-color:rgba(239,233,220,0.35);}
+  /* black-and-white portrait with a light warm (sepia) tone to sit with the paper and copper palette; change sepia(.3) to adjust */
+  .bobby .photo-slot img{filter:grayscale(1) sepia(.3) contrast(1.06) brightness(1.02);}
+  .bobby .photo-slot::before{background:radial-gradient(120% 90% at 30% 10%, rgba(255,255,255,0.10), transparent 60%), rgba(0,0,0,0.08);}
+  .bobby .photo-tag{background:var(--pine-deep); border-color:rgba(239,233,220,0.3); color:var(--paper-on-pine);}
+  /* plate captions under the story and Bobby photos, matching the hero's "Plate I" */
+  .plate{margin:0; min-width:0;}
+  .plate figcaption{margin-top:10px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);}
+  .bobby .plate figcaption{color:rgba(239,233,220,0.72);}
+  .bobby h2{color:var(--paper-on-pine); font-size:clamp(30px,3.7vw,44px);}
+  .bobby p{color:rgba(239,233,220,0.85); font-size:clamp(17px,1.5vw,19.5px); line-height:1.65; margin-top:18px;}
+
+  /* ---- clients, in their words ---- */
+  .voices{
+    background:var(--paper-2);
+    border-block:1px solid var(--line);
+    padding-block:clamp(56px,8vw,96px);
+  }
+  .voices-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(28px,4vw,56px);
+    margin-top:34px;
+  }
+  .voices blockquote{
+    margin:0;
+    min-width:0;
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:clamp(19px,2vw,22px);
+    line-height:1.45;
+    color:var(--pine-text);
+    border-left:2px solid var(--copper);
+    padding-left:22px;
+  }
+  .voices blockquote .quote-by{
+    display:block;
+    margin-top:14px;
+    font-family:"Public Sans", sans-serif;
+    font-style:normal;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .voices .emo{font-style:normal;}
+  .voices blockquote.voices-story{
+    grid-column:1 / -1;
+    max-width:760px;
+  }
+  @media (max-width:860px){
+    .voices-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---- section 7: close ---- */
+  .close{
+    padding-block:clamp(70px,10vw,120px);
+    text-align:center;
+  }
+  .close h2{font-size:clamp(28px,3.6vw,40px); max-width:680px; margin-inline:auto;}
+  /* section headlines: lighter weight to match the hero, with an italic accent phrase */
+  .turn h2,.story h2,.mechanism h2,.who h2,.bobby h2,.close h2{font-weight:450; letter-spacing:-0.012em;}
+  .story h2 em,.mechanism h2 em,.who h2 em,.close h2 em{color:var(--copper-deep); font-weight:450;}
+  .turn h2 em,.bobby h2 em{color:#D3A46E; font-weight:450;}
+  .close p.lede{margin-top:18px; color:var(--ink-soft); font-size:16.5px; max-width:560px; margin-inline:auto;}
+  .close .btn{margin-top:34px;}
+  .close .faq-link{display:block; width:max-content; margin:22px auto 0;}
+  .close .final-tag{
+    margin-top:88px;
+    font-size:clamp(15px,1.6vw,17px);
+    color:var(--ink-soft);
+  }
+
+
+  /* ---- new in v25: sleep-range copy ---- */
+  .nights{padding-block:clamp(64px,9vw,110px) clamp(36px,5vw,60px);}
+  .nights + .story{padding-top:clamp(36px,5vw,60px);}
+  .nights h2,.offer h2{font-size:clamp(26px,3vw,34px); max-width:720px; font-weight:450; letter-spacing:-0.012em;}
+  .nights h2 em,.offer h2 em{color:var(--copper-deep); font-weight:450;}
+  .nights-grid{
+    list-style:none; margin:44px 0 0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:clamp(24px,3.4vw,44px) clamp(28px,4vw,56px);
+  }
+  .nights-grid li{
+    padding-top:18px; border-top:1px solid var(--line); min-width:0;
+    font-family:"Newsreader", Georgia, serif; font-weight:440;
+    font-size:clamp(18px,1.7vw,21px); line-height:1.4; color:var(--pine-text);
+  }
+  .nights-close{
+    margin-top:40px; padding-top:28px; border-top:1px solid var(--line);
+    font-family:"Newsreader",serif; font-style:italic;
+    font-size:clamp(19px,2.2vw,23px); color:var(--ink-soft); text-align:center; text-wrap:balance;
+  }
+  .offer{
+    background:var(--paper-2); border-block:1px solid var(--line);
+    padding-block:clamp(64px,9vw,110px);
+  }
+  .steps{
+    list-style:none; margin:44px 0 0; padding:0;
+    display:grid; grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:clamp(18px,2.4vw,32px);
+  }
+  .steps li{border-top:1px solid var(--pine-text); padding-top:16px; display:grid; gap:8px; align-content:start; min-width:0;}
+  .steps li b{font-family:"Public Sans",sans-serif; font-size:11.5px; letter-spacing:0.18em; font-weight:700; color:var(--copper-deep);}
+  .steps li strong{font-family:"Newsreader",Georgia,serif; font-weight:560; font-size:19px; line-height:1.2; color:var(--pine-text);}
+  .steps li span{font-size:15px; line-height:1.55; color:var(--ink-soft);}
+  .offer-note{margin-top:34px; max-width:680px; text-wrap:pretty; color:var(--ink-soft); font-size:16.5px;}
+  .tiers{
+    margin-top:44px;
+    display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:clamp(18px,2.4vw,32px);
+  }
+  .tier{border:1px solid var(--line); background:var(--paper); padding:24px 24px 26px; display:grid; gap:8px; align-content:start; min-width:0;}
+  .tier-name{font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  .tier-price{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:clamp(26px,2.6vw,32px); line-height:1.1; color:var(--pine-text);}
+  .tier p{font-size:15.5px; color:var(--ink-soft); line-height:1.55;}
+  .offer-cta{margin-top:40px; display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px;}
+  .offer-cta p{color:var(--ink-soft); font-size:15.5px; max-width:34em;}
+  .checkfirst{padding-block:clamp(36px,5vw,56px) 0;}
+  .checkfirst p{
+    max-width:720px; margin-inline:auto; padding:18px 22px;
+    border:1px solid var(--line); border-left:2px solid var(--copper);
+    font-size:15px; line-height:1.6; color:var(--ink-soft); background:var(--paper-2);
+  }
+  .checkfirst p strong{color:var(--pine-text); font-weight:600;}
+  @media (max-width:980px){
+    .steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tiers{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nights-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .offer-cta .btn{width:100%; justify-content:center; text-align:center;}
+  }
+
+  footer.site-foot{
+    border-top:1px solid var(--line);
+    background:var(--paper-2);
+    padding-block:clamp(44px,6vw,64px) clamp(32px,4vw,44px);
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    line-height:1.6;
+  }
+  .site-foot .sf-word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:clamp(24px,2.4vw,28px);
+    letter-spacing:0.005em;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .site-foot .sf-tag{
+    margin:10px 0 0;
+    font-family:"Newsreader", serif;
+    font-style:italic;
+    font-size:clamp(17px,1.8vw,19px);
+    color:var(--copper-deep);
+  }
+  .site-foot .sf-line{margin:22px 0 0;}
+  .site-foot .sf-contact{margin:6px 0 0;}
+  .site-foot .sf-contact a{color:inherit; text-decoration:none; border-bottom:1px solid var(--line);}
+  .site-foot .sf-contact a:hover{color:var(--ink);}
+
+  /* ---- design-note badges (visible only to Bobby reviewing the comp) ---- */
+  .devnote{
+    position:absolute;
+    top:10px; right:10px;
+    z-index:2;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:4px 8px;
+    opacity:.85;
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+    <span class="nav-toggle-bars" aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+
+<!-- SECTION 1 — HERO -->
+<section class="hero-d1">
+  <div class="hero-inner">
+    <div class="hero-d1-grid">
+      <figure class="hero-plate">
+        <div class="hero-plate-img">
+          <picture><source media="(max-width:900px)" srcset="assets/img/eeabbd754ec1.jpg"><img src="assets/img/028947e6b70e.jpg" alt="A woman in a white blouse looking toward the light in a bright bedroom" /></picture>
+        </div>
+      </figure>
+      <div class="hero-d1-copy">
+        <span class="eyebrow">Beneath. Within. You.</span>
+        <h1><span class="hq">When rest just won&rsquo;t come.</span> <em class="ha">Your house may be telling you something.</em></h1>
+        <p class="kicker">A home assessment looks at the ground beneath your house, the fields within it, and how your body responds, then puts solutions in place so your home has a chance to let you rest.</p>
+        <p class="hero-area">In-home assessments across greater Portland and within 150 miles. From $500 for a single room.</p>
+        <div class="hero-cta">
+          <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the 2&#8209;Minute Sleep Quiz</a>
+          <a href="contact.html" class="btn btn-outline-hero">Book a Free Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-creds">
+    <p class="hero-creds-lead">Home assessments by <strong>Bobby Jones</strong></p>
+    <ul>
+      <li><b>I</b>Former hydrogeologist</li>
+      <li><b>II</b>20 years in chiropractic</li>
+      <li><b>III</b><span>Licensed <strong>BioGeometry&reg;&#8209;EHS</strong> Associate&#8209;Practitioner</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION 2 — THE TURN -->
+<section class="turn">
+  <div class="rings ring-pulse" aria-hidden="true">
+    <svg width="640" height="640" style="left:50%; top:50%; transform:translate(-50%,-50%);" viewBox="0 0 640 640" fill="none">
+      <circle cx="320" cy="320" r="90" stroke="#EFE9DC" stroke-width="1"/>
+      <circle cx="320" cy="320" r="170" stroke="#EFE9DC" stroke-width="1"/>
+      <circle cx="320" cy="320" r="250" stroke="#EFE9DC" stroke-width="1"/>
+      <circle cx="320" cy="320" r="310" stroke="#EFE9DC" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="turn-inner wrap">
+    <span class="eyebrow on-pine">The Turn</span>
+    <h2>The elephant in the room <em>is the room.</em></h2>
+    <p>If you&rsquo;ve tried the usual things &mdash; melatonin, magnesium, the apps, the sleep-hygiene list &mdash; and your nights still aren&rsquo;t what you want, it may not be a personal failing. It may be that nobody has ever thought to look at the room.</p>
+    <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a>
+  </div>
+</section>
+
+<!-- SECTION 2b — DOES THIS SOUND LIKE YOUR NIGHT -->
+<section class="nights wrap">
+  <span class="eyebrow">Sound Familiar?</span>
+  <h2>Does this sound like <em>your night?</em></h2>
+  <ul class="nights-grid">
+    <li>Tired and wired: you&rsquo;re worn out all day, then wide awake the moment your head hits the pillow.</li>
+    <li>You wake at 3am and can&rsquo;t get back to sleep.</li>
+    <li>You sleep through, but wake up tired anyway.</li>
+    <li>You&rsquo;ve tried melatonin, magnesium, the apps. It helped for a while, or not at all.</li>
+    <li>You sleep better in a hotel, on vacation, at a friend&rsquo;s place. Anywhere but home.</li>
+    <li>You used to sleep fine, but lately you can&rsquo;t sleep in your own bed. Maybe it started with a move, a new bed, or a new cell phone tower in the neighborhood.</li>
+  </ul>
+  <p class="nights-close">Most of what people try looks at you: your habits, your thoughts, your chemistry. This looks at the room too.</p>
+</section>
+
+<!-- SECTION 3 — ONE STORY -->
+<section class="story wrap">
+  <div class="story-grid">
+    <figure class="plate">
+      <div class="photo-slot warm photo-filled" aria-hidden="true">
+        <img src="assets/img/6a9505a02181.jpg" alt="" />
+      </div>
+      <figcaption>Plate I &mdash; The boxes, still waiting</figcaption>
+    </figure>
+    <div>
+      <span class="eyebrow">One Story</span>
+      <h2>The apartment she couldn&rsquo;t unpack.</h2>
+      <p>A woman moved into a new apartment and, a month later, still hadn&rsquo;t unpacked. Not because she was busy. Something in her wouldn&rsquo;t settle &mdash; she avoided her closet without knowing why, and sleep never quite arrived.</p>
+      <p>When Bobby assessed the space, he found earth gridlines crossing her bed, an electrical panel and wifi router positioned right where she slept, and a stress line running from the refrigerator straight through her bed and closet. None of it was visible. All of it showed up in the reading.</p>
+      <p>After the correction, she slept through the night for the first time since moving in.</p>
+      <blockquote>&ldquo;It&rsquo;s just nice to be home today. Not hampered by anxiety.&rdquo;<cite class="quote-by">&mdash; SL, Portland</cite></blockquote>
+      <div class="story-foot"><a href="beyond.html" class="soft-link">Read more stories &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3b — WHAT HAPPENS AND WHAT IT COSTS -->
+<section class="offer">
+  <div class="wrap">
+    <span class="eyebrow">What Happens</span>
+    <h2>A free call, one visit, a follow-up. <em>And what it costs.</em></h2>
+    <ol class="steps">
+      <li><b>1</b><strong>A free call</strong><span>Tell Bobby what you&rsquo;ve noticed about your sleep, your space, and how different rooms feel. You don&rsquo;t need the right words.</span></li>
+      <li><b>2</b><strong>The assessment</strong><span>Bobby walks the space room by room and maps what&rsquo;s beneath and within it.</span></li>
+      <li><b>3</b><strong>Solutions placed</strong><span>Small BioGeometry&reg; solutions go where the reading calls for them. Nothing drilled, wired, or altered.</span></li>
+      <li><b>4</b><strong>Re-measured</strong><span>Right after placement, to confirm the reading holds.</span></li>
+      <li><b>5</b><strong>The follow-up</strong><span>Two to three weeks later, included in every tier.</span></li>
+    </ol>
+    <p class="offer-note">Most people notice something within the first few days to weeks. It tends to be subtle at first. Renters never need landlord permission, since the solutions come out as easily as they go in.</p>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tier-name">Introductory Consultation</span>
+        <span class="tier-price">$500</span>
+        <p>One primary space, usually the bedroom. For anyone still wondering whether this will make a difference.</p>
+      </div>
+      <div class="tier">
+        <span class="tier-name">Essential</span>
+        <span class="tier-price">From $1,200</span>
+        <p>The whole home. Priced by size, number of rooms, and the electromagnetic sources found.</p>
+      </div>
+      <div class="tier">
+        <span class="tier-name">Essential PLUS</span>
+        <span class="tier-price">Set after the visit</span>
+        <p>For homes with more layers: heavier EMF environments or significant geopathic stress.</p>
+      </div>
+    </div>
+    <div class="offer-cta">
+      <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
+      <p>You don&rsquo;t have to decide anything tonight. The first call is free, with no obligation on either side.</p>
+      <a href="how-it-works.html" class="soft-link">See the full process &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 — BOBBY, BRIEFLY -->
+<section class="bobby">
+  <div class="bobby-grid wrap">
+    <div>
+      <span class="eyebrow on-pine">Bobby, Briefly</span>
+      <h2>He tested this <em>on his own home first.</em></h2>
+      <p>Bobby Jones traced invisible contamination through groundwater as a hydrogeologist, then spent two decades as a chiropractor watching patients improve in his office only to backslide within days of going home. He&rsquo;s a licensed BioGeometry&reg;-EHS Associate-Practitioner based in the Pacific Northwest &mdash; and long before any of that, his own body was sensitive to exactly this kind of stress.</p>
+      <div style="margin-top:22px;"><a href="about.html" class="soft-link on-pine">Read the full story &rarr;</a></div>
+    </div>
+    <figure class="plate">
+      <div class="photo-slot photo-filled">
+        <img src="assets/img/e5d92efa8c60.jpg" alt="Bobby Jones outdoors among green bushes, wearing a cap and glasses" />
+      </div>
+      <figcaption>Plate II &mdash; Bobby, in the field</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SECTION 4 — WHAT'S ACTUALLY HAPPENING -->
+<section class="mechanism">
+  <div class="mechanism-grid wrap">
+    <div>
+      <span class="eyebrow">What&rsquo;s Actually Happening</span>
+      <h2>The body already knows how to rest and reset, <em>once it has permission.</em></h2>
+    </div>
+    <div>
+      <p>A home under geopathic and electromagnetic stress may keep the nervous system on alert, stuck in overdrive &mdash; the same low-grade vigilance that keeps an animal from fully resting near a predator. A body that can&rsquo;t stand down may not reach the depth of sleep where real repair happens.</p>
+      <p>This is the work Bobby titled Call and Response: finding where a space may be keeping your body on alert, and giving it back a place safe enough to do what it already knows how to do.</p>
+      <div class="mechanism-foot"><a href="how-it-works.html" class="soft-link">See how it works &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 — WHO THIS IS FOR -->
+<section class="who wrap">
+  <span class="eyebrow">Who This Is For</span>
+  <h2>Two ways of noticing the same thing.</h2>
+  <div class="who-grid">
+    <div class="who-col">
+      <span class="num">One</span>
+      <p>If you&rsquo;ve been told your labs are fine, or that it&rsquo;s probably just stress, and that explanation never actually made the feeling go away &mdash; you&rsquo;re not imagining it. You may just be looking in the wrong place.</p>
+    </div>
+    <div class="who-col">
+      <span class="num">Or</span>
+      <p>Maybe it&rsquo;s simpler than that. Nothing&rsquo;s technically wrong. There&rsquo;s no test that would catch it, nothing you&rsquo;d bring to a doctor. You just don&rsquo;t feel fully at ease in your own home, and you can&rsquo;t quite say why.</p>
+    </div>
+  </div>
+  <p class="who-close">Both are the same signal, at different volumes.<br>Not a failing in you. Something to notice in the room around you.</p>
+</section>
+
+<!-- CLIENTS, IN THEIR WORDS -->
+<section class="voices">
+  <div class="wrap">
+    <span class="eyebrow">In Their Words</span>
+    <div class="voices-grid">
+      <blockquote>&ldquo;Keep working &mdash; I&rsquo;m liking this.&rdquo;<cite class="quote-by">&mdash; DF, Wilder, TN</cite></blockquote>
+      <blockquote>&ldquo;I slept better last night than I can remember. I felt so good, I didn&rsquo;t want to get out of bed.&rdquo;<cite class="quote-by">&mdash; JR, Calhoun, GA</cite></blockquote>
+      <blockquote>&ldquo;I think we both slept better &mdash; bed was easier to make. And G spent less time on the computer this morning <span class="emo" aria-label="smiley face" role="img">&#128578;</span>&rdquo;<cite class="quote-by">&mdash; LM, Portland, OR</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- CHECK WITH YOUR DOCTOR FIRST -->
+<section class="checkfirst wrap">
+  <p><strong>Before you book:</strong> check with your doctor first if you wake gasping for air, your heart races or pounds at night, your sleep changed when you started or stopped a medication, or it came with pregnancy, postpartum, or menopause. A home assessment looks at your space, not your health. It isn&rsquo;t medical care, and it works best alongside your doctor&rsquo;s.</p>
+</section>
+
+<!-- SECTION 7 — CLOSE -->
+<section class="close wrap">
+  <h2>Not sure where to start?</h2>
+  <p class="lede">Answer a few honest questions about your sleep, your space, and how your home actually feels &mdash; and find out what it&rsquo;s telling you.</p>
+  <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a>
+  <a href="contact.html" class="soft-link faq-link">Or book a free call &rarr;</a>
+  <a href="faq.html" class="soft-link faq-link">Still have questions? See the FAQ &rarr;</a>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a href="index.html" class="sf-word">Spaces Within</a>
+    <p class="sf-tag">beneath. within. you.</p>
+    <p class="sf-line">Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</p>
+    <p class="sf-contact"><a href="tel:+15035685033">(503) 568-5033</a> &nbsp;&middot;&nbsp; <a href="mailto:bobby@thespaceswithin.com">bobby@thespaceswithin.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
