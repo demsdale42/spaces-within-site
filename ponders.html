@@ -183,7 +183,8 @@
       z-index:5;
     }
     .nav-links.is-open{max-height:480px;}
-    .nav ul.nav-links{padding:8px clamp(20px,5vw,64px) 20px;}
+    .nav ul.nav-links{padding:0 clamp(20px,5vw,64px); border-bottom-color:transparent; transition:max-height .22s ease, padding .22s ease;}
+    .nav ul.nav-links.is-open{padding:8px clamp(20px,5vw,64px) 20px; border-bottom-color:var(--line);}
     .nav-links li{width:100%;}
     .nav-links li a{display:block; padding-block:11px; border-bottom:1px solid var(--line);}
     .nav-links li:last-child a{border-bottom:none;}

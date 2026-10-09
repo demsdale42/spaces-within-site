@@ -182,7 +182,8 @@
       z-index:5;
     }
     .nav-links.is-open{max-height:480px;}
-    .nav ul.nav-links{padding:8px clamp(20px,5vw,64px) 20px;}
+    .nav ul.nav-links{padding:0 clamp(20px,5vw,64px); border-bottom-color:transparent; transition:max-height .22s ease, padding .22s ease;}
+    .nav ul.nav-links.is-open{padding:8px clamp(20px,5vw,64px) 20px; border-bottom-color:var(--line);}
     .nav-links li{width:100%;}
     .nav-links li a{display:block; padding-block:11px; border-bottom:1px solid var(--line);}
     .nav-links li:last-child a{border-bottom:none;}
@@ -358,6 +359,11 @@
   .site-foot .sf-contact a:hover{color:var(--ink);}
   /* headlines: lighter weight, matching the homepage */
   h1,h2{font-weight:450; letter-spacing:-0.012em;}
+
+  .avail{display:flex; align-items:center; gap:10px; margin-top:clamp(16px,2.6vh,24px); font-family:"Public Sans", system-ui, sans-serif; font-size:13.5px; letter-spacing:0.02em; color:var(--pine-text);}
+  .avail[hidden]{display:none;}
+  .avail strong{font-weight:600;}
+  .avail-dot{flex:none; width:8px; height:8px; border-radius:50%; background:var(--copper); box-shadow:0 0 0 3px color-mix(in srgb, var(--copper) 22%, transparent);}
 </style>
 </head>
 <body>
@@ -389,6 +395,7 @@
     <span class="eyebrow">Contact</span>
     <h1>Let&rsquo;s talk</h1>
     <p class="kicker">Bring what you&rsquo;ve noticed. We&rsquo;ll go from there.</p>
+    <p class="avail" data-avail hidden><span class="avail-dot" aria-hidden="true"></span><span>Now scheduling <strong data-avail-month></strong> assessments.</span></p>
   </div>
 </section>
 
@@ -531,6 +538,26 @@
   var h=document.querySelector('.site-head'); if(!h) return;
   function f(){ h.classList.toggle('is-stuck', (window.scrollY||document.documentElement.scrollTop)>4); }
   f(); window.addEventListener('scroll',f,{passive:true});
+})();
+</script>
+<script>
+/* Availability line. On SWITCH_DAY of each month and after, it names next month; before that, the current month.
+   Remove the data-avail lines (or set SHOW=false) when there are no openings. */
+(function(){
+  try{
+    var SHOW = true, SWITCH_DAY = 5;
+    var els = document.querySelectorAll('[data-avail]');
+    if(!SHOW || !els.length) return;
+    var p = new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'numeric',day:'numeric'}).formatToParts(new Date());
+    var mo = 0, day = 1;
+    p.forEach(function(x){ if(x.type==='month') mo = parseInt(x.value,10)-1; if(x.type==='day') day = parseInt(x.value,10); });
+    if(day >= SWITCH_DAY) mo = (mo+1) % 12;
+    var names = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    for(var i=0;i<els.length;i++){
+      var m = els[i].querySelector('[data-avail-month]');
+      if(m){ m.textContent = names[mo]; els[i].hidden = false; }
+    }
+  }catch(e){}
 })();
 </script>
 </body>
