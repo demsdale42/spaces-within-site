@@ -141,6 +141,11 @@
   .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
   .nav-links{display:flex;}
   .nav{position:relative;}
+  /* sticky header: the nav stays at the top of the window while the page scrolls */
+  html{scroll-padding-top:72px;}
+  .site-head{position:sticky; top:0; z-index:50; background:var(--paper);}
+  .site-head.is-stuck{box-shadow:0 1px 0 var(--line), 0 8px 16px -12px rgba(0,0,0,.22);}
+  .site-head.is-stuck .nav{border-bottom-color:transparent;}
 
   .nav-toggle{
     display:none;
@@ -171,7 +176,7 @@
   .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before{transform:translateY(6px) rotate(45deg);}
   .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg);}
 
-  @media (max-width:640px){
+  @media (max-width:880px){
     .nav-toggle{display:flex;}
     .nav-links{
       flex-direction:column;
@@ -189,6 +194,7 @@
       z-index:5;
     }
     .nav-links.is-open{max-height:480px;}
+    .nav ul.nav-links{padding:8px clamp(20px,5vw,64px) 20px;}
     .nav-links li{width:100%;}
     .nav-links li a{display:block; padding-block:11px; border-bottom:1px solid var(--line);}
     .nav-links li:last-child a{border-bottom:none;}
@@ -752,6 +758,7 @@
 <body>
 
 
+<header class="site-head">
 <nav class="nav wrap">
   <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
@@ -769,6 +776,7 @@
     <li><a href="contact.html">Let&rsquo;s Talk</a></li>
   </ul>
 </nav>
+</header>
 
 <!-- SECTION 1 — HERO -->
 <section class="hero-d1">
@@ -1017,6 +1025,14 @@
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}
   window.addEventListener('load',fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* sticky header: add a soft edge once the page has scrolled */
+(function(){
+  var h=document.querySelector('.site-head'); if(!h) return;
+  function f(){ h.classList.toggle('is-stuck', (window.scrollY||document.documentElement.scrollTop)>4); }
+  f(); window.addEventListener('scroll',f,{passive:true});
 })();
 </script>
 </body>
