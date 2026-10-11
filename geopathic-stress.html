@@ -334,14 +334,14 @@
   .site-foot .sf-word{
     display:inline-block;
     font-family:"Fraunces", serif;
-    font-weight:560;
+    font-weight:600;
     font-size:clamp(26px,2.6vw,30px);
     letter-spacing:0.005em;
     color:var(--ink);
     text-decoration:none;
     line-height:1.1;
   }
-  /* tagline sits under the wordmark, starts after "Sp", and is tracked out to end under the final "n" (sized by the small script at the bottom) */
+  /* tagline sits under the wordmark like the business card: starts under the "c", runs a little past the final "n" (sized by the small script at the bottom) */
   .site-foot .sf-tag{
     display:block;
     width:max-content;
@@ -625,20 +625,20 @@
 })();
 </script>
 <script>
-/* footer lockup: tuck "beneath. within. you." under Spaces Within, from just after the "p" to the end of the "n" */
+/* footer lockup (matches the business card / logo): tagline starts under the "c" of "Spaces", is tracked out airy, and runs a little past the final "n" */
 (function(){
   function fit(){
     var w=document.querySelector('.sf-word'), t=document.querySelector('.sf-tag');
     if(!w||!t||!w.firstChild) return;
-    var r=document.createRange(); r.setStart(w.firstChild,0); r.setEnd(w.firstChild,2);
-    var off=r.getBoundingClientRect().width, W=w.getBoundingClientRect().width, avail=W-off;
+    var r=document.createRange(); r.setStart(w.firstChild,0); r.setEnd(w.firstChild,3);
+    var off=r.getBoundingClientRect().width, W=w.getBoundingClientRect().width, over=W*0.036, avail=W-off+over;
     if(avail<60) return;
     t.style.letterSpacing='0px'; t.style.marginRight='0px'; t.style.marginLeft=off+'px'; t.style.fontSize='16px';
     var n0=t.getBoundingClientRect().width, fs=16*(avail*0.8)/n0;
     fs=Math.max(12,Math.min(20,fs)); t.style.fontSize=fs+'px';
     var n=t.getBoundingClientRect().width, len=t.textContent.length;
     var ls=Math.max(0,(avail-n)/(len-1));
-    t.style.letterSpacing=ls+'px'; t.style.marginRight=(-ls)+'px';
+    t.style.letterSpacing=ls+'px'; t.style.marginRight=(-(ls+over))+'px';
   }
   fit();
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}
