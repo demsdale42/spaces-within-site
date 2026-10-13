@@ -360,6 +360,19 @@
   }
 
   /* ---- close CTA ---- */
+  /* ---- share invitation ---- */
+  .share{text-align:center; padding-block:clamp(36px,5vw,56px);}
+  .share h2{font-size:clamp(20px,2.3vw,26px); max-width:560px; margin:0 auto; font-weight:450;}
+  .share p{max-width:520px; margin:12px auto 0; color:var(--ink-soft); line-height:1.55;}
+  .share-links{list-style:none; padding:0; margin:20px 0 0; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px;}
+  .share-links a, .share-links button{
+    font:inherit; font-family:"Public Sans", sans-serif; font-weight:600; font-size:15.5px;
+    color:var(--copper-deep); background:none; border:0; border-bottom:1px solid var(--copper-deep);
+    padding:2px 0; cursor:pointer; text-decoration:none; line-height:1.4;
+  }
+  .share-links a:hover, .share-links button:hover{color:var(--ink); border-color:var(--ink);}
+  .share-links a:focus-visible, .share-links button:focus-visible{outline:2px solid var(--copper); outline-offset:3px;}
+  .share-note{min-height:1.4em; margin-top:10px; font-size:14px; color:var(--ink-soft);}
   /* ---- email sign-up band ---- */
   .signup{background:var(--paper-2); text-align:center; padding-block:clamp(44px,6vw,72px);}
   .signup h2{font-size:clamp(22px,2.6vw,30px); max-width:560px; margin:0 auto; font-weight:450;}
@@ -538,6 +551,18 @@
 
 </section>
 
+<!-- SHARE -->
+<section class="share wrap" data-share-url="https://thespaceswithin.com/ponders-your-body-sleeps-your-bedroom-doesnt.html">
+  <h2>Know someone who might want to read this?</h2>
+  <p>If it was worth your time, you&rsquo;re welcome to pass it along to a friend or family member. No pressure either way.</p>
+  <ul class="share-links">
+    <li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthespaceswithin.com%2Fponders-your-body-sleeps-your-bedroom-doesnt.html" target="_blank" rel="noopener">Share on LinkedIn</a></li>
+    <li><a href="mailto:?subject=A%20Ponder%20you%20might%20like%3A%20Your%20Body%20Sleeps.%20Your%20Bedroom%20Doesn%E2%80%99t.&amp;body=I%20read%20this%20and%20thought%20of%20you%3A%0A%0Ahttps%3A//thespaceswithin.com/ponders-your-body-sleeps-your-bedroom-doesnt.html%0A%0AIt%E2%80%99s%20a%20short%20read%20from%20Bobby%20Jones%20at%20Spaces%20Within.">Email it to a friend</a></li>
+    <li><button type="button" class="copy-link">Copy link</button></li>
+  </ul>
+  <p class="share-note" role="status" aria-live="polite"></p>
+</section>
+
 <!-- EMAIL SIGN-UP -->
 <section class="signup wrap">
   <h2>Get new Ponders by email</h2>
@@ -608,6 +633,26 @@
   var h=document.querySelector('.site-head'); if(!h) return;
   function f(){ h.classList.toggle('is-stuck', (window.scrollY||document.documentElement.scrollTop)>4); }
   f(); window.addEventListener('scroll',f,{passive:true});
+})();
+</script>
+<script>
+/* share: copy the page link */
+(function(){
+  var b=document.querySelector('.share .copy-link'); if(!b) return;
+  var s=document.querySelector('.share'), note=document.querySelector('.share-note');
+  var url=s.getAttribute('data-share-url');
+  function say(m){ if(note) note.textContent=m; }
+  b.addEventListener('click', function(){
+    function fallback(){
+      var t=document.createElement('input'); t.value=url; t.setAttribute('readonly','');
+      t.style.position='absolute'; t.style.left='-9999px'; document.body.appendChild(t); t.select();
+      var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(t); say(ok ? 'Link copied.' : url);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ say('Link copied.'); }, fallback);
+    } else { fallback(); }
+  });
 })();
 </script>
 </body>
