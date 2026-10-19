@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spaces Within">
 <meta property="og:title" content="Spaces Within | BioGeometry&reg;-EHS Home Assessments">
-<meta property="og:description" content="When rest just won&rsquo;t come, a home assessment looks at the room you sleep in: the ground beneath it, the fields within it, and how your body responds. In-home assessments across greater Portland and within 150 miles.">
+<meta property="og:description" content="Told it&rsquo;s just stress? Chronic stress happens when a body can&rsquo;t recover, and your home may be in the way. A home assessment looks at the room you sleep and work in: the ground beneath it, the fields within it, and how your body responds. In-home assessments across greater Portland and within 150 miles.">
 <meta property="og:url" content="https://thespaceswithin.com/">
 <meta property="og:image" content="https://thespaceswithin.com/assets/img/8b5c56f71d8a.jpg">
 <meta property="og:image:width" content="1200">
@@ -23,6 +23,7 @@
   :root{
     --paper:#EBEADF;
     --paper-2:#E1DFD1;
+    --paper-3:#D9D4BF;
     --ink:#211F1A;
     --ink-soft:#5B5748;
     --pine:#22403A;
@@ -42,6 +43,7 @@
     :root:not([data-theme="light"]){
       --paper:#171613;
       --paper-2:#1E1C18;
+      --paper-3:#26231D;
       --ink:#EAE5D8;
       --ink-soft:#B6AF9C;
       --pine:#132621;
@@ -61,6 +63,7 @@
   :root[data-theme="dark"]{
     --paper:#171613;
     --paper-2:#1E1C18;
+    --paper-3:#26231D;
     --ink:#EAE5D8;
     --ink-soft:#B6AF9C;
     --pine:#132621;
@@ -485,6 +488,14 @@
   .story p{font-size:16.5px; color:var(--ink-soft);}
   .story p + p{margin-top:16px;}
   .story-foot{margin-top:28px;}
+  /* dark-green One Story band (matches Bobby, Briefly) */
+  .story-dark{background:var(--pine); color:var(--paper-on-pine);}
+  .story-dark h2{color:var(--paper-on-pine);}
+  .story-dark p{color:rgba(239,233,220,0.85);}
+  .story-dark blockquote{color:var(--paper-on-pine); border-left-color:#D3A46E;}
+  .story-dark blockquote .quote-by{color:rgba(239,233,220,0.72);}
+  .story-dark .photo-slot{border-color:rgba(239,233,220,0.35);}
+  .story-dark .plate figcaption{color:rgba(239,233,220,0.72);}
 
   /* ---- section 4: whats actually happening ---- */
   .mechanism{
@@ -647,6 +658,107 @@
   }
 
 
+
+  /* ---- new in v42: stress-first homepage ---- */
+  .hero-d1-copy h1 .ha{font-size:.6em; line-height:1.2; margin-top:.35em; letter-spacing:-0.01em;}
+  .hero-d1-copy .hero-cta .btn{font-size:clamp(13.5px,0.98vw,15px); padding-inline:clamp(14px,1.25vw,20px); white-space:nowrap;}
+  .hero-d1-copy .hero-call{margin-top:16px; font-family:"Public Sans", system-ui, sans-serif; font-size:14.5px;}
+  .hero-d1-copy .hero-call .soft-link{color:var(--pine-text);}
+  #night,#office{scroll-margin-top:90px;}
+  .nights.office{padding-top:clamp(36px,5vw,60px);}
+  .nights + .nights.office{border-top:0;}
+  .nights.office + .story{padding-top:clamp(36px,5vw,60px);}
+  /* Does this resonate: two cards, one paragraph and one button each */
+  .resonate{background:var(--paper-3); border-block:1px solid var(--line); padding-block:clamp(64px,9vw,110px);}
+  .resonate h2{font-size:clamp(26px,3vw,34px); max-width:720px; font-weight:450; letter-spacing:-0.012em;}
+  .resonate h2 em{color:var(--copper-deep); font-weight:450;}
+  .res-grid{margin-top:40px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(18px,2.4vw,32px);}
+  .res-card{border:1px solid var(--line); background:var(--paper); padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; align-items:flex-start; gap:16px; min-width:0;}
+  .res-card h3{margin:0; font-family:"Newsreader", Georgia, serif; font-weight:560; font-size:clamp(21px,2vw,25px); line-height:1.2; color:var(--pine-text);}
+  .res-card p{margin:0; font-family:"Newsreader", Georgia, serif; font-weight:440; font-size:clamp(18px,1.6vw,20px); line-height:1.55; color:var(--pine-text);}
+  .res-card .btn{margin-top:auto;}
+  @media (max-width:760px){ .res-grid{grid-template-columns:1fr;} }
+  /* BioGeometry intro, leads into the Three-Layer Read */
+  .bgintro{padding-block:clamp(64px,9vw,110px) clamp(48px,7vw,84px);}
+  .bgintro h2{font-size:clamp(26px,3vw,34px); max-width:720px; font-weight:450; letter-spacing:-0.012em;}
+  .bgintro p{font-size:clamp(17px,1.5vw,19px); line-height:1.65; color:var(--ink-soft); max-width:40em; margin-top:16px;}
+  .bgintro p strong{color:var(--pine-text); font-weight:600;}
+  .layers{padding-block:clamp(40px,6vw,72px) 0; border-top:1px solid var(--line);}
+    .layers-lead{font-family:"Newsreader", Georgia, serif; font-weight:440; font-size:clamp(20px,2.1vw,26px); line-height:1.45; max-width:34em; margin-top:6px; color:var(--pine-text);}
+  .layers .lyr{color:var(--lyr); font-family:"Newsreader", Georgia, serif; font-style:italic; font-weight:500; font-size:1.12em;}
+  .layers .hero-creds{padding-inline:0; margin-top:clamp(28px,4vw,44px); padding-bottom:clamp(40px,6vw,72px);}
+  .turn p + p{margin-top:16px;}
+  @media (max-width:900px){
+    .hero-d1-copy h1 .ha{font-size:.62em;}
+    .hero-d1-copy .hero-cta .btn{white-space:normal; font-size:15.5px; padding:15px 22px;}
+    .layers .hero-creds{margin-top:26px; padding-bottom:44px;}
+  }
+
+  /* ---- v42b: full-width photo hero, text on the left ---- */
+  .hero-full{position:relative; overflow:hidden; background:#0e1213; height:clamp(500px, calc(100vh - 75px), 760px); display:flex; align-items:center;}
+  .hero-full-pic{position:absolute; inset:0; display:block;}
+  .hero-full-pic img{position:absolute; right:0; top:0; height:100%; width:auto; max-width:none; display:block; -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 30%); mask-image:linear-gradient(90deg, transparent 0, #000 30%);}
+  .hero-full-shade{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(90deg, rgba(14,18,19,.7) 0%, rgba(14,18,19,.55) 34%, rgba(14,18,19,.25) 50%, rgba(14,18,19,0) 64%);
+  }
+  .hero-full-inner{position:relative; z-index:1; width:100%; max-width:1240px; margin-inline:auto; padding-inline:clamp(20px,5vw,64px);}
+  .hero-full-copy{max-width:min(700px, 66%); color:#F4EFE3;}
+  .hero-full-copy h1{
+    font-family:"Newsreader", Georgia, serif; font-weight:440; font-optical-sizing:auto;
+    font-size:clamp(34px, min(4.1vw, 7vh), 62px); line-height:1.08; letter-spacing:-0.018em; color:#F7F2E6;
+    text-shadow:0 1px 18px rgba(8,16,14,.35);
+  }
+  .hero-full-copy h1 .hq, .hero-full-copy h1 .ha{display:block; text-wrap:balance;}
+  .hero-full-copy h1 em{color:#E0B27C; font-weight:440;}
+  .hero-full-copy h1 .ha .s{display:block; text-wrap:balance;}
+  .hero-full-copy h1 .ha{font-size:.53em; line-height:1.25; margin-top:.5em; letter-spacing:-0.005em;}
+  .hero-full-copy .kicker{font-size:clamp(15.5px, min(1.2vw, 2.4vh), 19px); line-height:1.65; margin-top:clamp(20px,3.4vh,34px); color:#EFE9DC; text-shadow:0 1px 12px rgba(8,16,14,.4);}
+  .hero-full-copy .hero-area{font-family:"Newsreader", Georgia, serif; font-style:italic; font-weight:440; font-size:clamp(15px,1.15vw,17.5px); line-height:1.4; margin-top:clamp(14px,2.4vh,22px); color:#E0B27C;}
+  @media (min-width:1400px){.hero-full-copy{max-width:min(760px, 72%);}}
+  .hero-full-copy .kicker{max-width:32em;}
+  .hero-full-copy .hero-area{max-width:34em;}
+  .hero-full-copy .avail{color:#EFE9DC; margin-top:clamp(16px,2.6vh,24px);}
+  .hero-full-copy .avail-dot{background:#E0B27C; box-shadow:0 0 0 3px rgba(224,178,124,.25);}
+  @media (max-width:900px){
+    .hero-full{display:block; height:auto; background:var(--paper);}
+    .hero-full-pic{position:relative; inset:auto;}
+    .hero-full-pic img{position:static; width:100%; height:auto; aspect-ratio:900/947; max-height:70vh; object-fit:cover; object-position:70% 30%; -webkit-mask-image:none; mask-image:none;}
+    .hero-full-shade{display:none;}
+    .hero-full-inner{padding-block:26px 40px;}
+    .hero-full-copy{max-width:none; color:var(--ink);}
+    .hero-full-copy h1{color:var(--pine-text); text-shadow:none; font-size:clamp(32px,9vw,46px);}
+    .hero-full-copy h1 em{color:var(--copper-deep);}
+    .hero-full-copy .kicker{color:var(--ink); text-shadow:none; font-size:clamp(16px,4.2vw,19px);}
+    .hero-full-copy .hero-area{color:var(--copper-deep);}
+    .hero-full-copy .avail{color:var(--pine-text);}
+    .hero-full-copy .avail-dot{background:var(--copper); box-shadow:0 0 0 3px color-mix(in srgb, var(--copper) 22%, transparent);}
+  }
+
+  /* ---- v42: acute vs chronic chart ---- */
+  .sr-only{position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+  .effects{padding-block:clamp(56px,8vw,96px) clamp(40px,6vw,72px);}
+  .effects h2{font-size:clamp(26px,3vw,34px); max-width:720px; font-weight:450; letter-spacing:-0.012em;}
+  .effects h2 em{color:var(--copper-deep); font-weight:450;}
+  .effects-key{display:grid; grid-template-columns:1fr; gap:clamp(20px,3vw,30px); margin-top:clamp(26px,4vw,40px);}
+  .effects-key > div{display:grid; grid-template-columns:clamp(120px,18vw,210px) 1fr; gap:clamp(16px,3vw,36px); align-items:center;}
+  .effects-key svg{display:block; width:100%; height:auto;}
+  .eff-acute{color:var(--pine-text);}
+  .eff-chronic{color:var(--copper-deep);}
+  .effects-key p{margin:0; font-family:"Newsreader", Georgia, serif; font-size:clamp(18px,1.8vw,22px); line-height:1.45; color:var(--ink); max-width:30em;}
+  .effects-key strong{font-weight:600;}
+  .eff-acute strong{color:var(--pine-text);}
+  .eff-chronic strong{color:var(--copper-deep);}
+  .effects-list{list-style:none; margin:clamp(22px,3vw,32px) 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 clamp(28px,5vw,72px);}
+  .effects-list li{padding:14px 0 14px 14px; border-top:1px solid var(--line); border-left:3px solid var(--copper-deep); margin-top:-1px; font-family:"Newsreader", Georgia, serif; font-size:clamp(17.5px,1.6vw,20px); line-height:1.35; color:var(--pine-text);}
+  .effects-note{margin-top:24px; font-size:13px; line-height:1.55; color:var(--ink-soft); max-width:52em;}
+  @media (max-width:700px){
+    .effects-key > div{grid-template-columns:110px 1fr; gap:14px;}
+    .effects-key p{font-size:16.5px;}
+    .effects-list{grid-template-columns:1fr;}
+  }
+
   /* ---- new in v25: sleep-range copy ---- */
   .nights{padding-block:clamp(64px,9vw,110px) clamp(36px,5vw,60px);}
   .nights + .story{padding-top:clamp(36px,5vw,60px);}
@@ -669,8 +781,12 @@
     font-size:clamp(19px,2.2vw,23px); color:var(--ink-soft); text-align:center; text-wrap:balance;
   }
   .nights-cta{margin-top:34px; text-align:center;}
+  /* darker-beige band behind the home office questions */
+  .nights-band{background:var(--paper-3); border-block:1px solid var(--line);}
+  .nights-band .nights{padding-block:clamp(64px,9vw,110px);}
+  .nights-band .nights-grid li,.nights-band .nights-close{border-top-color:color-mix(in srgb, var(--ink) 25%, transparent);}
   .offer{
-    background:var(--paper-2); border-block:1px solid var(--line);
+    background:var(--paper-3); border-block:1px solid var(--line);
     padding-block:clamp(64px,9vw,110px);
   }
   .steps{
@@ -791,36 +907,54 @@
 </nav>
 </header>
 
-<!-- SECTION 1 — HERO -->
-<section class="hero-d1">
-  <div class="hero-inner">
-    <div class="hero-d1-grid">
-      <figure class="hero-plate">
-        <div class="hero-plate-img">
-          <picture><source media="(max-width:900px)" srcset="assets/img/eeabbd754ec1.jpg"><img src="assets/img/028947e6b70e.jpg" alt="A woman in a white blouse looking toward the light in a bright bedroom" /></picture>
-        </div>
-      </figure>
-      <div class="hero-d1-copy">
-        <span class="eyebrow">The Three-Layer Read</span>
-        <h1><span class="hq">When rest just won&rsquo;t come.</span> <em class="ha">Your house may be telling you something.</em></h1>
-        <p class="kicker">A home assessment reads three layers: what&rsquo;s <span class="lyr">beneath</span> your house, what&rsquo;s <span class="lyr">within</span> it, and <span class="lyr">you</span>: how your body responds. No scare stories. Whatever&rsquo;s placed is re-measured before Bobby leaves, then checked again two to three weeks later.</p>
-        <p class="hero-area">In-home assessments across greater Portland and within 150 miles. From $500 for a single room.</p>
-        <div class="hero-cta">
-          <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the 2&#8209;Minute Sleep Quiz</a>
-          <a href="contact.html" class="btn btn-outline-hero">Book a Free Call</a>
-        </div>
-        <p class="avail" data-avail hidden><span class="avail-dot" aria-hidden="true"></span><span>Now scheduling <strong data-avail-month></strong> assessments.</span></p>
-      </div>
+<!-- SECTION 1 — HERO (full-width photo, text on the left) -->
+<section class="hero-full">
+  <picture class="hero-full-pic">
+    <source media="(max-width:900px)" srcset="assets/img/e14a6b0f93c7.jpg">
+    <img src="assets/img/7c3e91a5d2b8.jpg" alt="A woman at a kitchen counter, chin resting on her hand, stirring a cup of tea and looking away toward the window" width="2000" height="1333" fetchpriority="high" />
+  </picture>
+  <div class="hero-full-shade" aria-hidden="true"></div>
+  <div class="hero-full-inner">
+    <div class="hero-full-copy">
+      <h1><span class="hq">Told it&rsquo;s just stress?</span> <em class="ha"><span class="s">Chronic stress happens when a body can&rsquo;t recover.</span> <span class="s">Your home may be in the way.</span></em></h1>
+      <p class="kicker">Sleep. Screens. The desk you work at. The room you rest in. Most advice works on your symptoms. BioGeometry&reg; works on your space.</p>
+      <p class="hero-area">In-home assessments across greater Portland and within 150 miles.</p>
+      <p class="avail" data-avail hidden><span class="avail-dot" aria-hidden="true"></span><span>Now scheduling <strong data-avail-month></strong> assessments.</span></p>
     </div>
   </div>
-  <div class="hero-creds">
-    <p class="hero-creds-lead">Home assessments by <strong>Bobby Jones</strong></p>
-    <ul>
-      <li><b>I &middot; Beneath</b>Former hydrogeologist</li>
-      <li><b>II &middot; Within</b><span>Licensed <strong>BioGeometry&reg;&#8209;EHS</strong> Associate&#8209;Practitioner</span></li>
-      <li><b>III &middot; You</b>20 years in chiropractic</li>
-    </ul>
+</section>
+
+<!-- SECTION 1b — WHAT CHRONIC STRESS DOES (acute vs chronic chart) -->
+<section class="effects wrap" id="effects">
+  <span class="eff-eyebrow eyebrow">What it does to a body</span>
+  <h2>Stress that passes. <em>Stress that stays.</em></h2>
+  <div class="effects-key">
+    <div class="eff-acute">
+      <svg viewBox="0 0 200 60" role="img" aria-label="Acute stress: the line rises, then returns to baseline" focusable="false">
+        <line x1="0" y1="50" x2="200" y2="50" stroke="currentColor" stroke-opacity=".35" stroke-width="1" stroke-dasharray="4 4"/>
+        <path d="M0 50 C38 50 52 10 80 10 C108 10 122 50 160 50 L200 50" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <p><strong>Acute stress is protection.</strong> Your body revs up to handle a threat, then recovers when it&rsquo;s gone.</p>
+    </div>
+    <div class="eff-chronic">
+      <svg viewBox="0 0 200 60" role="img" aria-label="Chronic stress: the line rises and stays high" focusable="false">
+        <line x1="0" y1="50" x2="200" y2="50" stroke="currentColor" stroke-opacity=".35" stroke-width="1" stroke-dasharray="4 4"/>
+        <path d="M0 50 C38 50 52 12 80 12 C112 12 130 12 200 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <p><strong>Chronic stress is when the body never gets a chance to recover.</strong> It can result in:</p>
+    </div>
   </div>
+  <ul class="effects-list">
+    <li>Trouble falling or staying asleep</li>
+    <li>Raised blood pressure</li>
+    <li>Anxiety, low mood and trouble concentrating</li>
+    <li>Headaches and aching muscles</li>
+    <li>Digestive trouble</li>
+    <li>Weight gain around the middle</li>
+    <li>More frequent infections</li>
+    <li>Skin flare-ups</li>
+  </ul>
+  <p class="effects-note">General information, not medical advice. If you have any of these symptoms, see your doctor first. Sources: Mayo Clinic, &ldquo;Chronic stress puts your health at risk&rdquo;; McEwen, <em>New England Journal of Medicine</em>, 1998.</p>
 </section>
 
 <!-- SECTION 2 — THE TURN -->
@@ -834,31 +968,62 @@
     </svg>
   </div>
   <div class="turn-inner wrap">
-    <span class="eyebrow on-pine">The Turn</span>
-    <h2>The elephant in the room <em>is the room.</em></h2>
-    <p>If you&rsquo;ve tried the usual things &mdash; melatonin, magnesium, the apps, the sleep-hygiene list &mdash; and your nights still aren&rsquo;t what you want, it may not be a personal failing. It may be that nobody has ever thought to look at the room.</p>
+    <span class="eyebrow on-pine">Ok, now what?</span>
+    <h2>A thousand small things. <em>Has anyone checked the room?</em></h2>
+    <p>Stress isn&rsquo;t always one big event. Often it&rsquo;s a thousand small things, each asking a little too much of your body, day after day, with no real chance to recover. That&rsquo;s what makes stress chronic. It adds up.</p>
+    <p>You&rsquo;ve probably worked on the ones you can see: the schedule, the screen time, the sleep-hygiene list, the melatonin, the meditation. If none of it has been enough, it may not be a personal failing. It may be that nobody has ever thought to look at the room, the one place your body is supposed to recover.</p>
   </div>
 </section>
 
-<!-- SECTION 2b — DOES THIS SOUND LIKE YOUR NIGHT -->
-<section class="nights wrap">
-  <span class="eyebrow">Sound Familiar?</span>
-  <h2>Does this sound like <em>your night?</em></h2>
-  <ul class="nights-grid">
-    <li>Tired and wired: you&rsquo;re worn out all day, then wide awake the moment your head hits the pillow.</li>
-    <li>You wake at 3am and can&rsquo;t get back to sleep.</li>
-    <li>You sleep through, but wake up tired anyway.</li>
-    <li>You&rsquo;ve tried melatonin, magnesium, the apps. It helped for a while, or not at all.</li>
-    <li>You sleep better in a hotel, on vacation, at a friend&rsquo;s place. Anywhere but home.</li>
-    <li>You used to sleep fine, but lately you can&rsquo;t sleep in your own bed. Maybe it started with a move, a new bed, or a new cell phone tower in the neighborhood.</li>
-    <li class="nights-wide">Your little one won&rsquo;t settle at night, and you&rsquo;ve started wondering about the electronics in the room.</li>
-  </ul>
-  <p class="nights-close">Most of what people try looks at you: your habits, your thoughts, your chemistry. This looks at the room too.</p>
-  <p class="nights-cta"><a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a></p>
+<!-- SECTION 2b — DOES THIS RESONATE (night + home office, two cards, one button each) -->
+<section class="resonate">
+  <div class="wrap">
+    <span class="eyebrow">Two short quizzes</span>
+    <h2>Does this <em>resonate?</em></h2>
+    <div class="res-grid">
+      <div class="res-card" id="night">
+        <h3>At night</h3>
+        <p>You&rsquo;re worn out all day, then wide awake the moment your head hits the pillow. You wake at 3am and can&rsquo;t get back to sleep. Or you sleep better anywhere but home: a hotel, a friend&rsquo;s place, on vacation.</p>
+        <a href="https://bobby-ifjfdgxc.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Sleep Quiz</a>
+      </div>
+      <div class="res-card" id="office">
+        <h3>At your desk</h3>
+        <p>Focused work feels like wading through water. Five-minute decisions take twenty. By the end of the day you feel tension in your neck and shoulders, or a mild headache.</p>
+        <a href="https://bobby-ojvbvin8.scoreapp.com" target="_blank" rel="noopener" class="btn btn-copper">Take the Home Office Scorecard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 — WHAT IS BIOGEOMETRY (intro to the Three-Layer Read) -->
+<section class="bgintro">
+  <div class="wrap">
+    <span class="eyebrow">The Work</span>
+    <h2>What is BioGeometry&reg;?</h2>
+    <p>BioGeometry&reg; is an environmental science that works with the quality of energy in a space rather than against it. It identifies the invisible stressors in a home, such as man-made electromagnetic fields and geopathic stress zones, and how they interact.</p>
+    <p><strong>The goal is simple: balance the energy quality of the space, so your home is a place your body can recover in.</strong> Stress will always be part of life. What we can change is how well the body recovers from it, and the room you sleep and work in is a good place to start.</p>
+  </div>
+</section>
+
+<!-- SECTION 3a — THE THREE-LAYER READ -->
+<section class="layers">
+  <div class="wrap">
+    <span class="eyebrow">The Three-Layer Read</span>
+    <p class="layers-lead">A home assessment reads three layers: what&rsquo;s <span class="lyr">beneath</span> your house, what&rsquo;s <span class="lyr">within</span> it, and <span class="lyr">you</span>: how your body responds. Whatever&rsquo;s placed is re-measured before Bobby leaves, then checked again two to three weeks later.</p>
+    <div class="hero-creds">
+      <p class="hero-creds-lead">Home assessments by <strong>Bobby Jones</strong></p>
+      <ul>
+        <li><b>I &middot; Beneath</b>Former hydrogeologist</li>
+        <li><b>II &middot; Within</b><span>Licensed <strong>BioGeometry&reg;&#8209;EHS</strong> Associate&#8209;Practitioner</span></li>
+        <li><b>III &middot; You</b>20 years in chiropractic</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- SECTION 3 — ONE STORY -->
-<section class="story wrap">
+<section class="story story-dark">
+  <div class="wrap">
   <div class="story-grid">
     <figure class="plate">
       <div class="photo-slot warm photo-filled" aria-hidden="true">
@@ -867,14 +1032,15 @@
       <figcaption>Plate I &mdash; The boxes, still waiting</figcaption>
     </figure>
     <div>
-      <span class="eyebrow">One Story</span>
+      <span class="eyebrow on-pine">One Story</span>
       <h2>The apartment she couldn&rsquo;t unpack.</h2>
       <p>A woman moved into a new apartment and, a month later, still hadn&rsquo;t unpacked. Not because she was busy. Something in her wouldn&rsquo;t settle &mdash; she avoided her closet without knowing why, and sleep never quite arrived.</p>
       <p>When Bobby assessed the space, he found earth gridlines crossing her bed, an electrical panel and wifi router positioned right where she slept, and a stress line running from the refrigerator straight through her bed and closet. None of it was visible. All of it showed up in the reading.</p>
       <p>The day after the correction, she texted that she had slept through the night for the first time since moving in.</p>
       <blockquote>&ldquo;It&rsquo;s just nice to be home today. Not hampered by anxiety.&rdquo;<cite class="quote-by">&mdash; SL, Portland</cite></blockquote>
-      <div class="story-foot"><a href="beyond.html" class="soft-link">Read more stories &rarr;</a></div>
+      <div class="story-foot"><a href="beyond.html" class="soft-link on-pine">Read more stories &rarr;</a></div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -934,39 +1100,6 @@
   </div>
 </section>
 
-<!-- SECTION 4 — WHAT'S ACTUALLY HAPPENING -->
-<section class="mechanism">
-  <div class="mechanism-grid wrap">
-    <div>
-      <span class="eyebrow">What&rsquo;s Actually Happening</span>
-      <h2>The body already knows how to rest and reset, <em>once it has permission.</em></h2>
-    </div>
-    <div>
-      <p>A home under geopathic and electromagnetic stress may keep the nervous system on alert, stuck in overdrive &mdash; the same low-grade vigilance that keeps an animal from fully resting near a predator. A body that can&rsquo;t stand down may not reach the depth of sleep where real repair happens.</p>
-      <p>This is the work Bobby titled Call and Response: finding where a space may be keeping your body on alert, and giving it back a place safe enough to do what it already knows how to do.</p>
-      <p>You don&rsquo;t have to choose between &ldquo;it&rsquo;s all fear mongering&rdquo; and &ldquo;everything is dangerous.&rdquo; There&rsquo;s a calmer middle path.</p>
-      <div class="mechanism-foot"><a href="how-it-works.html" class="soft-link">See how it works &rarr;</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 5 — WHO THIS IS FOR -->
-<section class="who wrap">
-  <span class="eyebrow">Who This Is For</span>
-  <h2>Two ways of noticing the same thing.</h2>
-  <div class="who-grid">
-    <div class="who-col">
-      <span class="num">One</span>
-      <p>If you&rsquo;ve been told your labs are fine, or that it&rsquo;s probably just stress, and that explanation never actually made the feeling go away &mdash; you&rsquo;re not imagining it. You may just be looking in the wrong place.</p>
-    </div>
-    <div class="who-col">
-      <span class="num">Or</span>
-      <p>Maybe it&rsquo;s simpler than that. Nothing&rsquo;s technically wrong. There&rsquo;s no test that would catch it, nothing you&rsquo;d bring to a doctor. You just don&rsquo;t feel fully at ease in your own home, and you can&rsquo;t quite say why.</p>
-    </div>
-  </div>
-  <p class="who-close">Both are the same signal, at different volumes.<br>Not a failing in you. Something to notice in the room around you.</p>
-</section>
-
 <!-- CLIENTS, IN THEIR WORDS -->
 <section class="voices">
   <div class="wrap">
@@ -987,7 +1120,7 @@
 <!-- SECTION 7 — CLOSE -->
 <section class="close wrap">
   <h2>Not sure where to start?</h2>
-  <p class="lede">If you&rsquo;d rather talk it through, tell me what your nights are like and we&rsquo;ll work out whether the room is worth a look. No pressure, and the call is free.</p>
+  <p class="lede">If you&rsquo;d rather talk it through, tell me what you&rsquo;re noticing, at night, at your desk, or just around the house, and we&rsquo;ll work out whether the room is worth a look. No pressure, and the call is free.</p>
   <a href="contact.html" class="btn btn-copper">Book a Free Call</a>
   <a href="faq.html" class="soft-link faq-link">Still have questions? See the FAQ &rarr;</a>
 </section>
