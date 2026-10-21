@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Meditation works on the mind, but a body can stay on guard for reasons you cannot think your way out of. What sleep research, animal studies and worker data show about the room, and a two-week test you can run yourself.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Spaces Within — Stress That Won&rsquo;t Meditate Away</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,440;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,440;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EBEADF;
+    --paper-2:#E1DFD1;
+    --ink:#211F1A;
+    --ink-soft:#5B5748;
+    --pine:#22403A;
+    --pine-deep:#173029;
+    --pine-text:#173029;
+    --moss:#7E8C71;
+    --moss-deep:#5F6E54;
+    --copper:#A0632F;
+    --copper-deep:#824F27;
+    --line:#CFC9B7;
+    --paper-on-pine:#EFE9DC; --on-copper:#FBF6EC;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#171613;
+      --paper-2:#1E1C18;
+      --ink:#EAE5D8;
+      --ink-soft:#B6AF9C;
+      --pine:#132621;
+      --pine-deep:#0C1B17;
+      --pine-text:#A9C4A3;
+      --moss:#4C5844;
+      --moss-deep:#3B4534;
+      --copper:#C68A54;
+      --copper-deep:#DDA26C;
+      --line:#33312A;
+      --paper-on-pine:#EAE5D8; --on-copper:#171613;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#171613;
+    --paper-2:#1E1C18;
+    --ink:#EAE5D8;
+    --ink-soft:#B6AF9C;
+    --pine:#132621;
+    --pine-deep:#0C1B17;
+    --pine-text:#A9C4A3;
+    --moss:#4C5844;
+    --moss-deep:#3B4534;
+    --copper:#C68A54;
+    --copper-deep:#DDA26C;
+    --line:#33312A;
+    --paper-on-pine:#EAE5D8; --on-copper:#171613;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-weight:560;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  em, .display-italic{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin-inline:auto;
+    padding-inline:clamp(20px, 5vw, 64px);
+  }
+  .measure{max-width:680px;}
+
+  /* ---- nav ---- */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .nav .word{
+    font-family:"Fraunces", serif;
+    font-weight:560;
+    font-size:22px;
+    letter-spacing:0.005em;
+  }
+  .nav ul{
+    list-style:none;
+    display:flex;
+    gap:clamp(9px, 1.4vw, 24px);
+    margin:0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .nav ul li a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav ul li a:hover{color:var(--ink); border-color:var(--copper);}
+  .nav ul li a.active{color:var(--ink); border-color:var(--copper-deep);}
+  .nav-links{display:flex;}
+  .nav{position:relative;}
+  /* sticky header: the nav stays at the top of the window while the page scrolls */
+  html{scroll-padding-top:56px;}
+  .site-head{position:sticky; top:0; z-index:50; background:var(--paper);}
+  .site-head.is-stuck{box-shadow:0 1px 0 var(--line), 0 8px 16px -12px rgba(0,0,0,.22);}
+  .site-head.is-stuck .nav{border-bottom-color:transparent;}
+
+  .nav-toggle{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    padding:0;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:2px;
+    cursor:pointer;
+  }
+  .nav-toggle-bars,
+  .nav-toggle-bars::before,
+  .nav-toggle-bars::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:1.5px;
+    background:var(--ink);
+    position:relative;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .nav-toggle-bars::before{position:absolute; top:-6px;}
+  .nav-toggle-bars::after{position:absolute; top:6px;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars{background:transparent;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before{transform:translateY(6px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg);}
+
+  @media (max-width:880px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      flex-direction:column;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+      padding:8px clamp(20px,5vw,64px) 20px;
+      gap:4px;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .22s ease;
+      z-index:5;
+    }
+    .nav-links.is-open{max-height:480px;}
+    .nav ul.nav-links{padding:0 clamp(20px,5vw,64px); border-bottom-color:transparent; transition:max-height .22s ease, padding .22s ease;}
+    .nav ul.nav-links.is-open{padding:8px clamp(20px,5vw,64px) 20px; border-bottom-color:var(--line);}
+    .nav-links li{width:100%;}
+    .nav-links li a{display:block; padding-block:11px; border-bottom:1px solid var(--line);}
+    .nav-links li:last-child a{border-bottom:none;}
+  }
+
+  /* ---- eyebrow ---- */
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---- buttons / links ---- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-copper{background:var(--copper); color:var(--on-copper);}
+  .btn-copper:hover{background:var(--copper-deep); transform:translateY(-1px);}
+  .soft-link{
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .soft-link:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  section{position:relative;}
+
+  /* ---- intro ---- */
+  .ponders-intro{padding-block:clamp(56px,8vw,96px) clamp(36px,5vw,52px);}
+  .ponders-intro-inner{max-width:680px;}
+  .ponders-intro h1{margin-top:22px; font-size:clamp(32px,4.4vw,48px);}
+  .ponders-intro .kicker{
+    margin-top:18px;
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:58ch;
+  }
+  .ponders-intro .kicker + .kicker{margin-top:14px;}
+  .ponders-intro .motto{
+    display:block;
+    margin-top:26px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:16px;
+    color:var(--copper-deep);
+  }
+
+  /* ---- ponders layout: posts + sidebar ---- */
+  .ponders-layout{
+    padding-block:clamp(8px,2vw,20px) clamp(72px,9vw,110px);
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+    gap:clamp(40px,6vw,72px);
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .ponders-layout{grid-template-columns:1fr;}
+  }
+
+  /* ---- post cards (index) ---- */
+  .post-list{display:flex; flex-direction:column;}
+  .post-card{
+    padding-block:clamp(30px,4vw,42px);
+    border-top:1px solid var(--line);
+  }
+  .post-card:first-child{border-top:none; padding-top:0;}
+  .card-photo{
+    width:100%;
+    aspect-ratio:3/2;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .card-photo img{width:100%; height:100%; object-fit:cover;}
+  .post-card .post-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .post-card h2{font-size:clamp(22px,2.6vw,27px);}
+  .post-card h2 a{text-decoration:none; color:var(--ink);}
+  .post-card h2 a:hover{color:var(--copper-deep);}
+  .post-card .excerpt{
+    margin-top:12px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.6;
+  }
+  .post-card .read-more{
+    display:inline-block;
+    margin-top:16px;
+  }
+
+  /* ---- sidebar ---- */
+  .sidebar-title{font-size:19px; margin-bottom:16px;}
+  .cat-list{list-style:none; margin:0; padding:0;}
+  .cat-list li{border-top:1px solid var(--line);}
+  .cat-list li:first-child{border-top:none;}
+  .cat-list a{
+    display:block;
+    padding-block:11px;
+    text-decoration:none;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .cat-list a:hover{color:var(--copper-deep);}
+  .cat-list a.current{color:var(--ink); font-weight:600;}
+
+  /* ---- full articles ---- */
+  .article{padding-block:0;}
+  .article-post{
+    padding-block:clamp(48px,7vw,72px);
+    border-top:1px solid var(--line);
+    scroll-margin-top:24px;
+  }
+  .article-post .back-link{margin-bottom:22px; display:inline-block;}
+  .article-post .post-meta{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .article-post h2{font-size:clamp(26px,3.2vw,36px); max-width:22ch;}
+  .article-post .measure{margin-top:24px; display:flow-root;}
+  .article-post .measure > p{color:var(--ink-soft); font-size:16.5px; line-height:1.68; margin:0 0 17px;}
+  .article-post .measure > p:last-child{margin-bottom:0;}
+  .article-post .measure > p.lead{color:var(--ink); font-size:17px;}
+  .article-post .measure h3{
+    font-size:22px;
+    margin:30px 0 14px;
+    color:var(--ink);
+  }
+  .article-post .measure a{
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+  }
+  .article-post .measure a:hover{color:var(--copper-deep); border-color:var(--copper-deep);}
+
+  .post-photo{
+    width:320px;
+    margin:5px 0 16px;
+    aspect-ratio:3/2;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .post-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .post-photo.float-right{float:right; margin-left:28px;}
+  .post-photo.float-left{float:left; margin-right:28px;}
+  @media (max-width:640px){
+    .post-photo.float-right, .post-photo.float-left{
+      float:none; width:100%; max-width:380px; margin:6px auto 20px;
+    }
+  }
+
+  /* ---- close CTA ---- */
+  /* ---- share invitation ---- */
+  .share{text-align:center; padding-block:clamp(36px,5vw,56px);}
+  .share h2{font-size:clamp(20px,2.3vw,26px); max-width:560px; margin:0 auto; font-weight:450;}
+  .share p{max-width:520px; margin:12px auto 0; color:var(--ink-soft); line-height:1.55;}
+  .share-links{list-style:none; padding:0; margin:20px 0 0; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px;}
+  .share-links a, .share-links button{
+    font:inherit; font-family:"Public Sans", sans-serif; font-weight:600; font-size:15.5px;
+    color:var(--copper-deep); background:none; border:0; border-bottom:1px solid var(--copper-deep);
+    padding:2px 0; cursor:pointer; text-decoration:none; line-height:1.4;
+  }
+  .share-links a:hover, .share-links button:hover{color:var(--ink); border-color:var(--ink);}
+  .share-links a:focus-visible, .share-links button:focus-visible{outline:2px solid var(--copper); outline-offset:3px;}
+  .share-note{min-height:1.4em; margin-top:10px; font-size:14px; color:var(--ink-soft);}
+  /* ---- email sign-up band ---- */
+  .signup{background:var(--paper-2); text-align:center; padding-block:clamp(44px,6vw,72px);}
+  .signup h2{font-size:clamp(22px,2.6vw,30px); max-width:560px; margin:0 auto; font-weight:450;}
+  .signup p{max-width:520px; margin:14px auto 0; color:var(--ink-soft); line-height:1.55;}
+  .signup .btn{margin-top:26px;}
+  .close{
+    background:var(--pine);
+    color:var(--paper-on-pine);
+    padding-block:clamp(64px,9vw,110px);
+    text-align:center;
+  }
+  .close h2{color:var(--paper-on-pine); font-size:clamp(26px,3.2vw,36px); max-width:600px; margin-inline:auto; font-style:italic; font-weight:450;}
+  .close .btn{margin-top:34px;}
+  .close .motto{
+    display:block;
+    margin-top:26px;
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:440;
+    font-size:15px;
+    color:rgba(239,233,220,0.75);
+  }
+
+  footer.site-foot{
+    border-top:1px solid var(--line);
+    background:var(--paper-2);
+    padding-block:clamp(44px,6vw,64px) clamp(32px,4vw,44px);
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    line-height:1.6;
+  }
+  .site-foot .sf-lock{
+    display:inline-block;
+    text-align:left;
+    line-height:1;
+  }
+  .site-foot .sf-word{
+    display:inline-block;
+    font-family:"Fraunces", serif;
+    font-weight:600;
+    font-size:clamp(26px,2.6vw,30px);
+    letter-spacing:0.005em;
+    color:var(--ink);
+    text-decoration:none;
+    line-height:1.1;
+  }
+  /* tagline sits under the wordmark like the business card: starts under the "c", runs a little past the final "n" (sized by the small script at the bottom) */
+  .site-foot .sf-tag{
+    display:block;
+    width:max-content;
+    margin-top:2px;
+    white-space:nowrap;
+    font-family:"Newsreader", serif;
+    font-style:italic;
+    font-size:16px;
+    line-height:1.2;
+    color:var(--copper-deep);
+  }
+  .site-foot .sf-line{margin:22px 0 0;}
+  .site-foot .sf-contact{margin:6px 0 0;}
+  .site-foot .sf-contact a{color:inherit; text-decoration:none; border-bottom:1px solid var(--line);}
+  .site-foot .sf-contact a:hover{color:var(--ink);}
+  /* headlines: lighter weight, matching the homepage */
+  h1,h2{font-weight:450; letter-spacing:-0.012em;}
+  .article-post .measure p.cta-row{margin:6px 0 26px;}
+  .article-post .measure a.btn{color:var(--on-copper); border-bottom:none;}
+  .article-post .measure a.btn:hover{color:var(--on-copper); border-bottom:none;}
+  /* ---- sources / footnotes ---- */
+  .article-post .measure sup.fn{font-size:11px; line-height:0; margin-left:2px;}
+  .article-post .measure sup.fn a{border-bottom:none; color:var(--copper-deep); padding:0 1px;}
+  .article-post .measure p.sign{margin-top:28px; color:var(--ink);}
+  .article-post .measure p.sign em{color:var(--copper-deep);}
+  .sources{margin-top:44px; padding-top:22px; border-top:1px solid var(--line); scroll-margin-top:24px;}
+  .sources h4{font-family:"Public Sans", sans-serif; font-size:12.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 12px;}
+  .sources ol{margin:0; padding-left:20px; font-size:13.5px; line-height:1.55; color:var(--ink-soft);}
+  .sources li{margin-bottom:8px; overflow-wrap:anywhere;}
+  .sources a{color:var(--ink-soft);}
+  .post-photo.post-photo-portrait{width:200px; aspect-ratio:2/3;}
+  .article-post .measure ol.test-steps{color:var(--ink-soft); font-size:16.5px; line-height:1.68; margin:0 0 17px; padding-left:22px; display:flow-root;}
+  .article-post .measure ol.test-steps li{margin-bottom:9px;}
+  @media (max-width:640px){
+    .post-photo.post-photo-portrait{max-width:220px;}
+  }
+</style>
+</head>
+<body>
+
+
+<header class="site-head">
+<nav class="nav wrap">
+  <a href="index.html" class="word" style="text-decoration:none;color:inherit;">Spaces Within</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+    <span class="nav-toggle-bars" aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="emfs.html">EMFs</a></li>
+    <li><a href="geopathic-stress.html">Geopathic Stress</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="beyond.html">Beyond</a></li>
+    <li><a href="ponders.html" class="active">Ponders</a></li>
+    <li><a href="contact.html">Let&rsquo;s Talk</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ARTICLE -->
+<section class="article wrap" style="padding-top:clamp(40px,6vw,64px);">
+
+  <div class="article-post" id="stress-that-wont-meditate-away">
+    <a class="soft-link back-link" href="ponders.html">&larr; Back to Ponders</a>
+    <p class="post-meta">October 22, 2026 &nbsp;&middot;&nbsp; Spaces Within</p>
+    <h2>Stress That Won&rsquo;t Meditate Away</h2>
+    <div class="measure">
+      <figure class="post-photo float-right">
+        <img src="assets/img/b81f3c0d7a46.jpg" alt="A woman sitting cross-legged on her living-room floor with her eyes closed, a headset around her neck and an open laptop beside her">
+      </figure>
+      <h3>Two kinds of stress</h3>
+      <p class="lead">Stress is not the enemy. When something startles you, your brain sounds an alarm, your adrenal glands release adrenaline and cortisol, your heart speeds up, and your body gets ready to act. When the moment passes, the hormones settle back to normal and everything else carries on. Mayo Clinic describes this system as one that switches itself on and off as needed.<sup class="fn"><a href="#sources">1</a></sup></p>
+      <p>That is acute stress, and it is the body working exactly as designed.</p>
+      <p>The trouble starts when the alarm never gets the all-clear. Mayo Clinic describes chronic stress as the same response staying active for too long, often because the stressors are &ldquo;always present.&rdquo; Then the effects spread through nearly everything: mood and memory, digestion, muscle tension and headaches, weight, blood pressure and heart health, the immune system, reproductive health. Mayo Clinic says prolonged exposure to stress hormones can disrupt nearly all of the body&rsquo;s processes. Sleep is simply the one that is easiest to see.<sup class="fn"><a href="#sources">1</a></sup></p>
+      <p>Notice what that definition leaves out. It doesn&rsquo;t say a stressful life. It says an alarm that doesn&rsquo;t switch off.</p>
+      <h3>Why calming your mind may not be enough</h3>
+      <p>Most stress advice works on the mind: meditation, breathwork, affirmations, therapy. They help, and you should keep them. They also share a blind spot. They assume that whatever keeps your body on alert is something you can think your way out of.</p>
+      <p>Your nervous system doesn&rsquo;t wait for your attention. Sleep researchers have known for years that noise in a bedroom triggers brain arousals during sleep, and that these reactions are, in the words of a WHO systematic review, &ldquo;often not consciously perceived and remembered in the morning.&rdquo;<sup class="fn"><a href="#sources">2</a></sup> You don&rsquo;t wake up. You don&rsquo;t remember. Your body responded anyway.</p>
+      <p>If sound can do that, it is fair to ask what else in a bedroom your body is responding to while you are sure you feel nothing.</p>
+      <h3>The question rarely asked</h3>
+      <p class="lead">What in the room is still pushing?</p>
+      <p>Almost everyone accepts that noise, light and heat can keep a body from settling, even after you&rsquo;ve stopped noticing them. Almost no one asks the same about the electrical environment: the wiring, routers, chargers and phones within a few feet of your head for eight hours a night.</p>
+      <p>The usual reason is that you can&rsquo;t feel it. But feeling is a poor test. Sleep researchers don&rsquo;t rely on how people feel. They put electrodes on their heads.</p>
+      <h3>What the research shows</h3>
+      <p>The rules that decide what counts as safe were built around heat. ICNIRP, the body behind most national exposure limits, says the only substantiated effect of radiofrequency exposure relevant to health is heating of tissue.<sup class="fn"><a href="#sources">3</a></sup> Heat can be measured, and it shows up as a symptom. A standard built on heat and symptoms has nothing to say about what a brain does while it sleeps.</p>
+      <p>Sleep is the easiest place to see this, because it is the one stretch of the day when the body is supposed to stand down, and labs can record it. It is only a window, since chronic stress reaches into everything else too. And sleep labs measure exactly what a heat-based standard can&rsquo;t. In 2024, researchers at RMIT University published a blinded pilot study in <em>Frontiers in Public Health</em>. Twelve healthy adults slept for seven nights with an active baby monitor emitting 2.45 GHz radiofrequency fields and seven nights with an inactive one, and neither they nor the researchers knew which was which. On the active nights, brain-wave activity in the gamma, beta and theta ranges rose during non-REM sleep, the stages that are supposed to be quiet, and sleep quality ratings dropped significantly.<sup class="fn"><a href="#sources">4</a></sup> <em>Sleep Review</em> reported that over a quarter of the participants crossed a threshold for clinical insomnia risk.<sup class="fn"><a href="#sources">5</a></sup></p>
+      <p>That result is not an outlier. After reviewing the evidence below the heating threshold, ICNIRP itself says the one consistent finding is a small change in EEG brain activity, and that its biological significance is unclear.<sup class="fn"><a href="#sources">3</a></sup> Unclear means not yet understood. It does not mean harmless.</p>
+      <p>Animals show it more cleanly, because a person can be asked how they feel and a rat has no opinion about routers. In a 2019 study from Egypt&rsquo;s National Research Centre, published in <em>Biomedical and Pharmacology Journal</em>, Sharaf and colleagues set out to test BioGeometry&rsquo;s designed shapes on rats.<sup class="fn"><a href="#sources">6</a></sup> The shapes came from BioGeometry&rsquo;s founder, Dr. Ibrahim Karim, and a co-author. The team housed Wistar rats in three separate rooms for six months. One room had no wireless device. One had an ordinary Wi-Fi router about ten inches from the cages, running around the clock. One had the same kind of router plus the BioGeometry shapes. The router&rsquo;s maximum SAR, the standard heating measure, was 0.091 W/kg on the manufacturer&rsquo;s own conformity test.</p>
+      <p>Here is what six months looked like. The rats living beside the router behaved like anxious animals. In a maze with open arms and walled arms, they stayed in the walled arms more than four times as long as the control rats. In a water maze, asked to find a hidden platform, they took nearly three times as long. Their brains told the same story. Serotonin and dopamine, the chemicals behind mood and motivation, were down by roughly half in the cortex, striatum and hippocampus. Melatonin, the hormone that tells a body it&rsquo;s night, was down by more than three-quarters in two of those regions. Under the microscope, their neurons showed signs of damage.</p>
+      <p>The rats living with the BioGeometry shapes fared differently. They were willing to explore the open arms of the maze, they found the hidden platform in about half the time the exposed rats needed, and their melatonin was higher than the exposed group&rsquo;s. Their cortex tissue looked largely normal. Not every measure recovered, but most did.</p>
+      <p>The design has limits. Each condition had a room of its own, no group had look-alike objects without the designed geometry, and the paper does not state how many animals were in each group. It needs independent replication, and I&rsquo;d welcome it. But a rat can&rsquo;t be talked into feeling better. Whatever changed in those brains did not change because the animal expected it to.</p>
+      <p>The same pattern shows up in workers, though with a different kind of field. A 2026 study in <em>Frontiers in Psychiatry</em> compared 77 male power-plant employees in Tunisia, who worked in power-frequency fields with a median of about 5.9 microtesla, with 88 administrative staff whose workplaces measured close to zero.<sup class="fn"><a href="#sources">7</a></sup> Poor sleep was more than twice as common among the plant workers: 64.9% against 29.5%. Depression (24.7% against 3.4%), anxiety (23.4% against none) and stress (about 47% against none) were higher too. After the researchers adjusted for other factors, the field exposure stayed linked to poor sleep and to depression. For stress and anxiety, the adjusted model did not single out exposure. The study was small, relied on questionnaires and was a one-time snapshot, so it shows an association, not a cause.</p>
+      <p>Now look at what the reassuring studies measured. The largest review, commissioned by the WHO, pooled 13 observational papers and found no symptoms linked to exposure below guideline values.<sup class="fn"><a href="#sources">8</a></sup> It also rated its own certainty as very low. It mostly asks what people report, so it can&rsquo;t speak to changes people don&rsquo;t notice. A conclusion drawn from the wrong measurement can be perfectly accurate and still point you the wrong way.</p>
+      <p>Whether those changes matter over years is the open question. That they show up at all, in the bedroom, in the dark, while you sleep, is the part worth taking seriously.</p>
+      <h3>A two-week test you can run yourself</h3>
+      <figure class="post-photo post-photo-portrait float-left">
+        <img src="assets/img/5d29e7a0c3f1.jpg" alt="A hand held in a meditation pose on a blue mat, with a laptop blurred in the background">
+      </figure>
+      <p>You don&rsquo;t need a lab to ask whether your own bedroom is part of your load. Your sleep is an instrument, and two weeks of simple notes, with nothing to buy, will tell you something.</p>
+      <ol class="test-steps">
+        <li>Start with the obvious. If sleep trouble is new, persistent or severe, see your doctor first. Nothing here replaces that.</li>
+        <li>For one week, change nothing and keep a note each morning: how long it took to fall asleep, how many times you woke, and how tense, edgy or worn out you feel, on a scale of 1 to 5.</li>
+        <li>For the second week, make one change only: turn the Wi-Fi router off at night, or move the phone to another room and charge it there.</li>
+        <li>Leave everything else the same: bedtime, caffeine, room temperature.</li>
+        <li>Keep the same morning notes.</li>
+        <li>Compare the two weeks. Then put it back.</li>
+      </ol>
+      <p>Leave alone anything you rely on for health or safety, such as a medical device or a smoke alarm.</p>
+      <p>The notes are there so that one groggy morning doesn&rsquo;t decide the answer. The numbers do. If nothing changes, you&rsquo;ve lost very little and learned something. If something does, you have a question worth following up.</p>
+      <h3>Where my work fits</h3>
+      <p>I built my work around this question, and the rat study is its logic in miniature: place the shape, then measure the biology. When I assess a home, I read three layers: what&rsquo;s beneath the house, what&rsquo;s within the rooms, and how a person&rsquo;s body responds. I don&rsquo;t ask anyone to take it on faith. Whatever I place is re-measured before I leave and checked again two to three weeks later, and the result that counts is how you sleep and how you feel.</p>
+      <p>Most people who can&rsquo;t settle have already worked on the mind, the diet and the schedule. Almost no one has had the room looked at. Keep the meditation and the good habits. Add the one thing you haven&rsquo;t checked.</p>
+      <p>If you&rsquo;d like more Ponders like this one, <a href="https://lp.constantcontactpages.com/sl/RFfWl6E" target="_blank" rel="noopener">they arrive by email</a>, a few at a time, with no pressure to do anything.</p>
+      <p>If you&rsquo;re curious what a home assessment involves, <a href="how-it-works.html">here&rsquo;s how it works</a>.</p>
+      <p class="sign">&mdash; Bobby Jones, Licensed BioGeometry&reg;-EHS Associate-Practitioner</p>
+
+      <div class="sources" id="sources">
+        <h4>Sources</h4>
+        <ol>
+          <li>Mayo Clinic, <a href="https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress/art-20046037" target="_blank" rel="noopener">Chronic stress puts your health at risk</a>.</li>
+          <li>Basner M, McGuire S (2018), <a href="https://www.mdpi.com/1660-4601/15/3/519" target="_blank" rel="noopener">WHO Environmental Noise Guidelines for the European Region: a systematic review on environmental noise and effects on sleep</a>, <em>Int J Environ Res Public Health</em>.</li>
+          <li>ICNIRP, <a href="https://www.icnirp.org/en/frequencies/radiofrequenc" target="_blank" rel="noopener">radiofrequency EMF page</a>.</li>
+          <li>Bijlsma N, et al. (2024), <a href="https://doaj.org/article/f03bc317d5d8465786ee5f973d7e8edc" target="_blank" rel="noopener">Does radiofrequency radiation impact sleep? A double-blind, randomised, placebo-controlled, crossover pilot study</a>, <em>Frontiers in Public Health</em> (abstract).</li>
+          <li>Sleep Review, <a href="https://sleepreviewmag.com/?p=414430" target="_blank" rel="noopener">coverage of the RMIT study</a>.</li>
+          <li>Sharaf NE, Galal AF, El-Sawy MS, Shalby AB, Sayed AH, Ahmed HH (2019), <a href="https://biomedpharmajournal.org/vol12no3/role-of-designed-bio-geometrical-forms-in-antagonizing-neurobehavioral-burden-of-wi-fi-radiation-evidence-based-experimental-study/" target="_blank" rel="noopener">Role of designed bio-geometrical forms in antagonizing neurobehavioral burden of Wi-Fi radiation: evidence-based experimental study</a>, <em>Biomedical and Pharmacology Journal</em> 12(3):1217&ndash;1234.</li>
+          <li>Kacem I, Jammeli I, Sridi C, et al. (2026), <a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1755918/full" target="_blank" rel="noopener">Impact of extremely low frequency electromagnetic fields exposure on sleep quality and mental health in a Tunisian power plant: a cross-sectional study</a>, <em>Frontiers in Psychiatry</em> 17:1755918.</li>
+          <li><a href="https://doaj.org/article/cc5ac02d90904d64a012430c846cfe15" target="_blank" rel="noopener">The effects of radiofrequency electromagnetic fields exposure on tinnitus, migraine and non-specific symptoms: a systematic review and meta-analysis of human observational studies</a>, <em>Environment International</em> (abstract).</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SHARE -->
+<section class="share wrap" data-share-url="https://thespaceswithin.com/ponders-stress-that-wont-meditate-away.html">
+  <h2>Know someone who might want to read this?</h2>
+  <p>If it was worth your time, you&rsquo;re welcome to pass it along to a friend or family member. No pressure either way.</p>
+  <ul class="share-links">
+    <li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthespaceswithin.com%2Fponders-stress-that-wont-meditate-away.html" target="_blank" rel="noopener">Share on LinkedIn</a></li>
+    <li><a href="mailto:?subject=A%20Ponder%20you%20might%20like%3A%20Stress%20That%20Won%E2%80%99t%20Meditate%20Away&amp;body=I%20read%20this%20and%20thought%20of%20you%3A%0A%0Ahttps%3A//thespaceswithin.com/ponders-stress-that-wont-meditate-away.html%0A%0AIt%E2%80%99s%20a%20short%20read%20from%20Bobby%20Jones%20at%20Spaces%20Within.">Email it to a friend</a></li>
+    <li><button type="button" class="copy-link">Copy link</button></li>
+  </ul>
+  <p class="share-note" role="status" aria-live="polite"></p>
+</section>
+
+<!-- EMAIL SIGN-UP -->
+<section class="signup wrap">
+  <h2>Get new Ponders by email</h2>
+  <p>When something new goes up, you&rsquo;ll get a short note. You can unsubscribe at any time.</p>
+  <a href="https://lp.constantcontactpages.com/sl/RFfWl6E" class="btn btn-copper" target="_blank" rel="noopener">Join the list</a>
+</section>
+
+<!-- CLOSE -->
+<section class="close wrap">
+  <h2>Curious what your own space might be telling you?</h2>
+  <a href="contact.html" class="btn btn-copper">Let&rsquo;s Talk</a>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="sf-lock">
+      <a href="index.html" class="sf-word">Spaces Within</a>
+      <span class="sf-tag">beneath. within. you.</span>
+    </div>
+    <p class="sf-line">Pacific Northwest &nbsp;&middot;&nbsp; BioGeometry&reg;-EHS Associate-Practitioner</p>
+    <p class="sf-contact"><a href="tel:+15035685033">(503) 568-5033</a> &nbsp;&middot;&nbsp; <a href="mailto:bobby@thespaceswithin.com">bobby@thespaceswithin.com</a></p>
+    <p class="sf-contact"><a href="https://www.linkedin.com/in/bobby-jones-spaces-within/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://lp.constantcontactpages.com/sl/RFfWl6E" target="_blank" rel="noopener">Ponders by email</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('nav-links');
+  if(!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+<script>
+/* footer lockup (matches the business card / logo): tagline starts under the "c" of "Spaces", is tracked out airy, and runs a little past the final "n" */
+(function(){
+  function fit(){
+    var w=document.querySelector('.sf-word'), t=document.querySelector('.sf-tag');
+    if(!w||!t||!w.firstChild) return;
+    var r=document.createRange(); r.setStart(w.firstChild,0); r.setEnd(w.firstChild,3);
+    var off=r.getBoundingClientRect().width, W=w.getBoundingClientRect().width, over=W*0.036, avail=W-off+over;
+    if(avail<60) return;
+    t.style.letterSpacing='0px'; t.style.marginRight='0px'; t.style.marginLeft=off+'px'; t.style.fontSize='16px';
+    var n0=t.getBoundingClientRect().width, fs=16*(avail*0.8)/n0;
+    fs=Math.max(12,Math.min(20,fs)); t.style.fontSize=fs+'px';
+    var n=t.getBoundingClientRect().width, len=t.textContent.length;
+    var ls=Math.max(0,(avail-n)/(len-1));
+    t.style.letterSpacing=ls+'px'; t.style.marginRight=(-(ls+over))+'px';
+  }
+  fit();
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* sticky header: add a soft edge once the page has scrolled */
+(function(){
+  var h=document.querySelector('.site-head'); if(!h) return;
+  function f(){ h.classList.toggle('is-stuck', (window.scrollY||document.documentElement.scrollTop)>4); }
+  f(); window.addEventListener('scroll',f,{passive:true});
+})();
+</script>
+<script>
+/* share: copy the page link */
+(function(){
+  var b=document.querySelector('.share .copy-link'); if(!b) return;
+  var s=document.querySelector('.share'), note=document.querySelector('.share-note');
+  var url=s.getAttribute('data-share-url');
+  function say(m){ if(note) note.textContent=m; }
+  b.addEventListener('click', function(){
+    function fallback(){
+      var t=document.createElement('input'); t.value=url; t.setAttribute('readonly','');
+      t.style.position='absolute'; t.style.left='-9999px'; document.body.appendChild(t); t.select();
+      var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(t); say(ok ? 'Link copied.' : url);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ say('Link copied.'); }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
