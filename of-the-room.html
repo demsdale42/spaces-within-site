@@ -465,6 +465,15 @@
   .otr-fine{max-width:640px; margin:28px auto 0; text-align:left; font-size:14px; line-height:1.6; color:rgba(239,233,220,0.72);}
   @media (max-width:980px){ .otr-steps{grid-template-columns:repeat(2,minmax(0,1fr));} }
   @media (max-width:720px){ .otr-steps{grid-template-columns:1fr;} }
+  /* ---- tier cards (same look as the homepage) ---- */
+  .tiers2{margin-top:44px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.4vw,32px);}
+  .t2{position:relative; border:1px solid var(--line); background:var(--paper); padding:24px 24px 26px; display:grid; gap:8px; align-content:start; min-width:0;}
+  .t2-name{font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  .t2-price{font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:clamp(26px,2.6vw,32px); line-height:1.1; color:var(--pine-text);}
+  .t2 p{font-size:15.5px; color:var(--ink-soft); line-height:1.55; margin:0;}
+  .t2-feature{border-color:var(--copper); background:var(--paper-2); box-shadow:inset 0 2px 0 var(--copper);}
+  .t2-tag{position:absolute; top:-10px; left:20px; background:var(--paper); color:var(--copper-deep); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; padding:1px 9px; border:1px solid var(--copper);}
+  @media (max-width:980px){ .tiers2{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -554,21 +563,21 @@
     <li><b>5</b><strong>The follow-up</strong><span>Two to three weeks later, included in every tier.</span></li>
   </ol>
   <p class="otr-note">Most people notice something within the first few days to weeks. It tends to be subtle at first.</p>
-  <div class="tiers-grid otr-tiers">
-    <div class="tier-card tier-feature">
-      <span class="tier-tag">Recommended</span>
-      <h3>Essential</h3>
-      <span class="tier-price"><small>From</small>$1,500</span>
-      <p>The whole home. Priced by the size of the home, the number of rooms, and the electromagnetic sources found.</p>
+  <div class="tiers2">
+    <div class="t2 t2-feature">
+      <span class="t2-tag">Recommended</span>
+      <span class="t2-name">Essential</span>
+      <span class="t2-price">From $1,500</span>
+      <p>The whole home. Priced by size, number of rooms, and the electromagnetic sources found.</p>
     </div>
-    <div class="tier-card">
-      <h3>Introductory Consultation</h3>
-      <span class="tier-price">$500</span>
+    <div class="t2">
+      <span class="t2-name">Introductory Consultation</span>
+      <span class="t2-price">$500</span>
       <p>A smaller first step: one primary space, usually the bedroom. For when the whole home isn&rsquo;t in the budget yet.</p>
     </div>
-    <div class="tier-card">
-      <h3>Essential PLUS</h3>
-      <span class="tier-price tier-price-note">Set after the visit</span>
+    <div class="t2">
+      <span class="t2-name">Essential PLUS</span>
+      <span class="t2-price">Set after the visit</span>
       <p>For homes with more layers: heavier EMF environments or significant geopathic stress.</p>
     </div>
   </div>
