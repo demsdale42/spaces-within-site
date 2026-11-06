@@ -712,6 +712,31 @@
     .process-grid{grid-template-columns:1fr;}
   }
 
+
+  /* ---- about: background / credentials ---- */
+  .creds{padding-block:clamp(56px,8vw,96px);}
+  .creds h2{font-size:clamp(26px,3vw,34px); max-width:680px;}
+  .creds-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:clamp(24px,4vw,44px);
+    margin-top:36px;
+  }
+  .creds-item{padding-top:18px; border-top:1px solid var(--line); min-width:0;}
+  .creds-item .yr{
+    font-family:"Newsreader",serif;
+    font-style:italic;
+    color:var(--copper-deep);
+    font-size:15px;
+    display:block;
+    margin-bottom:6px;
+  }
+  .creds-item h3{font-size:17px; font-weight:560; margin-bottom:4px;}
+  .creds-item p{color:var(--ink-soft); font-size:15.5px;}
+  @media (max-width:700px){
+    .creds-grid{grid-template-columns:1fr;}
+  }
+
   /* ---- about: measurable (moss contrast statement) ---- */
   .measurable{
     background:var(--moss);
@@ -865,6 +890,34 @@
   <div class="measurable-inner wrap">
     <h2>Measurable, not ceremonial.</h2>
     <p>This isn&rsquo;t feng shui, smudging, or crystal placement — though Bobby doesn&rsquo;t discount them. It&rsquo;s quiet, methodical work: measure the space, place a solution, re-measure, adjust. Call and response, until the reading settles.</p>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section class="creds wrap">
+  <span class="eyebrow">Background</span>
+  <h2>The training behind the work.</h2>
+  <div class="creds-grid">
+    <div class="creds-item">
+      <span class="yr">2023 &ndash; 2025</span>
+      <h3>BioGeometry&reg;-EHS, licensed</h3>
+      <p>Advanced Workshop in Florida (2024); practitioner training and licensing in Crete (October 2025). Licensed BioGeometry&reg;-EHS Associate-Practitioner.</p>
+    </div>
+    <div class="creds-item">
+      <span class="yr">Two decades</span>
+      <h3>Doctor of Chiropractic</h3>
+      <p>Western States Chiropractic College (2001), followed by two decades in practice, including 17 years at his own clinic in Portland.</p>
+    </div>
+    <div class="creds-item">
+      <span class="yr">1996</span>
+      <h3>Master&rsquo;s in Geology and Hydrogeology</h3>
+      <p>University of Georgia. Two years as a hydrogeologist, investigating groundwater contamination beneath homes and military properties.</p>
+    </div>
+    <div class="creds-item">
+      <span class="yr">Ongoing</span>
+      <h3>Reiki Level III and muscle testing</h3>
+      <p>Reiki practitioner and applied kinesiology (muscle testing), developed through years of clinical practice.</p>
+    </div>
   </div>
 </section>
 
